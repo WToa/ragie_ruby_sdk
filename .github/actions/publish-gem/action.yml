@@ -10,7 +10,7 @@ runs:
     - name: Build gem
       run: |
         cd ${{ inputs.repo_sdk_path }}
-        gem build ragie-ruby-sdk.gemspec
+        gem build ragie_ruby_sdk.gemspec
       shell: bash
 
     - name: Publish gem

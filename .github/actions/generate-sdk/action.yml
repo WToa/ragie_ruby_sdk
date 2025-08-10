@@ -11,6 +11,6 @@ runs:
           openapitools/openapi-generator-cli generate \
           -i https://api.ragie.ai/openapi.json \
           -g ruby \
-          -o /local/ragie-ruby-sdk \
-          --additional-properties=gemName=ragie-ruby-sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/
+          -o /local/ragie_ruby_sdk \
+          --additional-properties=gemName=ragie_ruby_sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/
       shell: bash

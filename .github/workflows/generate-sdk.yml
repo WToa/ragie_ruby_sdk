@@ -6,9 +6,9 @@ on:
     - cron: '0 0 * * 0'
 
 env:
-  SDK_PATH: local/ragie-ruby-sdk
-  REPO_SDK_PATH: ragie-ruby-sdk
-  VERSION_FILE: local/ragie-ruby-sdk/lib/ragie_ruby_sdk/version.rb
+  SDK_PATH: local/ragie_ruby_sdk
+  REPO_SDK_PATH: ragie_ruby_sdk
+  VERSION_FILE: local/ragie_ruby_sdk/lib/ragie_ruby_sdk/version.rb
 
 jobs:
   generate-and-release:
