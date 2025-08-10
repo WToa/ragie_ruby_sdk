@@ -4,6 +4,9 @@ inputs:
   repo_sdk_path:
     description: Path to the generated SDK
     required: true
+  rubygems_api_key:
+    description: RubyGems API key for publishing
+    required: true
 runs:
   using: "composite"
   steps:
@@ -15,7 +18,7 @@ runs:
 
     - name: Publish gem
       env:
-        RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        RUBYGEMS_API_KEY: ${{ inputs.rubygems_api_key }}
       run: |
         cd ${{ inputs.repo_sdk_path }}
         gem push *.gem --key rubygems_api_key --host https://rubygems.org
