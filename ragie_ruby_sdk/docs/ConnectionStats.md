@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionStats
+# RagieRubySdk::ConnectionStats
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConnectionStats.new(
+instance = RagieRubySdk::ConnectionStats.new(
   document_count: null,
   page_count: null
 )

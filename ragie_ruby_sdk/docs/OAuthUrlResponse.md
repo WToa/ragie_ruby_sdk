@@ -1,4 +1,4 @@
-# OpenapiClient::OAuthUrlResponse
+# RagieRubySdk::OAuthUrlResponse
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::OAuthUrlResponse.new(
+instance = RagieRubySdk::OAuthUrlResponse.new(
   url: null
 )
 ```

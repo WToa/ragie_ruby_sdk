@@ -1,4 +1,4 @@
-# OpenapiClient::GoogleFolderData
+# RagieRubySdk::GoogleFolderData
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::GoogleFolderData.new(
+instance = RagieRubySdk::GoogleFolderData.new(
   id: null,
   name: null,
   mime_type: null

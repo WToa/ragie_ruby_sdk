@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorSlackConnection
+# RagieRubySdk::AuthenticatorSlackConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorSlackConnection.new(
+instance = RagieRubySdk::AuthenticatorSlackConnection.new(
   provider: null,
   data: null,
   user_email: null,

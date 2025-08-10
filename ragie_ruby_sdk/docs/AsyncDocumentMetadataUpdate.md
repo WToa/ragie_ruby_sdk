@@ -1,4 +1,4 @@
-# OpenapiClient::AsyncDocumentMetadataUpdate
+# RagieRubySdk::AsyncDocumentMetadataUpdate
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AsyncDocumentMetadataUpdate.new(
+instance = RagieRubySdk::AsyncDocumentMetadataUpdate.new(
   status: null
 )
 ```

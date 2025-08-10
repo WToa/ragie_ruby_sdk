@@ -1,4 +1,4 @@
-# OpenapiClient::PublicZendeskConnection
+# RagieRubySdk::PublicZendeskConnection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicZendeskConnection.new(
+instance = RagieRubySdk::PublicZendeskConnection.new(
   provider: null,
   data: null,
   credentials: null

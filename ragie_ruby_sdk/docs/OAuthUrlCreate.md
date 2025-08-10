@@ -1,4 +1,4 @@
-# OpenapiClient::OAuthUrlCreate
+# RagieRubySdk::OAuthUrlCreate
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::OAuthUrlCreate.new(
+instance = RagieRubySdk::OAuthUrlCreate.new(
   redirect_uri: null,
   partition: null,
   source_type: null,

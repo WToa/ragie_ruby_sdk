@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentMetadataUpdate
+# RagieRubySdk::DocumentMetadataUpdate
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentMetadataUpdate.new(
+instance = RagieRubySdk::DocumentMetadataUpdate.new(
   metadata: null
 )
 ```

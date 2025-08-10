@@ -1,4 +1,4 @@
-# OpenapiClient::BucketData
+# RagieRubySdk::BucketData
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::BucketData.new(
+instance = RagieRubySdk::BucketData.new(
   bucket: null,
   prefix: null,
   import_file_metadata: null

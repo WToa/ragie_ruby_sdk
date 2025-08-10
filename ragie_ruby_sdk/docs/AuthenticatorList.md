@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorList
+# RagieRubySdk::AuthenticatorList
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorList.new(
+instance = RagieRubySdk::AuthenticatorList.new(
   pagination: null,
   authenticators: null
 )

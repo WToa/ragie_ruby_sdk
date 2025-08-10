@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionList
+# RagieRubySdk::ConnectionList
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConnectionList.new(
+instance = RagieRubySdk::ConnectionList.new(
   pagination: null,
   connections: null
 )

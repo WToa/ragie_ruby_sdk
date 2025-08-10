@@ -1,4 +1,4 @@
-# OpenapiClient::PatchDocumentMetadataParams
+# RagieRubySdk::PatchDocumentMetadataParams
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PatchDocumentMetadataParams.new(
+instance = RagieRubySdk::PatchDocumentMetadataParams.new(
   metadata: null,
   async: null
 )

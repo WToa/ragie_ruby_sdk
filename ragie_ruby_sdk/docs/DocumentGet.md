@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentGet
+# RagieRubySdk::DocumentGet
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentGet.new(
+instance = RagieRubySdk::DocumentGet.new(
   status: null,
   id: null,
   created_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionStrategy
+# RagieRubySdk::PartitionStrategy
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PartitionStrategy.new(
+instance = RagieRubySdk::PartitionStrategy.new(
   static: null,
   audio: null,
   video: null

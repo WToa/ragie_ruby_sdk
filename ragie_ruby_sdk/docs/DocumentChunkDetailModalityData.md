@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentChunkDetailModalityData
+# RagieRubySdk::DocumentChunkDetailModalityData
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::DocumentChunkDetailModalityData.openapi_one_of
+RagieRubySdk::DocumentChunkDetailModalityData.openapi_one_of
 # =>
 # [
 #   :'AudioModalityData',
@@ -26,9 +26,9 @@ Returns the discriminator's property name.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::DocumentChunkDetailModalityData.openapi_discriminator_name
+RagieRubySdk::DocumentChunkDetailModalityData.openapi_discriminator_name
 # => :'type'
 ```
 
@@ -39,9 +39,9 @@ Returns the discriminator's mapping.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::DocumentChunkDetailModalityData.openapi_discriminator_mapping
+RagieRubySdk::DocumentChunkDetailModalityData.openapi_discriminator_mapping
 # =>
 # {
 #   :'audio' => :'AudioModalityData',
@@ -56,12 +56,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::DocumentChunkDetailModalityData.build(data)
+RagieRubySdk::DocumentChunkDetailModalityData.build(data)
 # => #<AudioModalityData:0x00007fdd4aab02a0>
 
-OpenapiClient::DocumentChunkDetailModalityData.build(data_that_doesnt_match)
+RagieRubySdk::DocumentChunkDetailModalityData.build(data_that_doesnt_match)
 # => nil
 ```
 

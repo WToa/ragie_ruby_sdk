@@ -1,4 +1,4 @@
-# OpenapiClient::FreshdeskData
+# RagieRubySdk::FreshdeskData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::FreshdeskData.new(
+instance = RagieRubySdk::FreshdeskData.new(
   tickets: null,
   articles: null
 )

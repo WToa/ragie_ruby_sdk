@@ -1,4 +1,4 @@
-# OpenapiClient::PublicS3CompatibleConnection
+# RagieRubySdk::PublicS3CompatibleConnection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicS3CompatibleConnection.new(
+instance = RagieRubySdk::PublicS3CompatibleConnection.new(
   provider: null,
   data: null,
   credentials: null

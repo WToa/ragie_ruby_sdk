@@ -1,4 +1,4 @@
-# OpenapiClient::CreateDocumentRawParams
+# RagieRubySdk::CreateDocumentRawParams
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::CreateDocumentRawParams.new(
+instance = RagieRubySdk::CreateDocumentRawParams.new(
   name: null,
   metadata: null,
   external_id: null,

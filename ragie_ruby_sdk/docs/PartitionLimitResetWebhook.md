@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionLimitResetWebhook
+# RagieRubySdk::PartitionLimitResetWebhook
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PartitionLimitResetWebhook.new(
+instance = RagieRubySdk::PartitionLimitResetWebhook.new(
   nonce: null,
   type: null,
   payload: null

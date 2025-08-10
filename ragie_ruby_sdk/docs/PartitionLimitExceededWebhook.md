@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionLimitExceededWebhook
+# RagieRubySdk::PartitionLimitExceededWebhook
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PartitionLimitExceededWebhook.new(
+instance = RagieRubySdk::PartitionLimitExceededWebhook.new(
   nonce: null,
   type: null,
   payload: null

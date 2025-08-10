@@ -1,4 +1,4 @@
-# OpenapiClient::AudioModalityData
+# RagieRubySdk::AudioModalityData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AudioModalityData.new(
+instance = RagieRubySdk::AudioModalityData.new(
   type: null,
   word_timestamps: null
 )

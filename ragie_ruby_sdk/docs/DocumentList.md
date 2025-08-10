@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentList
+# RagieRubySdk::DocumentList
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentList.new(
+instance = RagieRubySdk::DocumentList.new(
   pagination: null,
   documents: null
 )

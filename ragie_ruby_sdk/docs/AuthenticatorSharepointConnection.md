@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorSharepointConnection
+# RagieRubySdk::AuthenticatorSharepointConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorSharepointConnection.new(
+instance = RagieRubySdk::AuthenticatorSharepointConnection.new(
   provider: null,
   data: null,
   user_email: null,

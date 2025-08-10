@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentUpdateWebhookPayload
+# RagieRubySdk::DocumentUpdateWebhookPayload
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentUpdateWebhookPayload.new(
+instance = RagieRubySdk::DocumentUpdateWebhookPayload.new(
   document_id: null,
   status: null,
   partition: null,

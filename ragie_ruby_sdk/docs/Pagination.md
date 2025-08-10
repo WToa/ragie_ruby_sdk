@@ -1,4 +1,4 @@
-# OpenapiClient::Pagination
+# RagieRubySdk::Pagination
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Pagination.new(
+instance = RagieRubySdk::Pagination.new(
   next_cursor: null,
   total_count: null
 )

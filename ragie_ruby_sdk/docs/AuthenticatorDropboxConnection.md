@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorDropboxConnection
+# RagieRubySdk::AuthenticatorDropboxConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorDropboxConnection.new(
+instance = RagieRubySdk::AuthenticatorDropboxConnection.new(
   provider: null,
   data: null,
   email: null,

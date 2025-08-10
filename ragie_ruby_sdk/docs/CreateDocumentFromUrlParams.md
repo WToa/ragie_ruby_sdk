@@ -1,4 +1,4 @@
-# OpenapiClient::CreateDocumentFromUrlParams
+# RagieRubySdk::CreateDocumentFromUrlParams
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::CreateDocumentFromUrlParams.new(
+instance = RagieRubySdk::CreateDocumentFromUrlParams.new(
   name: null,
   metadata: null,
   mode: null,

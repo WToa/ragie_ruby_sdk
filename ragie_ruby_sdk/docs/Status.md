@@ -1,4 +1,4 @@
-# OpenapiClient::Status
+# RagieRubySdk::Status
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Status.new()
+instance = RagieRubySdk::Status.new()
 ```
 

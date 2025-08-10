@@ -1,4 +1,4 @@
-# OpenapiClient::ValidationErrorLocInner
+# RagieRubySdk::ValidationErrorLocInner
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ValidationErrorLocInner.new()
+instance = RagieRubySdk::ValidationErrorLocInner.new()
 ```
 

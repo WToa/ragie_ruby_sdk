@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentDeleteWebhookPayload
+# RagieRubySdk::DocumentDeleteWebhookPayload
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentDeleteWebhookPayload.new(
+instance = RagieRubySdk::DocumentDeleteWebhookPayload.new(
   document_id: null,
   partition: null,
   metadata: null,

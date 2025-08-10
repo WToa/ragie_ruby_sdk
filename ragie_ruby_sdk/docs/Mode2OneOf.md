@@ -1,4 +1,4 @@
-# OpenapiClient::Mode2OneOf
+# RagieRubySdk::Mode2OneOf
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Mode2OneOf.new(
+instance = RagieRubySdk::Mode2OneOf.new(
   static: null,
   audio: null,
   video: null

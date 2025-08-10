@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorOnedriveConnection
+# RagieRubySdk::AuthenticatorOnedriveConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorOnedriveConnection.new(
+instance = RagieRubySdk::AuthenticatorOnedriveConnection.new(
   provider: null,
   data: null,
   user_email: null,

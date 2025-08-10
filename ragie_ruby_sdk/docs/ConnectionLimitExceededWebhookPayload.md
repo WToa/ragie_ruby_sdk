@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionLimitExceededWebhookPayload
+# RagieRubySdk::ConnectionLimitExceededWebhookPayload
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConnectionLimitExceededWebhookPayload.new(
+instance = RagieRubySdk::ConnectionLimitExceededWebhookPayload.new(
   connection_id: null,
   partition: null,
   connection_metadata: null,

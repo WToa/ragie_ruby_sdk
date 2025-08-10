@@ -1,4 +1,4 @@
-# OpenapiClient::OAuthCredentials
+# RagieRubySdk::OAuthCredentials
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::OAuthCredentials.new(
+instance = RagieRubySdk::OAuthCredentials.new(
   provider: null,
   name: null,
   client_id: null,

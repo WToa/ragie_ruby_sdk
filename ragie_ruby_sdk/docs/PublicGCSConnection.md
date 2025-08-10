@@ -1,4 +1,4 @@
-# OpenapiClient::PublicGCSConnection
+# RagieRubySdk::PublicGCSConnection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicGCSConnection.new(
+instance = RagieRubySdk::PublicGCSConnection.new(
   provider: null,
   data: null,
   credentials: null

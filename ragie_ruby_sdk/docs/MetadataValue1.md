@@ -1,4 +1,4 @@
-# OpenapiClient::MetadataValue1
+# RagieRubySdk::MetadataValue1
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::MetadataValue1.openapi_one_of
+RagieRubySdk::MetadataValue1.openapi_one_of
 # =>
 # [
 #   :'Array<String>',
@@ -28,12 +28,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::MetadataValue1.build(data)
+RagieRubySdk::MetadataValue1.build(data)
 # => #<Array<String>:0x00007fdd4aab02a0>
 
-OpenapiClient::MetadataValue1.build(data_that_doesnt_match)
+RagieRubySdk::MetadataValue1.build(data_that_doesnt_match)
 # => nil
 ```
 

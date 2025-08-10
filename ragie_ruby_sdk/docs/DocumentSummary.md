@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentSummary
+# RagieRubySdk::DocumentSummary
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentSummary.new(
+instance = RagieRubySdk::DocumentSummary.new(
   document_id: null,
   summary: null
 )

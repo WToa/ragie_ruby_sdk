@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorGoogleDriveConnection
+# RagieRubySdk::AuthenticatorGoogleDriveConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorGoogleDriveConnection.new(
+instance = RagieRubySdk::AuthenticatorGoogleDriveConnection.new(
   provider: null,
   data: null,
   email: null,

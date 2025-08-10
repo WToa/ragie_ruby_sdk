@@ -1,4 +1,4 @@
-# OpenapiClient::SetConnectionEnabledPayload
+# RagieRubySdk::SetConnectionEnabledPayload
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::SetConnectionEnabledPayload.new(
+instance = RagieRubySdk::SetConnectionEnabledPayload.new(
   enabled: null,
   reason: null
 )

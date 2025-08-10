@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionLimits
+# RagieRubySdk::PartitionLimits
 
 ## Properties
 
@@ -20,9 +20,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PartitionLimits.new(
+instance = RagieRubySdk::PartitionLimits.new(
   pages_processed_limit_monthly: null,
   pages_hosted_limit_monthly: null,
   pages_processed_limit_max: null,

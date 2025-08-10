@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionsApi
+# RagieRubySdk::PartitionsApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -23,21 +23,21 @@ Create a new partition. Partitions are used to scope documents, connections, and
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PartitionsApi.new
-create_partition_params = OpenapiClient::CreatePartitionParams.new({name: 'name_example'}) # CreatePartitionParams | 
+api_instance = RagieRubySdk::PartitionsApi.new
+create_partition_params = RagieRubySdk::CreatePartitionParams.new({name: 'name_example'}) # CreatePartitionParams | 
 
 begin
   # Create Partition
   result = api_instance.create_partition_partitions_post(create_partition_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->create_partition_partitions_post: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Partition>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->create_partition_partitions_post_with_http_info: #{e}"
 end
 ```
@@ -92,21 +92,21 @@ Deletes a partition and all of its associated data. This includes connections, d
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PartitionsApi.new
+api_instance = RagieRubySdk::PartitionsApi.new
 partition_id = 'partition_id_example' # String | 
 
 begin
   # Delete Partition
   result = api_instance.delete_partition_partitions_partition_id_delete(partition_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->delete_partition_partitions_partition_id_delete: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Hash&lt;String, String&gt;
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->delete_partition_partitions_partition_id_delete_with_http_info: #{e}"
 end
 ```
@@ -161,21 +161,21 @@ Get a partition by its ID. Includes usage information such as the number of docu
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PartitionsApi.new
+api_instance = RagieRubySdk::PartitionsApi.new
 partition_id = 'partition_id_example' # String | 
 
 begin
   # Get Partition
   result = api_instance.get_partition_partitions_partition_id_get(partition_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->get_partition_partitions_partition_id_get: #{e}"
 end
 ```
@@ -193,7 +193,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PartitionDetail>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->get_partition_partitions_partition_id_get_with_http_info: #{e}"
 end
 ```
@@ -230,14 +230,14 @@ List all partitions sorted by name in ascending order. Results are paginated wit
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PartitionsApi.new
+api_instance = RagieRubySdk::PartitionsApi.new
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
   page_size: 56 # Integer | The number of items per page (must be greater than 0 and less than or equal to 100)
@@ -247,7 +247,7 @@ begin
   # List Partitions
   result = api_instance.list_partitions_partitions_get(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->list_partitions_partitions_get: #{e}"
 end
 ```
@@ -265,7 +265,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PartitionList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->list_partitions_partitions_get_with_http_info: #{e}"
 end
 ```
@@ -303,22 +303,22 @@ Sets limits on a partition. Limits can be set on the total number of pages a par
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PartitionsApi.new
+api_instance = RagieRubySdk::PartitionsApi.new
 partition_id = 'partition_id_example' # String | 
-partition_limit_params = OpenapiClient::PartitionLimitParams.new # PartitionLimitParams | 
+partition_limit_params = RagieRubySdk::PartitionLimitParams.new # PartitionLimitParams | 
 
 begin
   # Set Partition Limits
   result = api_instance.set_partition_limits_partitions_partition_id_limits_put(partition_id, partition_limit_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->set_partition_limits_partitions_partition_id_limits_put: #{e}"
 end
 ```
@@ -336,7 +336,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PartitionDetail>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->set_partition_limits_partitions_partition_id_limits_put_with_http_info: #{e}"
 end
 ```

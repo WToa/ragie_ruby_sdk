@@ -1,4 +1,4 @@
-# OpenapiClient::ListConnectorSourceTypeInfo
+# RagieRubySdk::ListConnectorSourceTypeInfo
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ListConnectorSourceTypeInfo.new(
+instance = RagieRubySdk::ListConnectorSourceTypeInfo.new(
   connectors: null
 )
 ```

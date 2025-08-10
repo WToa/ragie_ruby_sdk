@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentFileUpdate
+# RagieRubySdk::DocumentFileUpdate
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentFileUpdate.new(
+instance = RagieRubySdk::DocumentFileUpdate.new(
   status: null
 )
 ```

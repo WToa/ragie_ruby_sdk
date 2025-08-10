@@ -1,4 +1,4 @@
-# OpenapiClient::BodyCreateDocument
+# RagieRubySdk::BodyCreateDocument
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::BodyCreateDocument.new(
+instance = RagieRubySdk::BodyCreateDocument.new(
   mode: null,
   metadata: null,
   file: null,

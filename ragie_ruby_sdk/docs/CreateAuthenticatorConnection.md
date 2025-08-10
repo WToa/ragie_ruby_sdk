@@ -1,4 +1,4 @@
-# OpenapiClient::CreateAuthenticatorConnection
+# RagieRubySdk::CreateAuthenticatorConnection
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::CreateAuthenticatorConnection.new(
+instance = RagieRubySdk::CreateAuthenticatorConnection.new(
   partition_strategy: null,
   partition: null,
   page_limit: null,

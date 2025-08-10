@@ -1,4 +1,4 @@
-# OpenapiClient::ValidationError
+# RagieRubySdk::ValidationError
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ValidationError.new(
+instance = RagieRubySdk::ValidationError.new(
   loc: null,
   msg: null,
   type: null

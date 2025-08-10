@@ -1,4 +1,4 @@
-# OpenapiClient::Entity
+# RagieRubySdk::Entity
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Entity.new(
+instance = RagieRubySdk::Entity.new(
   id: null,
   created_at: null,
   updated_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::ConfluenceData
+# RagieRubySdk::ConfluenceData
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConfluenceData.new(
+instance = RagieRubySdk::ConfluenceData.new(
   resource_id: null,
   space_id: null,
   space_key: null,

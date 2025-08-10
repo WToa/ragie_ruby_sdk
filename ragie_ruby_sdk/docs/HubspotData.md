@@ -1,4 +1,4 @@
-# OpenapiClient::HubspotData
+# RagieRubySdk::HubspotData
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::HubspotData.new(
+instance = RagieRubySdk::HubspotData.new(
   companies: null,
   contacts: null,
   contact_notes: null,

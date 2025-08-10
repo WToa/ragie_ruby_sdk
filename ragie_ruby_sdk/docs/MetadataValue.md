@@ -1,4 +1,4 @@
-# OpenapiClient::MetadataValue
+# RagieRubySdk::MetadataValue
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::MetadataValue.new()
+instance = RagieRubySdk::MetadataValue.new()
 ```
 

@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorGmailConnection
+# RagieRubySdk::AuthenticatorGmailConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorGmailConnection.new(
+instance = RagieRubySdk::AuthenticatorGmailConnection.new(
   provider: null,
   data: null,
   email: null,

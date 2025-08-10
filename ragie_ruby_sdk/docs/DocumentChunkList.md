@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentChunkList
+# RagieRubySdk::DocumentChunkList
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentChunkList.new(
+instance = RagieRubySdk::DocumentChunkList.new(
   pagination: null,
   chunks: null
 )

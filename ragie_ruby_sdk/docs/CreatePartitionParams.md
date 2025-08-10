@@ -1,4 +1,4 @@
-# OpenapiClient::CreatePartitionParams
+# RagieRubySdk::CreatePartitionParams
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::CreatePartitionParams.new(
+instance = RagieRubySdk::CreatePartitionParams.new(
   name: null,
   pages_hosted_limit_monthly: null,
   pages_processed_limit_monthly: null,

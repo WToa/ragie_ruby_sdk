@@ -1,4 +1,4 @@
-# OpenapiClient::FolderData
+# RagieRubySdk::FolderData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::FolderData.new(
+instance = RagieRubySdk::FolderData.new(
   folder_id: null,
   folder_name: null
 )

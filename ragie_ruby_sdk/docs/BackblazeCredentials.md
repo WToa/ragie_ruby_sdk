@@ -1,4 +1,4 @@
-# OpenapiClient::BackblazeCredentials
+# RagieRubySdk::BackblazeCredentials
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::BackblazeCredentials.new(
+instance = RagieRubySdk::BackblazeCredentials.new(
   key_id: null,
   application_key: null,
   region: null,

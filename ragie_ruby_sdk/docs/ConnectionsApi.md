@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionsApi
+# RagieRubySdk::ConnectionsApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -29,21 +29,21 @@ Create a connection. This is only for non-oauth connections such as S3 compatibl
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
-public_create_connection = OpenapiClient::PublicCreateConnection.new({partition_strategy: OpenapiClient::MediaModeParam.new, connection: OpenapiClient::PublicBackblazeConnection.new({provider: 'backblaze', data: OpenapiClient::BucketData.new({bucket: 'bucket_example'}), credentials: OpenapiClient::BackblazeCredentials.new({key_id: 'key_id_example', application_key: 'application_key_example', region: 'region_example', endpoint: 'endpoint_example'})})}) # PublicCreateConnection | 
+api_instance = RagieRubySdk::ConnectionsApi.new
+public_create_connection = RagieRubySdk::PublicCreateConnection.new({partition_strategy: RagieRubySdk::MediaModeParam.new, connection: RagieRubySdk::PublicBackblazeConnection.new({provider: 'backblaze', data: RagieRubySdk::BucketData.new({bucket: 'bucket_example'}), credentials: RagieRubySdk::BackblazeCredentials.new({key_id: 'key_id_example', application_key: 'application_key_example', region: 'region_example', endpoint: 'endpoint_example'})})}) # PublicCreateConnection | 
 
 begin
   # Create Connection
   result = api_instance.create_connection(public_create_connection)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_connection: #{e}"
 end
 ```
@@ -61,7 +61,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_connection_with_http_info: #{e}"
 end
 ```
@@ -98,21 +98,21 @@ Creates a redirect url to redirect the user to when initializing an embedded con
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
-o_auth_url_create = OpenapiClient::OAuthUrlCreate.new({redirect_uri: 'redirect_uri_example'}) # OAuthUrlCreate | 
+api_instance = RagieRubySdk::ConnectionsApi.new
+o_auth_url_create = RagieRubySdk::OAuthUrlCreate.new({redirect_uri: 'redirect_uri_example'}) # OAuthUrlCreate | 
 
 begin
   # Create Oauth Redirect Url
   result = api_instance.create_oauth_redirect_url_connections_oauth_post(o_auth_url_create)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_oauth_redirect_url_connections_oauth_post: #{e}"
 end
 ```
@@ -130,7 +130,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <OAuthUrlResponse>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->create_oauth_redirect_url_connections_oauth_post_with_http_info: #{e}"
 end
 ```
@@ -167,22 +167,22 @@ Schedules a connection to be deleted. You can choose to keep the files from the 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-delete_connection_payload = OpenapiClient::DeleteConnectionPayload.new({keep_files: false}) # DeleteConnectionPayload | 
+delete_connection_payload = RagieRubySdk::DeleteConnectionPayload.new({keep_files: false}) # DeleteConnectionPayload | 
 
 begin
   # Delete Connection
   result = api_instance.delete_connection_connections_connection_id_delete_post(connection_id, delete_connection_payload)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->delete_connection_connections_connection_id_delete_post: #{e}"
 end
 ```
@@ -200,7 +200,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Hash&lt;String, String&gt;
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->delete_connection_connections_connection_id_delete_post_with_http_info: #{e}"
 end
 ```
@@ -238,21 +238,21 @@ Get a connection.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Get Connection
   result = api_instance.get_connection_connections_connection_id_get(connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connection_connections_connection_id_get: #{e}"
 end
 ```
@@ -270,7 +270,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connection_connections_connection_id_get_with_http_info: #{e}"
 end
 ```
@@ -307,21 +307,21 @@ Lists connection stats: total documents active documents, total active pages.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Get Connection Stats
   result = api_instance.get_connection_stats_connections_connection_id_stats_get(connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connection_stats_connections_connection_id_stats_get: #{e}"
 end
 ```
@@ -339,7 +339,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConnectionStats>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->get_connection_stats_connections_connection_id_stats_get_with_http_info: #{e}"
 end
 ```
@@ -376,20 +376,20 @@ List available connection source types like 'google_drive' and 'notion' along wi
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 
 begin
   # List Connection Source Types
   result = api_instance.list_connection_source_types_connections_source_type_get
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connection_source_types_connections_source_type_get: #{e}"
 end
 ```
@@ -407,7 +407,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ListConnectorSourceTypeInfo>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connection_source_types_connections_source_type_get_with_http_info: #{e}"
 end
 ```
@@ -442,14 +442,14 @@ List all connections sorted by created_at in descending order. Results are pagin
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
   page_size: 56, # Integer | The number of items per page (must be greater than 0 and less than or equal to 100)
@@ -461,7 +461,7 @@ begin
   # List Connections
   result = api_instance.list_connections_connections_get(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connections_connections_get: #{e}"
 end
 ```
@@ -479,7 +479,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ConnectionList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->list_connections_connections_get_with_http_info: #{e}"
 end
 ```
@@ -519,22 +519,22 @@ Enable or disable the connection. A disabled connection won't sync.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-set_connection_enabled_payload = OpenapiClient::SetConnectionEnabledPayload.new({enabled: false}) # SetConnectionEnabledPayload | 
+set_connection_enabled_payload = RagieRubySdk::SetConnectionEnabledPayload.new({enabled: false}) # SetConnectionEnabledPayload | 
 
 begin
   # Set Connection Enabled
   result = api_instance.set_connection_enabled_connections_connection_id_enabled_put(connection_id, set_connection_enabled_payload)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->set_connection_enabled_connections_connection_id_enabled_put: #{e}"
 end
 ```
@@ -552,7 +552,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->set_connection_enabled_connections_connection_id_enabled_put_with_http_info: #{e}"
 end
 ```
@@ -590,22 +590,22 @@ Sets limits on a connection. Limits can be set on the total number of pages a co
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-connection_limit_params = OpenapiClient::ConnectionLimitParams.new # ConnectionLimitParams | 
+connection_limit_params = RagieRubySdk::ConnectionLimitParams.new # ConnectionLimitParams | 
 
 begin
   # Set Connection Limits
   result = api_instance.set_connection_limits_connections_connection_id_limit_put(connection_id, connection_limit_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->set_connection_limits_connections_connection_id_limit_put: #{e}"
 end
 ```
@@ -623,7 +623,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->set_connection_limits_connections_connection_id_limit_put_with_http_info: #{e}"
 end
 ```
@@ -661,21 +661,21 @@ Schedules a connector to sync as soon as possible.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Sync Connection
   result = api_instance.sync_connection(connection_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->sync_connection: #{e}"
 end
 ```
@@ -693,7 +693,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ResponseOK>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->sync_connection_with_http_info: #{e}"
 end
 ```
@@ -730,22 +730,22 @@ Updates a connections metadata or mode. These changes will be seen after the nex
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::ConnectionsApi.new
+api_instance = RagieRubySdk::ConnectionsApi.new
 connection_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-connection_base = OpenapiClient::ConnectionBase.new({partition_strategy: OpenapiClient::PartitionStrategy.new}) # ConnectionBase | 
+connection_base = RagieRubySdk::ConnectionBase.new({partition_strategy: RagieRubySdk::PartitionStrategy.new}) # ConnectionBase | 
 
 begin
   # Update Connection
   result = api_instance.update_connection_connections_connection_id_put(connection_id, connection_base)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->update_connection_connections_connection_id_put: #{e}"
 end
 ```
@@ -763,7 +763,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling ConnectionsApi->update_connection_connections_connection_id_put_with_http_info: #{e}"
 end
 ```

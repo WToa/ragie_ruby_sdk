@@ -1,4 +1,4 @@
-# OpenapiClient::Link
+# RagieRubySdk::Link
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Link.new(
+instance = RagieRubySdk::Link.new(
   href: null,
   type: null
 )

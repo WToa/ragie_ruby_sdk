@@ -1,4 +1,4 @@
-# OpenapiClient::DeleteConnectionPayload
+# RagieRubySdk::DeleteConnectionPayload
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DeleteConnectionPayload.new(
+instance = RagieRubySdk::DeleteConnectionPayload.new(
   keep_files: null
 )
 ```

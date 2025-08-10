@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentWithContent
+# RagieRubySdk::DocumentWithContent
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentWithContent.new(
+instance = RagieRubySdk::DocumentWithContent.new(
   status: null,
   id: null,
   created_at: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::PublicIntercomConnection
+# RagieRubySdk::PublicIntercomConnection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicIntercomConnection.new(
+instance = RagieRubySdk::PublicIntercomConnection.new(
   provider: null,
   data: null,
   credentials: null

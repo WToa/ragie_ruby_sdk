@@ -1,4 +1,4 @@
-# OpenapiClient::EntityExtractedWebhookPayload
+# RagieRubySdk::EntityExtractedWebhookPayload
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::EntityExtractedWebhookPayload.new(
+instance = RagieRubySdk::EntityExtractedWebhookPayload.new(
   entity_id: null,
   document_id: null,
   instruction_id: null,

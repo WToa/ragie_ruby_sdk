@@ -1,4 +1,4 @@
-# OpenapiClient::ResponsePatchdocumentmetadata
+# RagieRubySdk::ResponsePatchdocumentmetadata
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ResponsePatchdocumentmetadata.new(
+instance = RagieRubySdk::ResponsePatchdocumentmetadata.new(
   metadata: null,
   status: null
 )

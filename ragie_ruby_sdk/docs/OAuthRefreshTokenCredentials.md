@@ -1,4 +1,4 @@
-# OpenapiClient::OAuthRefreshTokenCredentials
+# RagieRubySdk::OAuthRefreshTokenCredentials
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::OAuthRefreshTokenCredentials.new(
+instance = RagieRubySdk::OAuthRefreshTokenCredentials.new(
   refresh_token: null
 )
 ```

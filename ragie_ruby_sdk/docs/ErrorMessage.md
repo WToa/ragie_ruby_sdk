@@ -1,4 +1,4 @@
-# OpenapiClient::ErrorMessage
+# RagieRubySdk::ErrorMessage
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ErrorMessage.new(
+instance = RagieRubySdk::ErrorMessage.new(
   detail: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::WordTimestamp
+# RagieRubySdk::WordTimestamp
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::WordTimestamp.new(
+instance = RagieRubySdk::WordTimestamp.new(
   start_time: null,
   end_time: null,
   word: null,

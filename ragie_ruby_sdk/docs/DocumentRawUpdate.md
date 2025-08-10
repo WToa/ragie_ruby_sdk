@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentRawUpdate
+# RagieRubySdk::DocumentRawUpdate
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentRawUpdate.new(
+instance = RagieRubySdk::DocumentRawUpdate.new(
   status: null
 )
 ```

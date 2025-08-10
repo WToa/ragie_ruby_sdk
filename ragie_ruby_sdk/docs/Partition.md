@@ -1,4 +1,4 @@
-# OpenapiClient::Partition
+# RagieRubySdk::Partition
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Partition.new(
+instance = RagieRubySdk::Partition.new(
   name: null,
   is_default: null,
   limit_exceeded_at: null,

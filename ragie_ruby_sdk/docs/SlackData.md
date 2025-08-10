@@ -1,4 +1,4 @@
-# OpenapiClient::SlackData
+# RagieRubySdk::SlackData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::SlackData.new(
+instance = RagieRubySdk::SlackData.new(
   channel_id: null,
   channel_name: null
 )

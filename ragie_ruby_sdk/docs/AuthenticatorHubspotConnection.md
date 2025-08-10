@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorHubspotConnection
+# RagieRubySdk::AuthenticatorHubspotConnection
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorHubspotConnection.new(
+instance = RagieRubySdk::AuthenticatorHubspotConnection.new(
   provider: null,
   data: null,
   hub_id: null,

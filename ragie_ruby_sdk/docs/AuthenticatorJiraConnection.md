@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorJiraConnection
+# RagieRubySdk::AuthenticatorJiraConnection
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorJiraConnection.new(
+instance = RagieRubySdk::AuthenticatorJiraConnection.new(
   provider: null,
   credentials: null
 )

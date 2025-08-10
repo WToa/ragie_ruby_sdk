@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionLimitParams
+# RagieRubySdk::ConnectionLimitParams
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConnectionLimitParams.new(
+instance = RagieRubySdk::ConnectionLimitParams.new(
   page_limit: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::EntitiesApi
+# RagieRubySdk::EntitiesApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -24,21 +24,21 @@ Create a new instruction. Instructions are applied to documents as they are crea
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
-create_instruction_params = OpenapiClient::CreateInstructionParams.new({name: 'name_example', prompt: 'prompt_example', entity_schema: { key: 3.56}}) # CreateInstructionParams | 
+api_instance = RagieRubySdk::EntitiesApi.new
+create_instruction_params = RagieRubySdk::CreateInstructionParams.new({name: 'name_example', prompt: 'prompt_example', entity_schema: { key: 3.56}}) # CreateInstructionParams | 
 
 begin
   # Create Instruction
   result = api_instance.create_instruction(create_instruction_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->create_instruction: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Instruction>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->create_instruction_with_http_info: #{e}"
 end
 ```
@@ -93,21 +93,21 @@ Delete an instruction. This will delete the instruction and all entities generat
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
+api_instance = RagieRubySdk::EntitiesApi.new
 instruction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the instruction.
 
 begin
   # Delete Instruction
   result = api_instance.delete_instruction(instruction_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->delete_instruction: #{e}"
 end
 ```
@@ -125,7 +125,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Hash&lt;String, String&gt;
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->delete_instruction_with_http_info: #{e}"
 end
 ```
@@ -160,14 +160,14 @@ Get Document Extracted Entities
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
+api_instance = RagieRubySdk::EntitiesApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
@@ -179,7 +179,7 @@ begin
   # Get Document Extracted Entities
   result = api_instance.list_entities_by_document(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_entities_by_document: #{e}"
 end
 ```
@@ -197,7 +197,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EntityList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_entities_by_document_with_http_info: #{e}"
 end
 ```
@@ -235,14 +235,14 @@ Get Instruction Extracted Entities
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
+api_instance = RagieRubySdk::EntitiesApi.new
 instruction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the instruction.
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
@@ -254,7 +254,7 @@ begin
   # Get Instruction Extracted Entities
   result = api_instance.list_entities_by_instruction(instruction_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_entities_by_instruction: #{e}"
 end
 ```
@@ -272,7 +272,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <EntityList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_entities_by_instruction_with_http_info: #{e}"
 end
 ```
@@ -312,20 +312,20 @@ List all instructions.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
+api_instance = RagieRubySdk::EntitiesApi.new
 
 begin
   # List Instructions
   result = api_instance.list_instructions
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_instructions: #{e}"
 end
 ```
@@ -343,7 +343,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<Instruction>>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->list_instructions_with_http_info: #{e}"
 end
 ```
@@ -376,22 +376,22 @@ Update Instruction
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EntitiesApi.new
+api_instance = RagieRubySdk::EntitiesApi.new
 instruction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the instruction.
-update_instruction_params = OpenapiClient::UpdateInstructionParams.new({active: false}) # UpdateInstructionParams | 
+update_instruction_params = RagieRubySdk::UpdateInstructionParams.new({active: false}) # UpdateInstructionParams | 
 
 begin
   # Update Instruction
   result = api_instance.update_instruction(instruction_id, update_instruction_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->update_instruction: #{e}"
 end
 ```
@@ -409,7 +409,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Instruction>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling EntitiesApi->update_instruction_with_http_info: #{e}"
 end
 ```

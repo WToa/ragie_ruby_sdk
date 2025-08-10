@@ -1,4 +1,4 @@
-# OpenapiClient::VideoModalityData
+# RagieRubySdk::VideoModalityData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::VideoModalityData.new(
+instance = RagieRubySdk::VideoModalityData.new(
   type: null,
   word_timestamps: null
 )

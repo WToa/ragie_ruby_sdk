@@ -1,4 +1,4 @@
-# OpenapiClient::PartitionStats
+# RagieRubySdk::PartitionStats
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PartitionStats.new(
+instance = RagieRubySdk::PartitionStats.new(
   pages_processed_monthly: null,
   pages_hosted_monthly: null,
   pages_processed_total: null,

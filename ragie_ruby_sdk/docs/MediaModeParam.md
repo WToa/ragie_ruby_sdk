@@ -1,4 +1,4 @@
-# OpenapiClient::MediaModeParam
+# RagieRubySdk::MediaModeParam
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::MediaModeParam.new(
+instance = RagieRubySdk::MediaModeParam.new(
   static: null,
   audio: null,
   video: null

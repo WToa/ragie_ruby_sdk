@@ -1,4 +1,4 @@
-# OpenapiClient::OnedriveData
+# RagieRubySdk::OnedriveData
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::OnedriveData.new(
+instance = RagieRubySdk::OnedriveData.new(
   drive_id: null,
   folder_id: null,
   folder_name: null

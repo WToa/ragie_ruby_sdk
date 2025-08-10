@@ -1,4 +1,4 @@
-# OpenapiClient::Payload
+# RagieRubySdk::Payload
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Payload.openapi_one_of
+RagieRubySdk::Payload.openapi_one_of
 # =>
 # [
 #   :'CreateGoogleAuthenticator',
@@ -26,9 +26,9 @@ Returns the discriminator's property name.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Payload.openapi_discriminator_name
+RagieRubySdk::Payload.openapi_discriminator_name
 # => :'provider'
 ```
 
@@ -39,9 +39,9 @@ Returns the discriminator's mapping.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Payload.openapi_discriminator_mapping
+RagieRubySdk::Payload.openapi_discriminator_mapping
 # =>
 # {
 #   :'atlassian' => :'OAuthCredentials',
@@ -61,12 +61,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Payload.build(data)
+RagieRubySdk::Payload.build(data)
 # => #<CreateGoogleAuthenticator:0x00007fdd4aab02a0>
 
-OpenapiClient::Payload.build(data_that_doesnt_match)
+RagieRubySdk::Payload.build(data_that_doesnt_match)
 # => nil
 ```
 

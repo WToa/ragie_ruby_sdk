@@ -1,4 +1,4 @@
-# OpenapiClient::SharepointSiteData
+# RagieRubySdk::SharepointSiteData
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::SharepointSiteData.new(
+instance = RagieRubySdk::SharepointSiteData.new(
   id: null,
   name: null
 )

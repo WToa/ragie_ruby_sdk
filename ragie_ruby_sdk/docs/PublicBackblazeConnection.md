@@ -1,4 +1,4 @@
-# OpenapiClient::PublicBackblazeConnection
+# RagieRubySdk::PublicBackblazeConnection
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicBackblazeConnection.new(
+instance = RagieRubySdk::PublicBackblazeConnection.new(
   provider: null,
   data: null,
   credentials: null

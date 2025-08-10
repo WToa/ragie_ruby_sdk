@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentsApi
+# RagieRubySdk::DocumentsApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -34,17 +34,17 @@ On ingest, the document goes through a series of steps before it is ready for re
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`.
 opts = {
-  mode: OpenapiClient::Mode2OneOf.new, # Mode2 | 
+  mode: RagieRubySdk::Mode2OneOf.new, # Mode2 | 
   metadata: { key: nil}, # Hash<String, MetadataValue1> | Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`.
   external_id: 'external_id_example', # String | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
   name: 'name_example', # String | An optional name for the document. If set, the document will have this name. Otherwise it will default to the file's name.
@@ -55,7 +55,7 @@ begin
   # Create Document
   result = api_instance.create_document(file, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document: #{e}"
 end
 ```
@@ -73,7 +73,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Document>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document_with_http_info: #{e}"
 end
 ```
@@ -115,21 +115,21 @@ Ingest a document from a publicly accessible URL. On ingest, the document goes t
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
-create_document_from_url_params = OpenapiClient::CreateDocumentFromUrlParams.new({url: 'url_example'}) # CreateDocumentFromUrlParams | 
+api_instance = RagieRubySdk::DocumentsApi.new
+create_document_from_url_params = RagieRubySdk::CreateDocumentFromUrlParams.new({url: 'url_example'}) # CreateDocumentFromUrlParams | 
 
 begin
   # Create Document From Url
   result = api_instance.create_document_from_url(create_document_from_url_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document_from_url: #{e}"
 end
 ```
@@ -147,7 +147,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Document>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document_from_url_with_http_info: #{e}"
 end
 ```
@@ -184,21 +184,21 @@ Ingest a document as raw text. On ingest, the document goes through a series of 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
-create_document_raw_params = OpenapiClient::CreateDocumentRawParams.new({data: OpenapiClient::Data.new}) # CreateDocumentRawParams | 
+api_instance = RagieRubySdk::DocumentsApi.new
+create_document_raw_params = RagieRubySdk::CreateDocumentRawParams.new({data: RagieRubySdk::Data.new}) # CreateDocumentRawParams | 
 
 begin
   # Create Document Raw
   result = api_instance.create_document_raw(create_document_raw_params)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document_raw: #{e}"
 end
 ```
@@ -216,7 +216,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Document>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->create_document_raw_with_http_info: #{e}"
 end
 ```
@@ -251,14 +251,14 @@ Delete Document
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   async: true, # Boolean | If true, performs document deletion asynchronously
@@ -269,7 +269,7 @@ begin
   # Delete Document
   result = api_instance.delete_document(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->delete_document: #{e}"
 end
 ```
@@ -287,7 +287,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentDelete>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->delete_document_with_http_info: #{e}"
 end
 ```
@@ -324,14 +324,14 @@ Get Document
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
@@ -341,7 +341,7 @@ begin
   # Get Document
   result = api_instance.get_document(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document: #{e}"
 end
 ```
@@ -359,7 +359,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentGet>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_with_http_info: #{e}"
 end
 ```
@@ -397,14 +397,14 @@ Gets a document chunk by its document and chunk ID.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 chunk_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the chunk.
 opts = {
@@ -415,7 +415,7 @@ begin
   # Get Document Chunk
   result = api_instance.get_document_chunk(document_id, chunk_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunk: #{e}"
 end
 ```
@@ -433,7 +433,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentChunkDetail>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunk_with_http_info: #{e}"
 end
 ```
@@ -472,14 +472,14 @@ Returns the content of a document chunk in the requested format. Can be used to 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 chunk_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the chunk.
 opts = {
@@ -493,7 +493,7 @@ begin
   # Get Document Chunk Content
   result = api_instance.get_document_chunk_content(document_id, chunk_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunk_content: #{e}"
 end
 ```
@@ -511,7 +511,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunk_content_with_http_info: #{e}"
 end
 ```
@@ -553,14 +553,14 @@ List all document chunks sorted by index in ascending order. May be limited to a
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   start_index: 56, # Integer | The inclusive starting index of the chunk range to list. If omitted and `end_index` is present effectively limits results to at most one chunk matching `end_index`. If both `start_index` and `end_index` are omitted, results are not limited by index.
@@ -574,7 +574,7 @@ begin
   # Get Document Chunks
   result = api_instance.get_document_chunks(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunks: #{e}"
 end
 ```
@@ -592,7 +592,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentChunkList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_chunks_with_http_info: #{e}"
 end
 ```
@@ -634,17 +634,17 @@ Get the content of a document. The `media_type` parameter can be used to request
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
-  media_type: OpenapiClient::MediaType.new, # MediaType | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document's type.
+  media_type: RagieRubySdk::MediaType.new, # MediaType | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document's type.
   download: true, # Boolean | Whether to return the content as a file download or a raw stream. If set to `true`, the content will be returned as a named file for download.
   partition: 'partition_example', # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
   range: 'range_example' # String | 
@@ -654,7 +654,7 @@ begin
   # Get Document Content
   result = api_instance.get_document_content(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_content: #{e}"
 end
 ```
@@ -672,7 +672,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentWithContent>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_content_with_http_info: #{e}"
 end
 ```
@@ -713,14 +713,14 @@ Get the source file of a document. The source file is the original file that was
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
@@ -730,7 +730,7 @@ begin
   # Get Document Source
   result = api_instance.get_document_source(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_source: #{e}"
 end
 ```
@@ -748,7 +748,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => File
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_source_with_http_info: #{e}"
 end
 ```
@@ -786,14 +786,14 @@ Get a LLM generated summary of the document. The summary is created when the doc
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
@@ -803,7 +803,7 @@ begin
   # Get Document Summary
   result = api_instance.get_document_summary(document_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_summary: #{e}"
 end
 ```
@@ -821,7 +821,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentSummary>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->get_document_summary_with_http_info: #{e}"
 end
 ```
@@ -859,14 +859,14 @@ List all documents sorted by created_at in descending order. Results are paginat
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
   page_size: 56, # Integer | The number of items per page (must be greater than 0 and less than or equal to 100)
@@ -878,7 +878,7 @@ begin
   # List Documents
   result = api_instance.list_documents(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->list_documents: #{e}"
 end
 ```
@@ -896,7 +896,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->list_documents_with_http_info: #{e}"
 end
 ```
@@ -934,16 +934,16 @@ Patch Document Metadata
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
-patch_document_metadata_params = OpenapiClient::PatchDocumentMetadataParams.new({metadata: { key: 3.56}}) # PatchDocumentMetadataParams | 
+patch_document_metadata_params = RagieRubySdk::PatchDocumentMetadataParams.new({metadata: { key: 3.56}}) # PatchDocumentMetadataParams | 
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
 }
@@ -952,7 +952,7 @@ begin
   # Patch Document Metadata
   result = api_instance.patch_document_metadata(document_id, patch_document_metadata_params, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->patch_document_metadata: #{e}"
 end
 ```
@@ -970,7 +970,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ResponsePatchdocumentmetadata>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->patch_document_metadata_with_http_info: #{e}"
 end
 ```
@@ -1007,26 +1007,26 @@ Update Document File
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`.
 opts = {
   partition: 'partition_example', # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
-  mode: OpenapiClient::Mode2OneOf.new # Mode2 | 
+  mode: RagieRubySdk::Mode2OneOf.new # Mode2 | 
 }
 
 begin
   # Update Document File
   result = api_instance.update_document_file(document_id, file, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_file: #{e}"
 end
 ```
@@ -1044,7 +1044,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentFileUpdate>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_file_with_http_info: #{e}"
 end
 ```
@@ -1084,16 +1084,16 @@ Updates a document from a publicly accessible URL. On ingest, the document goes 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
-update_document_from_url_params = OpenapiClient::UpdateDocumentFromUrlParams.new({url: 'url_example'}) # UpdateDocumentFromUrlParams | 
+update_document_from_url_params = RagieRubySdk::UpdateDocumentFromUrlParams.new({url: 'url_example'}) # UpdateDocumentFromUrlParams | 
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
 }
@@ -1102,7 +1102,7 @@ begin
   # Update Document Url
   result = api_instance.update_document_from_url(document_id, update_document_from_url_params, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_from_url: #{e}"
 end
 ```
@@ -1120,7 +1120,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentUrlUpdate>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_from_url_with_http_info: #{e}"
 end
 ```
@@ -1157,16 +1157,16 @@ Update Document Raw
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DocumentsApi.new
+api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
-update_document_raw_params = OpenapiClient::UpdateDocumentRawParams.new({data: OpenapiClient::Data.new}) # UpdateDocumentRawParams | 
+update_document_raw_params = RagieRubySdk::UpdateDocumentRawParams.new({data: RagieRubySdk::Data.new}) # UpdateDocumentRawParams | 
 opts = {
   partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
 }
@@ -1175,7 +1175,7 @@ begin
   # Update Document Raw
   result = api_instance.update_document_raw(document_id, update_document_raw_params, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_raw: #{e}"
 end
 ```
@@ -1193,7 +1193,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <DocumentRawUpdate>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DocumentsApi->update_document_raw_with_http_info: #{e}"
 end
 ```

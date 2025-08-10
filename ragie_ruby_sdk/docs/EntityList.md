@@ -1,4 +1,4 @@
-# OpenapiClient::EntityList
+# RagieRubySdk::EntityList
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::EntityList.new(
+instance = RagieRubySdk::EntityList.new(
   pagination: null,
   entities: null
 )

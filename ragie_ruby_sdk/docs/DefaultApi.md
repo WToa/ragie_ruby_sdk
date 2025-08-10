@@ -1,4 +1,4 @@
-# OpenapiClient::DefaultApi
+# RagieRubySdk::DefaultApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -19,21 +19,21 @@ When events occur in Ragie such as a document being processed, we'll send this d
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::DefaultApi.new
+api_instance = RagieRubySdk::DefaultApi.new
 body =  # Body | 
 
 begin
   # Event
   result = api_instance.eventevent_post(body)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DefaultApi->eventevent_post: #{e}"
 end
 ```
@@ -51,7 +51,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling DefaultApi->eventevent_post_with_http_info: #{e}"
 end
 ```

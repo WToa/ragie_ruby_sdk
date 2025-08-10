@@ -1,4 +1,4 @@
-# OpenapiClient::Body
+# RagieRubySdk::Body
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::Body.new(
+instance = RagieRubySdk::Body.new(
   nonce: null,
   type: null,
   payload: null

@@ -1,4 +1,4 @@
-# OpenapiClient::S3CompatibleCredentials
+# RagieRubySdk::S3CompatibleCredentials
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::S3CompatibleCredentials.new(
+instance = RagieRubySdk::S3CompatibleCredentials.new(
   access_key_id: null,
   secret_access_key: null,
   region: null,

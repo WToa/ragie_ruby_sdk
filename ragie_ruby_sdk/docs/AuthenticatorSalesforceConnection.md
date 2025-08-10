@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorSalesforceConnection
+# RagieRubySdk::AuthenticatorSalesforceConnection
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorSalesforceConnection.new(
+instance = RagieRubySdk::AuthenticatorSalesforceConnection.new(
   provider: null,
   user_email: null,
   url: null,

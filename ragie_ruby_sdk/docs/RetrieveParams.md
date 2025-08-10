@@ -1,4 +1,4 @@
-# OpenapiClient::RetrieveParams
+# RagieRubySdk::RetrieveParams
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::RetrieveParams.new(
+instance = RagieRubySdk::RetrieveParams.new(
   query: null,
   top_k: null,
   filter: null,

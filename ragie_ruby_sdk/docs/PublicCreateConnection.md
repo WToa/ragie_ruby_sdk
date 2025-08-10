@@ -1,4 +1,4 @@
-# OpenapiClient::PublicCreateConnection
+# RagieRubySdk::PublicCreateConnection
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::PublicCreateConnection.new(
+instance = RagieRubySdk::PublicCreateConnection.new(
   partition_strategy: null,
   partition: null,
   page_limit: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorsApi
+# RagieRubySdk::AuthenticatorsApi
 
 All URIs are relative to *https://api.ragie.ai*
 
@@ -22,21 +22,21 @@ Create White labeled connector credentials
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticatorsApi.new
-payload = OpenapiClient::CreateGoogleAuthenticator.new({provider: 'google', name: 'name_example', client_id: 'client_id_example', client_secret: 'client_secret_example'}) # Payload | 
+api_instance = RagieRubySdk::AuthenticatorsApi.new
+payload = RagieRubySdk::CreateGoogleAuthenticator.new({provider: 'google', name: 'name_example', client_id: 'client_id_example', client_secret: 'client_secret_example'}) # Payload | 
 
 begin
   # Create Authenticator
   result = api_instance.create_authenticator(payload)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->create_authenticator: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BaseGetAuthenticator>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->create_authenticator_with_http_info: #{e}"
 end
 ```
@@ -91,22 +91,22 @@ Create a connector for a given authenticator. This requires credentials dependen
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticatorsApi.new
+api_instance = RagieRubySdk::AuthenticatorsApi.new
 authenticator_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
-create_authenticator_connection = OpenapiClient::CreateAuthenticatorConnection.new({partition_strategy: OpenapiClient::MediaModeParam.new, connection: OpenapiClient::AuthenticatorConfluenceConnection.new({provider: 'confluence', data: [OpenapiClient::ConfluenceData.new({resource_id: 'resource_id_example', space_id: 37, space_key: 'space_key_example', space_name: 'space_name_example'})], credentials: OpenapiClient::OAuthRefreshTokenCredentials.new({refresh_token: 'refresh_token_example'})})}) # CreateAuthenticatorConnection | 
+create_authenticator_connection = RagieRubySdk::CreateAuthenticatorConnection.new({partition_strategy: RagieRubySdk::MediaModeParam.new, connection: RagieRubySdk::AuthenticatorConfluenceConnection.new({provider: 'confluence', data: [RagieRubySdk::ConfluenceData.new({resource_id: 'resource_id_example', space_id: 37, space_key: 'space_key_example', space_name: 'space_name_example'})], credentials: RagieRubySdk::OAuthRefreshTokenCredentials.new({refresh_token: 'refresh_token_example'})})}) # CreateAuthenticatorConnection | 
 
 begin
   # Create Authenticator Connection
   result = api_instance.create_authenticator_connection(authenticator_id, create_authenticator_connection)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->create_authenticator_connection: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Connection>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->create_authenticator_connection_with_http_info: #{e}"
 end
 ```
@@ -162,21 +162,21 @@ Delete an authenticator. This requires all connections created by that authentic
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticatorsApi.new
+api_instance = RagieRubySdk::AuthenticatorsApi.new
 authenticator_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 
 begin
   # Delete Authenticator
   result = api_instance.delete_authenticator_connection(authenticator_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->delete_authenticator_connection: #{e}"
 end
 ```
@@ -194,7 +194,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <ResponseOK>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->delete_authenticator_connection_with_http_info: #{e}"
 end
 ```
@@ -231,14 +231,14 @@ List all authenticators sorted by created_at in descending order. Results are pa
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 # setup authorization
-OpenapiClient.configure do |config|
+RagieRubySdk.configure do |config|
   # Configure Bearer authorization: auth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AuthenticatorsApi.new
+api_instance = RagieRubySdk::AuthenticatorsApi.new
 opts = {
   cursor: 'cursor_example', # String | An opaque cursor for pagination
   page_size: 56 # Integer | The number of items per page (must be greater than 0 and less than or equal to 100)
@@ -248,7 +248,7 @@ begin
   # List Authenticators
   result = api_instance.list_authenticators(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->list_authenticators: #{e}"
 end
 ```
@@ -266,7 +266,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AuthenticatorList>
-rescue OpenapiClient::ApiError => e
+rescue RagieRubySdk::ApiError => e
   puts "Error when calling AuthenticatorsApi->list_authenticators_with_http_info: #{e}"
 end
 ```

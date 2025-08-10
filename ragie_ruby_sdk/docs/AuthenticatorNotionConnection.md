@@ -1,4 +1,4 @@
-# OpenapiClient::AuthenticatorNotionConnection
+# RagieRubySdk::AuthenticatorNotionConnection
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::AuthenticatorNotionConnection.new(
+instance = RagieRubySdk::AuthenticatorNotionConnection.new(
   provider: null,
   workspace_id: null,
   workspace_name: null,

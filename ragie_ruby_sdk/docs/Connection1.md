@@ -1,4 +1,4 @@
-# OpenapiClient::Connection1
+# RagieRubySdk::Connection1
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Connection1.openapi_one_of
+RagieRubySdk::Connection1.openapi_one_of
 # =>
 # [
 #   :'AuthenticatorConfluenceConnection',
@@ -35,9 +35,9 @@ Returns the discriminator's property name.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Connection1.openapi_discriminator_name
+RagieRubySdk::Connection1.openapi_discriminator_name
 # => :'provider'
 ```
 
@@ -48,9 +48,9 @@ Returns the discriminator's mapping.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Connection1.openapi_discriminator_mapping
+RagieRubySdk::Connection1.openapi_discriminator_mapping
 # =>
 # {
 #   :'confluence' => :'AuthenticatorConfluenceConnection',
@@ -74,12 +74,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Connection1.build(data)
+RagieRubySdk::Connection1.build(data)
 # => #<AuthenticatorConfluenceConnection:0x00007fdd4aab02a0>
 
-OpenapiClient::Connection1.build(data_that_doesnt_match)
+RagieRubySdk::Connection1.build(data_that_doesnt_match)
 # => nil
 ```
 

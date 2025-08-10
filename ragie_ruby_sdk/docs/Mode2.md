@@ -1,4 +1,4 @@
-# OpenapiClient::Mode2
+# RagieRubySdk::Mode2
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Mode2.openapi_one_of
+RagieRubySdk::Mode2.openapi_one_of
 # =>
 # [
 #   :'Mode2OneOf',
@@ -26,12 +26,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-OpenapiClient::Mode2.build(data)
+RagieRubySdk::Mode2.build(data)
 # => #<Mode2OneOf:0x00007fdd4aab02a0>
 
-OpenapiClient::Mode2.build(data_that_doesnt_match)
+RagieRubySdk::Mode2.build(data_that_doesnt_match)
 # => nil
 ```
 

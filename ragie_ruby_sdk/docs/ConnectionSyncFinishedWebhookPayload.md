@@ -1,4 +1,4 @@
-# OpenapiClient::ConnectionSyncFinishedWebhookPayload
+# RagieRubySdk::ConnectionSyncFinishedWebhookPayload
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ConnectionSyncFinishedWebhookPayload.new(
+instance = RagieRubySdk::ConnectionSyncFinishedWebhookPayload.new(
   connection_id: null,
   sync_id: null,
   partition: null,

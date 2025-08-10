@@ -1,4 +1,4 @@
-# OpenapiClient::ScoredChunk
+# RagieRubySdk::ScoredChunk
 
 ## Properties
 
@@ -17,9 +17,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::ScoredChunk.new(
+instance = RagieRubySdk::ScoredChunk.new(
   text: null,
   score: null,
   id: null,

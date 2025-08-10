@@ -1,4 +1,4 @@
-# OpenapiClient::UpdateDocumentFromUrlParams
+# RagieRubySdk::UpdateDocumentFromUrlParams
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::UpdateDocumentFromUrlParams.new(
+instance = RagieRubySdk::UpdateDocumentFromUrlParams.new(
   mode: null,
   url: null
 )

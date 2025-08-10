@@ -1,4 +1,4 @@
-# OpenapiClient::DocumentChunkDetail
+# RagieRubySdk::DocumentChunkDetail
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'ragie_ruby_sdk'
 
-instance = OpenapiClient::DocumentChunkDetail.new(
+instance = RagieRubySdk::DocumentChunkDetail.new(
   id: null,
   index: null,
   text: null,
