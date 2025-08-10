@@ -53,7 +53,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          VERSION=$(grep -oE "[0-9]+\.[0-9]+\.[0-9]+" local/ragie_ruby_sdk/lib/ragie_ruby_sdk/version.rb)
+          VERSION=$(grep "VERSION = " local/ragie_ruby_sdk/lib/ragie_ruby_sdk/version.rb | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")
           git add ragie_ruby_sdk .last_sdk_hash
           git commit -m "Update Ragie Ruby SDK to version $VERSION" || echo "No changes to commit"
           git push

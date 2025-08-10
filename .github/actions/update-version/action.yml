@@ -10,7 +10,7 @@ runs:
       run: |
         VERSION_FILE="./${{ env.SDK_PATH }}/lib/ragie_ruby_sdk/version.rb"
         if [ -f "$VERSION_FILE" ]; then
-          CURRENT_VERSION=$(grep -oE "[0-9]+\.[0-9]+\.[0-9]+" "$VERSION_FILE")
+          CURRENT_VERSION=$(grep "VERSION = " "$VERSION_FILE" | grep -oE "[0-9]+\.[0-9]+\.[0-9]+")
           IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
           PATCH=$((PATCH + 1))
           NEW_VERSION="$MAJOR.$MINOR.$PATCH"
