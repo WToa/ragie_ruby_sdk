@@ -1,3 +1,8 @@
+inputs:
+  sdk_hash:
+    required: true
+    description: "Hash of the generated SDK"
+
 runs:
   using: "composite"
   steps:
