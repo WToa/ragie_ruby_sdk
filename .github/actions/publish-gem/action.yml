@@ -16,10 +16,15 @@ runs:
         gem build ragie_ruby_sdk.gemspec
       shell: bash
 
+    - name: Setup credentials
+      run: |
+        mkdir -p ~/.gem
+        echo ":rubygems_api_key: ${{ inputs.rubygems_api_key }}" > ~/.gem/credentials
+        chmod 0600 ~/.gem/credentials
+      shell: bash
+
     - name: Publish gem
-      env:
-        RUBYGEMS_API_KEY: ${{ inputs.rubygems_api_key }}
       run: |
         cd ${{ inputs.repo_sdk_path }}
-        gem push *.gem --key rubygems_api_key --host https://rubygems.org
+        gem push *.gem
       shell: bash
