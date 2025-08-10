@@ -3,7 +3,7 @@ name: Generate and Release Ragie Ruby SDK
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * *'
 
 env:
   SDK_PATH: local/ragie_ruby_sdk
