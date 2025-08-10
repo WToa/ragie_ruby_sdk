@@ -1,0 +1,16 @@
+name: Generate SDK
+description: Generates the Ragie Ruby SDK from OpenAPI
+runs:
+  using: "composite"
+  steps:
+    - name: Generate SDK
+      run: |
+        mkdir -p local
+        docker run --rm \
+          -v "${PWD}/local:/local" \
+          openapitools/openapi-generator-cli generate \
+          -i https://api.ragie.ai/openapi.json \
+          -g ruby \
+          -o /local/ragie-ruby-sdk \
+          --additional-properties=gemName=ragie-ruby-sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/
+      shell: bash

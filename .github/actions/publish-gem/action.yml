@@ -1,0 +1,22 @@
+name: Publish Gem
+description: Builds and publishes the gem to RubyGems
+inputs:
+  repo_sdk_path:
+    description: Path to the generated SDK
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Build gem
+      run: |
+        cd ${{ inputs.repo_sdk_path }}
+        gem build ragie-ruby-sdk.gemspec
+      shell: bash
+
+    - name: Publish gem
+      env:
+        RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+      run: |
+        cd ${{ inputs.repo_sdk_path }}
+        gem push *.gem --key rubygems_api_key --host https://rubygems.org
+      shell: bash
