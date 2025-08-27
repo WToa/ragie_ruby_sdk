@@ -1,8 +1,37 @@
 name: Generate SDK
 description: Generates the Ragie Ruby SDK from OpenAPI
+
+inputs:
+  repo_sdk_path:
+    required: true
+    description: "Path to the repository SDK directory"
+
+outputs:
+  gem_version:
+    description: "The current gem version"
+    value: ${{ steps.get_version.outputs.gem_version }}
+
 runs:
   using: "composite"
   steps:
+    - name: Get current version
+      run: |
+        get_version() {
+          local file=$1
+          grep "VERSION = " "$file" | grep -oE "[0-9]+\.[0-9]+\.[0-9]+"
+        }
+        VERSION_FILE="${{ inputs.repo_sdk_path }}/lib/ragie_ruby_sdk/version.rb"
+        if [ -f "$VERSION_FILE" ]; then
+          CURRENT_VERSION=$(get_version "$VERSION_FILE")
+          echo "Current version: $CURRENT_VERSION"
+        else
+          CURRENT_VERSION="1.0.0"  # Default for first run
+          echo "Version file not found, using default: $CURRENT_VERSION"
+        fi
+        echo "gem_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+      shell: bash
+      id: get_version
+
     - name: Generate SDK
       run: |
         mkdir -p local
@@ -12,5 +41,5 @@ runs:
           -i https://api.ragie.ai/openapi.json \
           -g ruby \
           -o /local/ragie_ruby_sdk \
-          --additional-properties=gemName=ragie_ruby_sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/
+          --additional-properties=gemName=ragie_ruby_sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/,gemVersion=${{ steps.get_version.outputs.gem_version }}
       shell: bash
