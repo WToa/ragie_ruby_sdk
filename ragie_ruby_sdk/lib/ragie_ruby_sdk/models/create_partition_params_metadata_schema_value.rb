@@ -14,12 +14,15 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  module Mode1
+  module CreatePartitionParamsMetadataSchemaValue
     class << self
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of
         [
-          :'MediaModeParam',
+          :'Array<String>',
+          :'Boolean',
+          :'Hash<String, Object>',
+          :'Integer',
           :'String'
         ]
       end

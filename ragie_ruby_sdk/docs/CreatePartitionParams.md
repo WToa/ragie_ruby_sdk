@@ -17,6 +17,7 @@
 | **media_streamed_limit_max** | **Integer** |  | [optional] |
 | **media_hosted_limit_monthly** | **Integer** |  | [optional] |
 | **media_hosted_limit_max** | **Integer** |  | [optional] |
+| **metadata_schema** | [**Hash&lt;String, CreatePartitionParamsMetadataSchemaValue&gt;**](CreatePartitionParamsMetadataSchemaValue.md) |  | [optional] |
 
 ## Example
 
@@ -36,7 +37,8 @@ instance = RagieRubySdk::CreatePartitionParams.new(
   media_streamed_limit_monthly: null,
   media_streamed_limit_max: null,
   media_hosted_limit_monthly: null,
-  media_hosted_limit_max: null
+  media_hosted_limit_max: null,
+  metadata_schema: null
 )
 ```
 
