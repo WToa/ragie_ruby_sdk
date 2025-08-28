@@ -41,5 +41,5 @@ runs:
           -i https://api.ragie.ai/openapi.json \
           -g ruby \
           -o /local/ragie_ruby_sdk \
-          --additional-properties=gemName=ragie_ruby_sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/,gemVersion=${{ steps.get_version.outputs.gem_version }}
+          --additional-properties=gemName=ragie_ruby_sdk,moduleName=RagieRubySdk,gemHomepage=https://www.ragie.ai/,gemVersion=${{ steps.get_version.outputs.gem_version }},library=faraday
       shell: bash

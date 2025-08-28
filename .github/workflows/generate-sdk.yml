@@ -26,7 +26,8 @@ jobs:
       - name: Compute SDK hash
         id: hash
         run: |
-          HASH=$(find ${{ env.SDK_PATH }} -type f -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
+          # Exclude .travis.yml and README.md files and the version file from the SDK hash
+          HASH=$(find "${{ env.SDK_PATH }}" -type f ! -name '.travis.yml' ! -name 'README.md' ! -path "${{ env.VERSION_FILE }}" -exec sha256sum {} \; | sort | sha256sum | cut -d' ' -f1)
           echo "sdk_hash=$HASH" >> $GITHUB_OUTPUT
 
       - name: Check for changes
