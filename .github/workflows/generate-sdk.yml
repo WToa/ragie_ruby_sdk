@@ -36,11 +36,12 @@ jobs:
           LAST_HASH=$(cat .last_sdk_hash 2>/dev/null || echo "")
           if [ "$LAST_HASH" = "${{ steps.hash.outputs.sdk_hash }}" ]; then
             echo "No changes detected in SDK. Skipping release."
+            echo "skip=true" >> $GITHUB_OUTPUT
           fi
 
       - name: Update version and hash
         id: update_version
-        if: steps.check_changes.outcome == 'success'
+        if: steps.check_changes.outputs.skip != 'true'
         uses: ./.github/actions/update-version
         with:
           sdk_hash: ${{ steps.hash.outputs.sdk_hash }}
@@ -49,7 +50,7 @@ jobs:
 
       - name: Check if version changed
         id: check_version
-        if: steps.check_changes.outcome == 'success'
+        if: steps.check_changes.outputs.skip != 'true'
         run: |
           PREV_VERSION="${{ steps.generate_sdk.outputs.gem_version }}"
           NEW_VERSION="${{ steps.update_version.outputs.new_version }}"
@@ -64,13 +65,13 @@ jobs:
           fi
 
       - name: Copy generated SDK into repo
-        if: steps.check_changes.outcome == 'success' && steps.check_version.outputs.skip != 'true'
+        if: steps.check_changes.outputs.skip != 'true' && steps.check_version.outputs.skip != 'true'
         run: |
           rm -rf ${{ env.REPO_SDK_PATH }}
           cp -r ${{ env.SDK_PATH }} ${{ env.REPO_SDK_PATH }}
 
       - name: Commit generated SDK and hash
-        if: steps.check_changes.outcome == 'success' && steps.check_version.outputs.skip != 'true'
+        if: steps.check_changes.outputs.skip != 'true' && steps.check_version.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -81,13 +82,13 @@ jobs:
           git push
 
       - name: Set up Ruby
-        if: steps.check_changes.outcome == 'success' && steps.check_version.outputs.skip != 'true'
+        if: steps.check_changes.outputs.skip != 'true' && steps.check_version.outputs.skip != 'true'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.4.5'
 
       - name: Publish gem
-        if: steps.check_changes.outcome == 'success' && steps.check_version.outputs.skip != 'true'
+        if: steps.check_changes.outputs.skip != 'true' && steps.check_version.outputs.skip != 'true'
         uses: ./.github/actions/publish-gem
         with:
           repo_sdk_path: ragie_ruby_sdk
