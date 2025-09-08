@@ -617,7 +617,7 @@ module RagieRubySdk
     # Get the content of a document. The `media_type` parameter can be used to request the content in a different format. When requesting as `application/json` additional metadata about the document will be included. If the original document contained content such as images or other non-textual media, this response will include a text description of that media instead of the original file data. Using mime types such as `audio/mpeg` or `video/mp4` will stream the file in a format that can be provided to an audio video player.
     # @param document_id [String] The id of the document.
     # @param [Hash] opts the optional parameters
-    # @option opts [MediaType] :media_type The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type.
+    # @option opts [String] :media_type The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type.
     # @option opts [Boolean] :download Whether to return the content as a file download or a raw stream. If set to &#x60;true&#x60;, the content will be returned as a named file for download. (default to false)
     # @option opts [String] :partition An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
     # @option opts [String] :range 
@@ -631,7 +631,7 @@ module RagieRubySdk
     # Get the content of a document. The &#x60;media_type&#x60; parameter can be used to request the content in a different format. When requesting as &#x60;application/json&#x60; additional metadata about the document will be included. If the original document contained content such as images or other non-textual media, this response will include a text description of that media instead of the original file data. Using mime types such as &#x60;audio/mpeg&#x60; or &#x60;video/mp4&#x60; will stream the file in a format that can be provided to an audio video player.
     # @param document_id [String] The id of the document.
     # @param [Hash] opts the optional parameters
-    # @option opts [MediaType] :media_type The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type.
+    # @option opts [String] :media_type The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type.
     # @option opts [Boolean] :download Whether to return the content as a file download or a raw stream. If set to &#x60;true&#x60;, the content will be returned as a named file for download. (default to false)
     # @option opts [String] :partition An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
     # @option opts [String] :range 
@@ -643,6 +643,10 @@ module RagieRubySdk
       # verify the required parameter 'document_id' is set
       if @api_client.config.client_side_validation && document_id.nil?
         fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.get_document_content"
+      end
+      allowable_values = ["text/plain", "audio/mpeg", "video/mp4", "image/webp", "image/heic", "image/bmp", "image/png", "image/jpeg", "image/tiff", "application/json"]
+      if @api_client.config.client_side_validation && opts[:'media_type'] && !allowable_values.include?(opts[:'media_type'])
+        fail ArgumentError, "invalid value for \"media_type\", must be one of #{allowable_values}"
       end
       # resource path
       local_var_path = '/documents/{document_id}/content'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))

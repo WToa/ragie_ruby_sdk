@@ -644,7 +644,7 @@ end
 api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
 opts = {
-  media_type: RagieRubySdk::MediaType.new, # MediaType | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document's type.
+  media_type: 'text/plain', # String | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document's type.
   download: true, # Boolean | Whether to return the content as a file download or a raw stream. If set to `true`, the content will be returned as a named file for download.
   partition: 'partition_example', # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
   range: 'range_example' # String | 
@@ -682,7 +682,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_id** | **String** | The id of the document. |  |
-| **media_type** | [**MediaType**](.md) | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type. | [optional] |
+| **media_type** | **String** | The desired media type of the content to return described as a mime type. An error will be returned if the requested media type is not supported for the document&#39;s type. | [optional] |
 | **download** | **Boolean** | Whether to return the content as a file download or a raw stream. If set to &#x60;true&#x60;, the content will be returned as a named file for download. | [optional][default to false] |
 | **partition** | **String** | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition. | [optional] |
 | **range** | **String** |  | [optional] |

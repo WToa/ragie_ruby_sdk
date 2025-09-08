@@ -33,6 +33,28 @@ module RagieRubySdk
 
     attr_accessor :error
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -62,7 +84,7 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'document_id' => :'String',
-        :'status' => :'Status',
+        :'status' => :'String',
         :'partition' => :'String',
         :'metadata' => :'Hash<String, Object>',
         :'external_id' => :'String',
@@ -190,6 +212,8 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @document_id.nil?
       return false if @status.nil?
+      status_validator = EnumAttributeValidator.new('String', ["ready", "failed", "indexed", "keyword_indexed"])
+      return false unless status_validator.valid?(@status)
       return false if @partition.nil?
       return false if @metadata.nil?
       return false if @name.nil?
@@ -206,13 +230,13 @@ module RagieRubySdk
       @document_id = document_id
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] status Value to be assigned
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
     def status=(status)
-      if status.nil?
-        fail ArgumentError, 'status cannot be nil'
+      validator = EnumAttributeValidator.new('String', ["ready", "failed", "indexed", "keyword_indexed"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
-
       @status = status
     end
 

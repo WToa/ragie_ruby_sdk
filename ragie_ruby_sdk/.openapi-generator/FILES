@@ -98,7 +98,6 @@ docs/IntercomData.md
 docs/Link.md
 docs/ListConnectorSourceTypeInfo.md
 docs/MediaModeParam.md
-docs/MediaType.md
 docs/MetadataValue.md
 docs/MetadataValue1.md
 docs/Mode.md
@@ -145,7 +144,6 @@ docs/SharepointFileData.md
 docs/SharepointSiteData.md
 docs/SlackData.md
 docs/Source.md
-docs/Status.md
 docs/UpdateDocumentFromUrlParams.md
 docs/UpdateDocumentRawParams.md
 docs/UpdateInstructionParams.md
@@ -253,7 +251,6 @@ lib/ragie_ruby_sdk/models/intercom_data.rb
 lib/ragie_ruby_sdk/models/link.rb
 lib/ragie_ruby_sdk/models/list_connector_source_type_info.rb
 lib/ragie_ruby_sdk/models/media_mode_param.rb
-lib/ragie_ruby_sdk/models/media_type.rb
 lib/ragie_ruby_sdk/models/metadata_value.rb
 lib/ragie_ruby_sdk/models/metadata_value1.rb
 lib/ragie_ruby_sdk/models/mode.rb
@@ -298,7 +295,6 @@ lib/ragie_ruby_sdk/models/sharepoint_file_data.rb
 lib/ragie_ruby_sdk/models/sharepoint_site_data.rb
 lib/ragie_ruby_sdk/models/slack_data.rb
 lib/ragie_ruby_sdk/models/source.rb
-lib/ragie_ruby_sdk/models/status.rb
 lib/ragie_ruby_sdk/models/update_document_from_url_params.rb
 lib/ragie_ruby_sdk/models/update_document_raw_params.rb
 lib/ragie_ruby_sdk/models/update_instruction_params.rb
@@ -403,7 +399,6 @@ spec/models/intercom_data_spec.rb
 spec/models/link_spec.rb
 spec/models/list_connector_source_type_info_spec.rb
 spec/models/media_mode_param_spec.rb
-spec/models/media_type_spec.rb
 spec/models/metadata_value1_spec.rb
 spec/models/metadata_value_spec.rb
 spec/models/mode1_spec.rb
@@ -448,7 +443,6 @@ spec/models/sharepoint_file_data_spec.rb
 spec/models/sharepoint_site_data_spec.rb
 spec/models/slack_data_spec.rb
 spec/models/source_spec.rb
-spec/models/status_spec.rb
 spec/models/update_document_from_url_params_spec.rb
 spec/models/update_document_raw_params_spec.rb
 spec/models/update_instruction_params_spec.rb

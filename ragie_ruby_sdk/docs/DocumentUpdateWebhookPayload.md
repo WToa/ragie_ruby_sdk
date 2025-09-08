@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_id** | **String** |  |  |
-| **status** | [**Status**](Status.md) |  |  |
+| **status** | **String** |  |  |
 | **partition** | **String** |  |  |
 | **metadata** | **Hash&lt;String, Object&gt;** |  |  |
 | **external_id** | **String** |  |  |
