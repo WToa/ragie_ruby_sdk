@@ -42,7 +42,7 @@ RagieRubySdk.configure do |config|
 end
 
 api_instance = RagieRubySdk::DocumentsApi.new
-file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`.
+file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`. PDF files over 2000 pages are not supported in hi_res mode.
 opts = {
   mode: RagieRubySdk::Mode2OneOf.new, # Mode2 | 
   metadata: { key: nil}, # Hash<String, MetadataValue1> | Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`.
@@ -82,7 +82,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **file** | **File** | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: &#x60;.eml&#x60; &#x60;.html&#x60; &#x60;.json&#x60; &#x60;.md&#x60; &#x60;.msg&#x60; &#x60;.rst&#x60; &#x60;.rtf&#x60; &#x60;.txt&#x60; &#x60;.xml&#x60; Images: &#x60;.png&#x60; &#x60;.webp&#x60; &#x60;.jpg&#x60; &#x60;.jpeg&#x60; &#x60;.tiff&#x60; &#x60;.bmp&#x60; &#x60;.heic&#x60; Documents: &#x60;.csv&#x60; &#x60;.doc&#x60; &#x60;.docx&#x60; &#x60;.epub&#x60; &#x60;.epub+zip&#x60; &#x60;.odt&#x60; &#x60;.pdf&#x60; &#x60;.ppt&#x60; &#x60;.pptx&#x60; &#x60;.tsv&#x60; &#x60;.xlsx&#x60; &#x60;.xls&#x60;. |  |
+| **file** | **File** | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: &#x60;.eml&#x60; &#x60;.html&#x60; &#x60;.json&#x60; &#x60;.md&#x60; &#x60;.msg&#x60; &#x60;.rst&#x60; &#x60;.rtf&#x60; &#x60;.txt&#x60; &#x60;.xml&#x60; Images: &#x60;.png&#x60; &#x60;.webp&#x60; &#x60;.jpg&#x60; &#x60;.jpeg&#x60; &#x60;.tiff&#x60; &#x60;.bmp&#x60; &#x60;.heic&#x60; Documents: &#x60;.csv&#x60; &#x60;.doc&#x60; &#x60;.docx&#x60; &#x60;.epub&#x60; &#x60;.epub+zip&#x60; &#x60;.odt&#x60; &#x60;.pdf&#x60; &#x60;.ppt&#x60; &#x60;.pptx&#x60; &#x60;.tsv&#x60; &#x60;.xlsx&#x60; &#x60;.xls&#x60;. PDF files over 2000 pages are not supported in hi_res mode. |  |
 | **mode** | [**Mode2**](Mode2.md) |  | [optional] |
 | **metadata** | [**Hash&lt;String, MetadataValue1&gt;**](Hash.md) | Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: &#x60;document_id&#x60;, &#x60;document_type&#x60;, &#x60;document_source&#x60;, &#x60;document_name&#x60;, &#x60;document_uploaded_at&#x60;, &#x60;start_time&#x60;, &#x60;end_time&#x60;. | [optional] |
 | **external_id** | **String** | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found. | [optional] |
@@ -109,7 +109,7 @@ end
 
 Create Document From Url
 
-Ingest a document from a publicly accessible URL. On ingest, the document goes through a series of steps before it is ready for retrieval. Each step is reflected in the status of the document which can be one of [`pending`, `partitioning`, `partitioned`, `refined`, `chunked`, `indexed`, `summary_indexed`, `keyword_indexed`, `ready`, `failed`]. The document is available for retrieval once it is in ready state. The summary index step can take a few seconds. You can optionally use the document for retrieval once it is in `indexed` state. However the summary will only be available once the state has changed to `summary_indexed` or `ready`.
+Ingest a document from a publicly accessible URL. On ingest, the document goes through a series of steps before it is ready for retrieval. Each step is reflected in the status of the document which can be one of [`pending`, `partitioning`, `partitioned`, `refined`, `chunked`, `indexed`, `summary_indexed`, `keyword_indexed`, `ready`, `failed`]. The document is available for retrieval once it is in ready state. The summary index step can take a few seconds. You can optionally use the document for retrieval once it is in `indexed` state. However the summary will only be available once the state has changed to `summary_indexed` or `ready`. PDF files over 2000 pages are not supported in hi_res mode.
 
 ### Examples
 
@@ -1016,7 +1016,7 @@ end
 
 api_instance = RagieRubySdk::DocumentsApi.new
 document_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The id of the document.
-file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`.
+file = File.new('/path/to/some/file') # File | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`. PDF files over 2000 pages are not supported in hi_res mode.
 opts = {
   partition: 'partition_example', # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
   mode: RagieRubySdk::Mode2OneOf.new # Mode2 | 
@@ -1054,7 +1054,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **document_id** | **String** | The id of the document. |  |
-| **file** | **File** | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: &#x60;.eml&#x60; &#x60;.html&#x60; &#x60;.json&#x60; &#x60;.md&#x60; &#x60;.msg&#x60; &#x60;.rst&#x60; &#x60;.rtf&#x60; &#x60;.txt&#x60; &#x60;.xml&#x60; Images: &#x60;.png&#x60; &#x60;.webp&#x60; &#x60;.jpg&#x60; &#x60;.jpeg&#x60; &#x60;.tiff&#x60; &#x60;.bmp&#x60; &#x60;.heic&#x60; Documents: &#x60;.csv&#x60; &#x60;.doc&#x60; &#x60;.docx&#x60; &#x60;.epub&#x60; &#x60;.epub+zip&#x60; &#x60;.odt&#x60; &#x60;.pdf&#x60; &#x60;.ppt&#x60; &#x60;.pptx&#x60; &#x60;.tsv&#x60; &#x60;.xlsx&#x60; &#x60;.xls&#x60;. |  |
+| **file** | **File** | The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: &#x60;.eml&#x60; &#x60;.html&#x60; &#x60;.json&#x60; &#x60;.md&#x60; &#x60;.msg&#x60; &#x60;.rst&#x60; &#x60;.rtf&#x60; &#x60;.txt&#x60; &#x60;.xml&#x60; Images: &#x60;.png&#x60; &#x60;.webp&#x60; &#x60;.jpg&#x60; &#x60;.jpeg&#x60; &#x60;.tiff&#x60; &#x60;.bmp&#x60; &#x60;.heic&#x60; Documents: &#x60;.csv&#x60; &#x60;.doc&#x60; &#x60;.docx&#x60; &#x60;.epub&#x60; &#x60;.epub+zip&#x60; &#x60;.odt&#x60; &#x60;.pdf&#x60; &#x60;.ppt&#x60; &#x60;.pptx&#x60; &#x60;.tsv&#x60; &#x60;.xlsx&#x60; &#x60;.xls&#x60;. PDF files over 2000 pages are not supported in hi_res mode. |  |
 | **partition** | **String** | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition. | [optional] |
 | **mode** | [**Mode2**](Mode2.md) |  | [optional] |
 
@@ -1078,7 +1078,7 @@ end
 
 Update Document Url
 
-Updates a document from a publicly accessible URL. On ingest, the document goes through a series of steps before it is ready for retrieval. Each step is reflected in the status of the document which can be one of [`pending`, `partitioning`, `partitioned`, `refined`, `chunked`, `indexed`, `summary_indexed`, `keyword_indexed`, `ready`, `failed`]. The document is available for retrieval once it is in ready state. The summary index step can take a few seconds. You can optionally use the document for retrieval once it is in `indexed` state. However the summary will only be available once the state has changed to `summary_indexed` or `ready`.
+Updates a document from a publicly accessible URL. On ingest, the document goes through a series of steps before it is ready for retrieval. Each step is reflected in the status of the document which can be one of [`pending`, `partitioning`, `partitioned`, `refined`, `chunked`, `indexed`, `summary_indexed`, `keyword_indexed`, `ready`, `failed`]. The document is available for retrieval once it is in ready state. The summary index step can take a few seconds. You can optionally use the document for retrieval once it is in `indexed` state. However the summary will only be available once the state has changed to `summary_indexed` or `ready`. PDF files over 2000 pages are not supported in hi_res mode.
 
 ### Examples
 

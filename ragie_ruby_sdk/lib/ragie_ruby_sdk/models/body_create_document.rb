@@ -21,7 +21,7 @@ module RagieRubySdk
     # Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`.
     attr_accessor :metadata
 
-    # The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`.
+    # The binary file to upload, extract, and index for retrieval. The following file types are supported: Plain Text: `.eml` `.html` `.json` `.md` `.msg` `.rst` `.rtf` `.txt` `.xml` Images: `.png` `.webp` `.jpg` `.jpeg` `.tiff` `.bmp` `.heic` Documents: `.csv` `.doc` `.docx` `.epub` `.epub+zip` `.odt` `.pdf` `.ppt` `.pptx` `.tsv` `.xlsx` `.xls`. PDF files over 2000 pages are not supported in hi_res mode.
     attr_accessor :file
 
     # An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
