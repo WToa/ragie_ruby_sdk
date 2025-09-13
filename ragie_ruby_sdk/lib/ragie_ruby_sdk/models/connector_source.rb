@@ -31,10 +31,11 @@ module RagieRubySdk
     S3 = "s3".freeze
     GCS = "gcs".freeze
     HUBSPOT = "hubspot".freeze
+    WEBCRAWLER = "webcrawler".freeze
     ZENDESK = "zendesk".freeze
 
     def self.all_vars
-      @all_vars ||= [BACKBLAZE, CONFLUENCE, DROPBOX, FRESHDESK, ONEDRIVE, GOOGLE_DRIVE, GMAIL, INTERCOM, NOTION, SALESFORCE, SHAREPOINT, JIRA, SLACK, S3, GCS, HUBSPOT, ZENDESK].freeze
+      @all_vars ||= [BACKBLAZE, CONFLUENCE, DROPBOX, FRESHDESK, ONEDRIVE, GOOGLE_DRIVE, GMAIL, INTERCOM, NOTION, SALESFORCE, SHAREPOINT, JIRA, SLACK, S3, GCS, HUBSPOT, WEBCRAWLER, ZENDESK].freeze
     end
 
     # Builds the enum from string
