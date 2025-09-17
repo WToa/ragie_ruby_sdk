@@ -15,11 +15,19 @@ require 'time'
 
 module RagieRubySdk
   class IntercomData
+    attr_accessor :articles_help_center
+
     attr_accessor :admins
 
-    attr_accessor :tickets
-
     attr_accessor :contacts
+
+    attr_accessor :conversations
+
+    attr_accessor :conversation_attachments
+
+    attr_accessor :conversation_notes
+
+    attr_accessor :tickets
 
     attr_accessor :ticket_attachments
 
@@ -30,9 +38,13 @@ module RagieRubySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'articles_help_center' => :'articles_help_center',
         :'admins' => :'admins',
-        :'tickets' => :'tickets',
         :'contacts' => :'contacts',
+        :'conversations' => :'conversations',
+        :'conversation_attachments' => :'conversation_attachments',
+        :'conversation_notes' => :'conversation_notes',
+        :'tickets' => :'tickets',
         :'ticket_attachments' => :'ticket_attachments',
         :'ticket_comments' => :'ticket_comments',
         :'ticket_notes' => :'ticket_notes'
@@ -52,9 +64,13 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'articles_help_center' => :'Boolean',
         :'admins' => :'Boolean',
-        :'tickets' => :'Boolean',
         :'contacts' => :'Boolean',
+        :'conversations' => :'Boolean',
+        :'conversation_attachments' => :'Boolean',
+        :'conversation_notes' => :'Boolean',
+        :'tickets' => :'Boolean',
         :'ticket_attachments' => :'Boolean',
         :'ticket_comments' => :'Boolean',
         :'ticket_notes' => :'Boolean'
@@ -83,40 +99,64 @@ module RagieRubySdk
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'articles_help_center')
+        self.articles_help_center = attributes[:'articles_help_center']
+      else
+        self.articles_help_center = false
+      end
+
       if attributes.key?(:'admins')
         self.admins = attributes[:'admins']
       else
-        self.admins = nil
-      end
-
-      if attributes.key?(:'tickets')
-        self.tickets = attributes[:'tickets']
-      else
-        self.tickets = nil
+        self.admins = false
       end
 
       if attributes.key?(:'contacts')
         self.contacts = attributes[:'contacts']
       else
-        self.contacts = nil
+        self.contacts = false
+      end
+
+      if attributes.key?(:'conversations')
+        self.conversations = attributes[:'conversations']
+      else
+        self.conversations = false
+      end
+
+      if attributes.key?(:'conversation_attachments')
+        self.conversation_attachments = attributes[:'conversation_attachments']
+      else
+        self.conversation_attachments = false
+      end
+
+      if attributes.key?(:'conversation_notes')
+        self.conversation_notes = attributes[:'conversation_notes']
+      else
+        self.conversation_notes = false
+      end
+
+      if attributes.key?(:'tickets')
+        self.tickets = attributes[:'tickets']
+      else
+        self.tickets = false
       end
 
       if attributes.key?(:'ticket_attachments')
         self.ticket_attachments = attributes[:'ticket_attachments']
       else
-        self.ticket_attachments = nil
+        self.ticket_attachments = false
       end
 
       if attributes.key?(:'ticket_comments')
         self.ticket_comments = attributes[:'ticket_comments']
       else
-        self.ticket_comments = nil
+        self.ticket_comments = false
       end
 
       if attributes.key?(:'ticket_notes')
         self.ticket_notes = attributes[:'ticket_notes']
       else
-        self.ticket_notes = nil
+        self.ticket_notes = false
       end
     end
 
@@ -125,30 +165,6 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @admins.nil?
-        invalid_properties.push('invalid value for "admins", admins cannot be nil.')
-      end
-
-      if @tickets.nil?
-        invalid_properties.push('invalid value for "tickets", tickets cannot be nil.')
-      end
-
-      if @contacts.nil?
-        invalid_properties.push('invalid value for "contacts", contacts cannot be nil.')
-      end
-
-      if @ticket_attachments.nil?
-        invalid_properties.push('invalid value for "ticket_attachments", ticket_attachments cannot be nil.')
-      end
-
-      if @ticket_comments.nil?
-        invalid_properties.push('invalid value for "ticket_comments", ticket_comments cannot be nil.')
-      end
-
-      if @ticket_notes.nil?
-        invalid_properties.push('invalid value for "ticket_notes", ticket_notes cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -156,73 +172,7 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @admins.nil?
-      return false if @tickets.nil?
-      return false if @contacts.nil?
-      return false if @ticket_attachments.nil?
-      return false if @ticket_comments.nil?
-      return false if @ticket_notes.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] admins Value to be assigned
-    def admins=(admins)
-      if admins.nil?
-        fail ArgumentError, 'admins cannot be nil'
-      end
-
-      @admins = admins
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] tickets Value to be assigned
-    def tickets=(tickets)
-      if tickets.nil?
-        fail ArgumentError, 'tickets cannot be nil'
-      end
-
-      @tickets = tickets
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] contacts Value to be assigned
-    def contacts=(contacts)
-      if contacts.nil?
-        fail ArgumentError, 'contacts cannot be nil'
-      end
-
-      @contacts = contacts
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] ticket_attachments Value to be assigned
-    def ticket_attachments=(ticket_attachments)
-      if ticket_attachments.nil?
-        fail ArgumentError, 'ticket_attachments cannot be nil'
-      end
-
-      @ticket_attachments = ticket_attachments
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] ticket_comments Value to be assigned
-    def ticket_comments=(ticket_comments)
-      if ticket_comments.nil?
-        fail ArgumentError, 'ticket_comments cannot be nil'
-      end
-
-      @ticket_comments = ticket_comments
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] ticket_notes Value to be assigned
-    def ticket_notes=(ticket_notes)
-      if ticket_notes.nil?
-        fail ArgumentError, 'ticket_notes cannot be nil'
-      end
-
-      @ticket_notes = ticket_notes
     end
 
     # Checks equality by comparing each attribute.
@@ -230,9 +180,13 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          articles_help_center == o.articles_help_center &&
           admins == o.admins &&
-          tickets == o.tickets &&
           contacts == o.contacts &&
+          conversations == o.conversations &&
+          conversation_attachments == o.conversation_attachments &&
+          conversation_notes == o.conversation_notes &&
+          tickets == o.tickets &&
           ticket_attachments == o.ticket_attachments &&
           ticket_comments == o.ticket_comments &&
           ticket_notes == o.ticket_notes
@@ -247,7 +201,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [admins, tickets, contacts, ticket_attachments, ticket_comments, ticket_notes].hash
+      [articles_help_center, admins, contacts, conversations, conversation_attachments, conversation_notes, tickets, ticket_attachments, ticket_comments, ticket_notes].hash
     end
 
     # Builds the object from hash
