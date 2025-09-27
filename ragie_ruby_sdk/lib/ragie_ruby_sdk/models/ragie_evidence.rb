@@ -14,43 +14,59 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class IntercomData
-    attr_accessor :articles_help_center
+  class RagieEvidence
+    attr_accessor :type
 
-    attr_accessor :admins
+    attr_accessor :text
 
-    attr_accessor :contacts
+    attr_accessor :id
 
-    attr_accessor :conversations
+    attr_accessor :index
 
-    attr_accessor :conversation_attachments
+    attr_accessor :document_id
 
-    attr_accessor :conversation_notes
+    attr_accessor :document_name
 
-    attr_accessor :tickets
+    attr_accessor :metadata
 
-    attr_accessor :ticket_attachments
+    attr_accessor :document_metadata
 
-    attr_accessor :ticket_comments
+    attr_accessor :links
 
-    attr_accessor :ticket_notes
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    attr_accessor :filter_user_id
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'articles_help_center' => :'articles_help_center',
-        :'admins' => :'admins',
-        :'contacts' => :'contacts',
-        :'conversations' => :'conversations',
-        :'conversation_attachments' => :'conversation_attachments',
-        :'conversation_notes' => :'conversation_notes',
-        :'tickets' => :'tickets',
-        :'ticket_attachments' => :'ticket_attachments',
-        :'ticket_comments' => :'ticket_comments',
-        :'ticket_notes' => :'ticket_notes',
-        :'filter_user_id' => :'filter_user_id'
+        :'type' => :'type',
+        :'text' => :'text',
+        :'id' => :'id',
+        :'index' => :'index',
+        :'document_id' => :'document_id',
+        :'document_name' => :'document_name',
+        :'metadata' => :'metadata',
+        :'document_metadata' => :'document_metadata',
+        :'links' => :'links'
       }
     end
 
@@ -67,24 +83,21 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'articles_help_center' => :'Boolean',
-        :'admins' => :'Boolean',
-        :'contacts' => :'Boolean',
-        :'conversations' => :'Boolean',
-        :'conversation_attachments' => :'Boolean',
-        :'conversation_notes' => :'Boolean',
-        :'tickets' => :'Boolean',
-        :'ticket_attachments' => :'Boolean',
-        :'ticket_comments' => :'Boolean',
-        :'ticket_notes' => :'Boolean',
-        :'filter_user_id' => :'String'
+        :'type' => :'String',
+        :'text' => :'String',
+        :'id' => :'String',
+        :'index' => :'Integer',
+        :'document_id' => :'String',
+        :'document_name' => :'String',
+        :'metadata' => :'Hash<String, Object>',
+        :'document_metadata' => :'Hash<String, Object>',
+        :'links' => :'Hash<String, SearchResultLink>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'filter_user_id'
       ])
     end
 
@@ -92,80 +105,70 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::IntercomData` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::RagieEvidence` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::IntercomData`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::RagieEvidence`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'articles_help_center')
-        self.articles_help_center = attributes[:'articles_help_center']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       else
-        self.articles_help_center = false
+        self.type = 'ragie'
       end
 
-      if attributes.key?(:'admins')
-        self.admins = attributes[:'admins']
+      if attributes.key?(:'text')
+        self.text = attributes[:'text']
       else
-        self.admins = false
+        self.text = nil
       end
 
-      if attributes.key?(:'contacts')
-        self.contacts = attributes[:'contacts']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       else
-        self.contacts = false
+        self.id = nil
       end
 
-      if attributes.key?(:'conversations')
-        self.conversations = attributes[:'conversations']
+      if attributes.key?(:'index')
+        self.index = attributes[:'index']
       else
-        self.conversations = false
+        self.index = nil
       end
 
-      if attributes.key?(:'conversation_attachments')
-        self.conversation_attachments = attributes[:'conversation_attachments']
+      if attributes.key?(:'document_id')
+        self.document_id = attributes[:'document_id']
       else
-        self.conversation_attachments = false
+        self.document_id = nil
       end
 
-      if attributes.key?(:'conversation_notes')
-        self.conversation_notes = attributes[:'conversation_notes']
+      if attributes.key?(:'document_name')
+        self.document_name = attributes[:'document_name']
       else
-        self.conversation_notes = false
+        self.document_name = nil
       end
 
-      if attributes.key?(:'tickets')
-        self.tickets = attributes[:'tickets']
-      else
-        self.tickets = false
+      if attributes.key?(:'metadata')
+        if (value = attributes[:'metadata']).is_a?(Hash)
+          self.metadata = value
+        end
       end
 
-      if attributes.key?(:'ticket_attachments')
-        self.ticket_attachments = attributes[:'ticket_attachments']
-      else
-        self.ticket_attachments = false
+      if attributes.key?(:'document_metadata')
+        if (value = attributes[:'document_metadata']).is_a?(Hash)
+          self.document_metadata = value
+        end
       end
 
-      if attributes.key?(:'ticket_comments')
-        self.ticket_comments = attributes[:'ticket_comments']
-      else
-        self.ticket_comments = false
-      end
-
-      if attributes.key?(:'ticket_notes')
-        self.ticket_notes = attributes[:'ticket_notes']
-      else
-        self.ticket_notes = false
-      end
-
-      if attributes.key?(:'filter_user_id')
-        self.filter_user_id = attributes[:'filter_user_id']
+      if attributes.key?(:'links')
+        if (value = attributes[:'links']).is_a?(Hash)
+          self.links = value
+        end
       end
     end
 
@@ -174,6 +177,26 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @text.nil?
+        invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
+      end
+
+      if @index.nil?
+        invalid_properties.push('invalid value for "index", index cannot be nil.')
+      end
+
+      if @document_id.nil?
+        invalid_properties.push('invalid value for "document_id", document_id cannot be nil.')
+      end
+
+      if @document_name.nil?
+        invalid_properties.push('invalid value for "document_name", document_name cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -181,7 +204,74 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      type_validator = EnumAttributeValidator.new('String', ["ragie"])
+      return false unless type_validator.valid?(@type)
+      return false if @text.nil?
+      return false if @id.nil?
+      return false if @index.nil?
+      return false if @document_id.nil?
+      return false if @document_name.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ["ragie"])
+      unless validator.valid?(type)
+        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
+      end
+      @type = type
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] text Value to be assigned
+    def text=(text)
+      if text.nil?
+        fail ArgumentError, 'text cannot be nil'
+      end
+
+      @text = text
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if id.nil?
+        fail ArgumentError, 'id cannot be nil'
+      end
+
+      @id = id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] index Value to be assigned
+    def index=(index)
+      if index.nil?
+        fail ArgumentError, 'index cannot be nil'
+      end
+
+      @index = index
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] document_id Value to be assigned
+    def document_id=(document_id)
+      if document_id.nil?
+        fail ArgumentError, 'document_id cannot be nil'
+      end
+
+      @document_id = document_id
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] document_name Value to be assigned
+    def document_name=(document_name)
+      if document_name.nil?
+        fail ArgumentError, 'document_name cannot be nil'
+      end
+
+      @document_name = document_name
     end
 
     # Checks equality by comparing each attribute.
@@ -189,17 +279,15 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          articles_help_center == o.articles_help_center &&
-          admins == o.admins &&
-          contacts == o.contacts &&
-          conversations == o.conversations &&
-          conversation_attachments == o.conversation_attachments &&
-          conversation_notes == o.conversation_notes &&
-          tickets == o.tickets &&
-          ticket_attachments == o.ticket_attachments &&
-          ticket_comments == o.ticket_comments &&
-          ticket_notes == o.ticket_notes &&
-          filter_user_id == o.filter_user_id
+          type == o.type &&
+          text == o.text &&
+          id == o.id &&
+          index == o.index &&
+          document_id == o.document_id &&
+          document_name == o.document_name &&
+          metadata == o.metadata &&
+          document_metadata == o.document_metadata &&
+          links == o.links
     end
 
     # @see the `==` method
@@ -211,7 +299,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [articles_help_center, admins, contacts, conversations, conversation_attachments, conversation_notes, tickets, ticket_attachments, ticket_comments, ticket_notes, filter_user_id].hash
+      [type, text, id, index, document_id, document_name, metadata, document_metadata, links].hash
     end
 
     # Builds the object from hash

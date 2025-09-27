@@ -14,43 +14,47 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class IntercomData
-    attr_accessor :articles_help_center
+  class CodeInterpreterEvidence
+    attr_accessor :type
 
-    attr_accessor :admins
+    attr_accessor :text
 
-    attr_accessor :contacts
+    attr_accessor :code
 
-    attr_accessor :conversations
+    attr_accessor :code_issue
 
-    attr_accessor :conversation_attachments
+    attr_accessor :code_result
 
-    attr_accessor :conversation_notes
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    attr_accessor :tickets
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
 
-    attr_accessor :ticket_attachments
-
-    attr_accessor :ticket_comments
-
-    attr_accessor :ticket_notes
-
-    attr_accessor :filter_user_id
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'articles_help_center' => :'articles_help_center',
-        :'admins' => :'admins',
-        :'contacts' => :'contacts',
-        :'conversations' => :'conversations',
-        :'conversation_attachments' => :'conversation_attachments',
-        :'conversation_notes' => :'conversation_notes',
-        :'tickets' => :'tickets',
-        :'ticket_attachments' => :'ticket_attachments',
-        :'ticket_comments' => :'ticket_comments',
-        :'ticket_notes' => :'ticket_notes',
-        :'filter_user_id' => :'filter_user_id'
+        :'type' => :'type',
+        :'text' => :'text',
+        :'code' => :'code',
+        :'code_issue' => :'code_issue',
+        :'code_result' => :'code_result'
       }
     end
 
@@ -67,24 +71,17 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'articles_help_center' => :'Boolean',
-        :'admins' => :'Boolean',
-        :'contacts' => :'Boolean',
-        :'conversations' => :'Boolean',
-        :'conversation_attachments' => :'Boolean',
-        :'conversation_notes' => :'Boolean',
-        :'tickets' => :'Boolean',
-        :'ticket_attachments' => :'Boolean',
-        :'ticket_comments' => :'Boolean',
-        :'ticket_notes' => :'Boolean',
-        :'filter_user_id' => :'String'
+        :'type' => :'String',
+        :'text' => :'String',
+        :'code' => :'String',
+        :'code_issue' => :'String',
+        :'code_result' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'filter_user_id'
       ])
     end
 
@@ -92,80 +89,46 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::IntercomData` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::CodeInterpreterEvidence` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::IntercomData`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::CodeInterpreterEvidence`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'articles_help_center')
-        self.articles_help_center = attributes[:'articles_help_center']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       else
-        self.articles_help_center = false
+        self.type = 'code_interpreter'
       end
 
-      if attributes.key?(:'admins')
-        self.admins = attributes[:'admins']
+      if attributes.key?(:'text')
+        self.text = attributes[:'text']
       else
-        self.admins = false
+        self.text = nil
       end
 
-      if attributes.key?(:'contacts')
-        self.contacts = attributes[:'contacts']
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       else
-        self.contacts = false
+        self.code = nil
       end
 
-      if attributes.key?(:'conversations')
-        self.conversations = attributes[:'conversations']
+      if attributes.key?(:'code_issue')
+        self.code_issue = attributes[:'code_issue']
       else
-        self.conversations = false
+        self.code_issue = nil
       end
 
-      if attributes.key?(:'conversation_attachments')
-        self.conversation_attachments = attributes[:'conversation_attachments']
+      if attributes.key?(:'code_result')
+        self.code_result = attributes[:'code_result']
       else
-        self.conversation_attachments = false
-      end
-
-      if attributes.key?(:'conversation_notes')
-        self.conversation_notes = attributes[:'conversation_notes']
-      else
-        self.conversation_notes = false
-      end
-
-      if attributes.key?(:'tickets')
-        self.tickets = attributes[:'tickets']
-      else
-        self.tickets = false
-      end
-
-      if attributes.key?(:'ticket_attachments')
-        self.ticket_attachments = attributes[:'ticket_attachments']
-      else
-        self.ticket_attachments = false
-      end
-
-      if attributes.key?(:'ticket_comments')
-        self.ticket_comments = attributes[:'ticket_comments']
-      else
-        self.ticket_comments = false
-      end
-
-      if attributes.key?(:'ticket_notes')
-        self.ticket_notes = attributes[:'ticket_notes']
-      else
-        self.ticket_notes = false
-      end
-
-      if attributes.key?(:'filter_user_id')
-        self.filter_user_id = attributes[:'filter_user_id']
+        self.code_result = nil
       end
     end
 
@@ -174,6 +137,22 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @text.nil?
+        invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @code.nil?
+        invalid_properties.push('invalid value for "code", code cannot be nil.')
+      end
+
+      if @code_issue.nil?
+        invalid_properties.push('invalid value for "code_issue", code_issue cannot be nil.')
+      end
+
+      if @code_result.nil?
+        invalid_properties.push('invalid value for "code_result", code_result cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -181,7 +160,63 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      type_validator = EnumAttributeValidator.new('String', ["code_interpreter"])
+      return false unless type_validator.valid?(@type)
+      return false if @text.nil?
+      return false if @code.nil?
+      return false if @code_issue.nil?
+      return false if @code_result.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ["code_interpreter"])
+      unless validator.valid?(type)
+        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
+      end
+      @type = type
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] text Value to be assigned
+    def text=(text)
+      if text.nil?
+        fail ArgumentError, 'text cannot be nil'
+      end
+
+      @text = text
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] code Value to be assigned
+    def code=(code)
+      if code.nil?
+        fail ArgumentError, 'code cannot be nil'
+      end
+
+      @code = code
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] code_issue Value to be assigned
+    def code_issue=(code_issue)
+      if code_issue.nil?
+        fail ArgumentError, 'code_issue cannot be nil'
+      end
+
+      @code_issue = code_issue
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] code_result Value to be assigned
+    def code_result=(code_result)
+      if code_result.nil?
+        fail ArgumentError, 'code_result cannot be nil'
+      end
+
+      @code_result = code_result
     end
 
     # Checks equality by comparing each attribute.
@@ -189,17 +224,11 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          articles_help_center == o.articles_help_center &&
-          admins == o.admins &&
-          contacts == o.contacts &&
-          conversations == o.conversations &&
-          conversation_attachments == o.conversation_attachments &&
-          conversation_notes == o.conversation_notes &&
-          tickets == o.tickets &&
-          ticket_attachments == o.ticket_attachments &&
-          ticket_comments == o.ticket_comments &&
-          ticket_notes == o.ticket_notes &&
-          filter_user_id == o.filter_user_id
+          type == o.type &&
+          text == o.text &&
+          code == o.code &&
+          code_issue == o.code_issue &&
+          code_result == o.code_result
     end
 
     # @see the `==` method
@@ -211,7 +240,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [articles_help_center, admins, contacts, conversations, conversation_attachments, conversation_notes, tickets, ticket_attachments, ticket_comments, ticket_notes, filter_user_id].hash
+      [type, text, code, code_issue, code_result].hash
     end
 
     # Builds the object from hash

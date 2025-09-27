@@ -14,6 +14,7 @@
 | **ticket_attachments** | **Boolean** |  | [optional][default to false] |
 | **ticket_comments** | **Boolean** |  | [optional][default to false] |
 | **ticket_notes** | **Boolean** |  | [optional][default to false] |
+| **filter_user_id** | **String** |  | [optional] |
 
 ## Example
 
@@ -30,7 +31,8 @@ instance = RagieRubySdk::IntercomData.new(
   tickets: null,
   ticket_attachments: null,
   ticket_comments: null,
-  ticket_notes: null
+  ticket_notes: null,
+  filter_user_id: null
 )
 ```
 
