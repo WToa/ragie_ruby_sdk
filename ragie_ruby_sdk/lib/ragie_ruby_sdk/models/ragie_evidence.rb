@@ -19,18 +19,25 @@ module RagieRubySdk
 
     attr_accessor :text
 
+    # The chunk id of the evidence.
     attr_accessor :id
 
+    # The index of the chunk in the document.
     attr_accessor :index
 
+    # The document id of the document containing the chunk being used as evidence.
     attr_accessor :document_id
 
+    # The name of the document that contains the chunk being used as evidence.
     attr_accessor :document_name
 
+    # The metadata of the chunk being used as evidence.
     attr_accessor :metadata
 
+    # The metadata of the document that contains the evidence.
     attr_accessor :document_metadata
 
+    # The links to the evidence.
     attr_accessor :links
 
     class EnumAttributeValidator

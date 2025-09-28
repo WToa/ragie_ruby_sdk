@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **text** | **String** |  |  |
-| **evidence** | [**Array&lt;FinalAnswerEvidenceInner&gt;**](FinalAnswerEvidenceInner.md) |  |  |
-| **steps** | [**Array&lt;FinalAnswerStepsInner&gt;**](FinalAnswerStepsInner.md) |  |  |
-| **usage** | [**AgentHoppsModelsModelsUsage**](AgentHoppsModelsModelsUsage.md) |  |  |
+| **text** | **String** | The final answer to the question. |  |
+| **evidence** | [**Array&lt;FinalAnswerEvidenceInner&gt;**](FinalAnswerEvidenceInner.md) | The evidence used to derive the answer. | [optional] |
+| **steps** | [**Array&lt;FinalAnswerStepsInner&gt;**](FinalAnswerStepsInner.md) | The steps that led to the answer. | [optional] |
+| **usage** | [**AgentHoppsModelsModelsUsage**](AgentHoppsModelsModelsUsage.md) | The usage of the models. | [optional] |
 
 ## Example
 

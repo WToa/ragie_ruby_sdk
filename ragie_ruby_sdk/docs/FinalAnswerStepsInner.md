@@ -9,12 +9,12 @@
 | **current_question** | **String** |  |  |
 | **other_resolved_question_ids** | **Array&lt;String&gt;** | A list of questions ids that are no longer relevant to the current answer referenced by their IDs. | [optional] |
 | **answer** | [**Answer**](Answer.md) |  |  |
-| **search** | [**Search**](Search.md) |  |  |
-| **questions_to_answer** | **Array&lt;String&gt;** |  |  |
+| **search** | [**Search**](Search.md) | The search request to be made. |  |
+| **questions_to_answer** | **Array&lt;String&gt;** | The questions that need to be answered to answer the original question. | [optional] |
 | **code_issue** | **String** | The natural language description of the code issue you need to solve. |  |
 | **code** | **String** | The code you generated to solve the code issue. | [optional][default to &#39;&#39;] |
 | **code_result** | **String** | The result of the code you generated after executing it. | [optional][default to &#39;&#39;] |
-| **partial_answer** | [**Answer**](Answer.md) |  |  |
+| **partial_answer** | [**Answer**](Answer.md) | The a potential partial answer when a full answer was not possible. |  |
 | **eval_passed** | **Boolean** |  |  |
 | **eval_reason** | **String** |  |  |
 

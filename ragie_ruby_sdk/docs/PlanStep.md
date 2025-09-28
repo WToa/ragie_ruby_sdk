@@ -7,7 +7,7 @@
 | **type** | **String** |  | [optional][default to &#39;plan&#39;] |
 | **think** | **String** |  |  |
 | **current_question** | **String** |  |  |
-| **questions_to_answer** | **Array&lt;String&gt;** |  |  |
+| **questions_to_answer** | **Array&lt;String&gt;** | The questions that need to be answered to answer the original question. | [optional] |
 
 ## Example
 

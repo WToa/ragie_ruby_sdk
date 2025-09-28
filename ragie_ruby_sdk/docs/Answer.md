@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **text** | **String** |  |  |
-| **evidence** | **Array&lt;String&gt;** |  |  |
+| **text** | **String** | An answer to a question. |  |
+| **evidence** | **Array&lt;String&gt;** | The evidence used to derive the answer. | [optional] |
 
 ## Example
 

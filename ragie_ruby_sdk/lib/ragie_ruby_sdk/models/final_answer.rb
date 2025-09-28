@@ -15,12 +15,16 @@ require 'time'
 
 module RagieRubySdk
   class FinalAnswer
+    # The final answer to the question.
     attr_accessor :text
 
+    # The evidence used to derive the answer.
     attr_accessor :evidence
 
+    # The steps that led to the answer.
     attr_accessor :steps
 
+    # The usage of the models.
     attr_accessor :usage
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -85,22 +89,16 @@ module RagieRubySdk
         if (value = attributes[:'evidence']).is_a?(Array)
           self.evidence = value
         end
-      else
-        self.evidence = nil
       end
 
       if attributes.key?(:'steps')
         if (value = attributes[:'steps']).is_a?(Array)
           self.steps = value
         end
-      else
-        self.steps = nil
       end
 
       if attributes.key?(:'usage')
         self.usage = attributes[:'usage']
-      else
-        self.usage = nil
       end
     end
 
@@ -113,18 +111,6 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "text", text cannot be nil.')
       end
 
-      if @evidence.nil?
-        invalid_properties.push('invalid value for "evidence", evidence cannot be nil.')
-      end
-
-      if @steps.nil?
-        invalid_properties.push('invalid value for "steps", steps cannot be nil.')
-      end
-
-      if @usage.nil?
-        invalid_properties.push('invalid value for "usage", usage cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -133,9 +119,6 @@ module RagieRubySdk
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @text.nil?
-      return false if @evidence.nil?
-      return false if @steps.nil?
-      return false if @usage.nil?
       true
     end
 
@@ -147,36 +130,6 @@ module RagieRubySdk
       end
 
       @text = text
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] evidence Value to be assigned
-    def evidence=(evidence)
-      if evidence.nil?
-        fail ArgumentError, 'evidence cannot be nil'
-      end
-
-      @evidence = evidence
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] steps Value to be assigned
-    def steps=(steps)
-      if steps.nil?
-        fail ArgumentError, 'steps cannot be nil'
-      end
-
-      @steps = steps
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] usage Value to be assigned
-    def usage=(usage)
-      if usage.nil?
-        fail ArgumentError, 'usage cannot be nil'
-      end
-
-      @usage = usage
     end
 
     # Checks equality by comparing each attribute.

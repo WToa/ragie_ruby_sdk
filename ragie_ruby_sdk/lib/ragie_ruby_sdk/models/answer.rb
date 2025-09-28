@@ -15,8 +15,10 @@ require 'time'
 
 module RagieRubySdk
   class Answer
+    # An answer to a question.
     attr_accessor :text
 
+    # The evidence used to derive the answer.
     attr_accessor :evidence
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -77,8 +79,6 @@ module RagieRubySdk
         if (value = attributes[:'evidence']).is_a?(Array)
           self.evidence = value
         end
-      else
-        self.evidence = nil
       end
     end
 
@@ -91,10 +91,6 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "text", text cannot be nil.')
       end
 
-      if @evidence.nil?
-        invalid_properties.push('invalid value for "evidence", evidence cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -103,7 +99,6 @@ module RagieRubySdk
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @text.nil?
-      return false if @evidence.nil?
       true
     end
 
@@ -115,16 +110,6 @@ module RagieRubySdk
       end
 
       @text = text
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] evidence Value to be assigned
-    def evidence=(evidence)
-      if evidence.nil?
-        fail ArgumentError, 'evidence cannot be nil'
-      end
-
-      @evidence = evidence
     end
 
     # Checks equality by comparing each attribute.

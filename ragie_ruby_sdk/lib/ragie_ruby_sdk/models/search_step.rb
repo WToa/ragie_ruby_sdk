@@ -21,6 +21,7 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    # The search request to be made.
     attr_accessor :search
 
     class EnumAttributeValidator

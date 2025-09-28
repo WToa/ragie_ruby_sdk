@@ -21,6 +21,7 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    # The questions that need to be answered to answer the original question.
     attr_accessor :questions_to_answer
 
     class EnumAttributeValidator
@@ -119,8 +120,6 @@ module RagieRubySdk
         if (value = attributes[:'questions_to_answer']).is_a?(Array)
           self.questions_to_answer = value
         end
-      else
-        self.questions_to_answer = nil
       end
     end
 
@@ -137,10 +136,6 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
       end
 
-      if @questions_to_answer.nil?
-        invalid_properties.push('invalid value for "questions_to_answer", questions_to_answer cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -152,7 +147,6 @@ module RagieRubySdk
       return false unless type_validator.valid?(@type)
       return false if @think.nil?
       return false if @current_question.nil?
-      return false if @questions_to_answer.nil?
       true
     end
 
@@ -184,16 +178,6 @@ module RagieRubySdk
       end
 
       @current_question = current_question
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] questions_to_answer Value to be assigned
-    def questions_to_answer=(questions_to_answer)
-      if questions_to_answer.nil?
-        fail ArgumentError, 'questions_to_answer cannot be nil'
-      end
-
-      @questions_to_answer = questions_to_answer
     end
 
     # Checks equality by comparing each attribute.

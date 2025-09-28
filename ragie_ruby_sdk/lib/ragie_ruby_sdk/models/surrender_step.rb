@@ -21,6 +21,7 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    # The a potential partial answer when a full answer was not possible.
     attr_accessor :partial_answer
 
     class EnumAttributeValidator

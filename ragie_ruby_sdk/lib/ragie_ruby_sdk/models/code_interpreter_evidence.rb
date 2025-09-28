@@ -19,10 +19,13 @@ module RagieRubySdk
 
     attr_accessor :text
 
+    # The code that was executed.
     attr_accessor :code
 
+    # The issue that the code was written to solve.
     attr_accessor :code_issue
 
+    # The result of the code that was executed.
     attr_accessor :code_result
 
     class EnumAttributeValidator
