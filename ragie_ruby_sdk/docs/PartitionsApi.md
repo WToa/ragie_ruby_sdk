@@ -6,6 +6,8 @@ All URIs are relative to *https://api.ragie.ai*
 | ------ | ------------ | ----------- |
 | [**create_partition_partitions_post**](PartitionsApi.md#create_partition_partitions_post) | **POST** /partitions | Create Partition |
 | [**delete_partition_partitions_partition_id_delete**](PartitionsApi.md#delete_partition_partitions_partition_id_delete) | **DELETE** /partitions/{partition_id} | Delete Partition |
+| [**disable_mcp_partitions_partition_id_mcp_delete**](PartitionsApi.md#disable_mcp_partitions_partition_id_mcp_delete) | **DELETE** /partitions/{partition_id}/mcp | Disable Mcp |
+| [**enable_mcp_partitions_partition_id_mcp_post**](PartitionsApi.md#enable_mcp_partitions_partition_id_mcp_post) | **POST** /partitions/{partition_id}/mcp | Enable Mcp |
 | [**get_partition_partitions_partition_id_get**](PartitionsApi.md#get_partition_partitions_partition_id_get) | **GET** /partitions/{partition_id} | Get Partition |
 | [**list_partitions_partitions_get**](PartitionsApi.md#list_partitions_partitions_get) | **GET** /partitions | List Partitions |
 | [**set_partition_limits_partitions_partition_id_limits_put**](PartitionsApi.md#set_partition_limits_partitions_partition_id_limits_put) | **PUT** /partitions/{partition_id}/limits | Set Partition Limits |
@@ -138,6 +140,144 @@ end
 ### Return type
 
 **Hash&lt;String, String&gt;**
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## disable_mcp_partitions_partition_id_mcp_delete
+
+> Object disable_mcp_partitions_partition_id_mcp_delete(partition_id)
+
+Disable Mcp
+
+Disables context-aware descriptions for a partition. This will stop automatically generating descriptions for the partition.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ragie_ruby_sdk'
+# setup authorization
+RagieRubySdk.configure do |config|
+  # Configure Bearer authorization: auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = RagieRubySdk::PartitionsApi.new
+partition_id = 'partition_id_example' # String | 
+
+begin
+  # Disable Mcp
+  result = api_instance.disable_mcp_partitions_partition_id_mcp_delete(partition_id)
+  p result
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling PartitionsApi->disable_mcp_partitions_partition_id_mcp_delete: #{e}"
+end
+```
+
+#### Using the disable_mcp_partitions_partition_id_mcp_delete_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Object, Integer, Hash)> disable_mcp_partitions_partition_id_mcp_delete_with_http_info(partition_id)
+
+```ruby
+begin
+  # Disable Mcp
+  data, status_code, headers = api_instance.disable_mcp_partitions_partition_id_mcp_delete_with_http_info(partition_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Object
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling PartitionsApi->disable_mcp_partitions_partition_id_mcp_delete_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **partition_id** | **String** |  |  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## enable_mcp_partitions_partition_id_mcp_post
+
+> Object enable_mcp_partitions_partition_id_mcp_post(partition_id)
+
+Enable Mcp
+
+Enables context-aware descriptions for a partition. This will allow the automatically generate a desccription for based on the documents in the partition.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ragie_ruby_sdk'
+# setup authorization
+RagieRubySdk.configure do |config|
+  # Configure Bearer authorization: auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = RagieRubySdk::PartitionsApi.new
+partition_id = 'partition_id_example' # String | 
+
+begin
+  # Enable Mcp
+  result = api_instance.enable_mcp_partitions_partition_id_mcp_post(partition_id)
+  p result
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling PartitionsApi->enable_mcp_partitions_partition_id_mcp_post: #{e}"
+end
+```
+
+#### Using the enable_mcp_partitions_partition_id_mcp_post_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(Object, Integer, Hash)> enable_mcp_partitions_partition_id_mcp_post_with_http_info(partition_id)
+
+```ruby
+begin
+  # Enable Mcp
+  data, status_code, headers = api_instance.enable_mcp_partitions_partition_id_mcp_post_with_http_info(partition_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => Object
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling PartitionsApi->enable_mcp_partitions_partition_id_mcp_post_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **partition_id** | **String** |  |  |
+
+### Return type
+
+**Object**
 
 ### Authorization
 

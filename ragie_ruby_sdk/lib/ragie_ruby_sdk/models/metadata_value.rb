@@ -21,6 +21,7 @@ module RagieRubySdk
         [
           :'Array<String>',
           :'Boolean',
+          :'Float',
           :'Integer',
           :'String'
         ]
