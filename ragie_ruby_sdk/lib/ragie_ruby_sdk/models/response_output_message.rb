@@ -14,15 +14,14 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class SearchStep
+  class ResponseOutputMessage
     attr_accessor :type
 
-    attr_accessor :think
+    attr_accessor :id
 
-    attr_accessor :current_question
+    attr_accessor :role
 
-    # The search request to be made.
-    attr_accessor :search
+    attr_accessor :content
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -50,9 +49,9 @@ module RagieRubySdk
     def self.attribute_map
       {
         :'type' => :'type',
-        :'think' => :'think',
-        :'current_question' => :'current_question',
-        :'search' => :'search'
+        :'id' => :'id',
+        :'role' => :'role',
+        :'content' => :'content'
       }
     end
 
@@ -70,9 +69,9 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'type' => :'String',
-        :'think' => :'String',
-        :'current_question' => :'String',
-        :'search' => :'Search'
+        :'id' => :'String',
+        :'role' => :'String',
+        :'content' => :'Array<ResponseContent>'
       }
     end
 
@@ -86,14 +85,14 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::SearchStep` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::ResponseOutputMessage` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::SearchStep`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::ResponseOutputMessage`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -101,25 +100,27 @@ module RagieRubySdk
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
-        self.type = 'base_search'
+        self.type = 'message'
       end
 
-      if attributes.key?(:'think')
-        self.think = attributes[:'think']
+      if attributes.key?(:'id')
+        self.id = attributes[:'id']
       else
-        self.think = nil
+        self.id = nil
       end
 
-      if attributes.key?(:'current_question')
-        self.current_question = attributes[:'current_question']
+      if attributes.key?(:'role')
+        self.role = attributes[:'role']
       else
-        self.current_question = nil
+        self.role = 'assistant'
       end
 
-      if attributes.key?(:'search')
-        self.search = attributes[:'search']
+      if attributes.key?(:'content')
+        if (value = attributes[:'content']).is_a?(Array)
+          self.content = value
+        end
       else
-        self.search = nil
+        self.content = nil
       end
     end
 
@@ -128,16 +129,12 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @think.nil?
-        invalid_properties.push('invalid value for "think", think cannot be nil.')
+      if @id.nil?
+        invalid_properties.push('invalid value for "id", id cannot be nil.')
       end
 
-      if @current_question.nil?
-        invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
-      end
-
-      if @search.nil?
-        invalid_properties.push('invalid value for "search", search cannot be nil.')
+      if @content.nil?
+        invalid_properties.push('invalid value for "content", content cannot be nil.')
       end
 
       invalid_properties
@@ -147,18 +144,19 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      type_validator = EnumAttributeValidator.new('String', ["base_search"])
+      type_validator = EnumAttributeValidator.new('String', ["message"])
       return false unless type_validator.valid?(@type)
-      return false if @think.nil?
-      return false if @current_question.nil?
-      return false if @search.nil?
+      return false if @id.nil?
+      role_validator = EnumAttributeValidator.new('String', ["assistant"])
+      return false unless role_validator.valid?(@role)
+      return false if @content.nil?
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["base_search"])
+      validator = EnumAttributeValidator.new('String', ["message"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
@@ -166,33 +164,33 @@ module RagieRubySdk
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] think Value to be assigned
-    def think=(think)
-      if think.nil?
-        fail ArgumentError, 'think cannot be nil'
+    # @param [Object] id Value to be assigned
+    def id=(id)
+      if id.nil?
+        fail ArgumentError, 'id cannot be nil'
       end
 
-      @think = think
+      @id = id
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] role Object to be assigned
+    def role=(role)
+      validator = EnumAttributeValidator.new('String', ["assistant"])
+      unless validator.valid?(role)
+        fail ArgumentError, "invalid value for \"role\", must be one of #{validator.allowable_values}."
+      end
+      @role = role
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] current_question Value to be assigned
-    def current_question=(current_question)
-      if current_question.nil?
-        fail ArgumentError, 'current_question cannot be nil'
+    # @param [Object] content Value to be assigned
+    def content=(content)
+      if content.nil?
+        fail ArgumentError, 'content cannot be nil'
       end
 
-      @current_question = current_question
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] search Value to be assigned
-    def search=(search)
-      if search.nil?
-        fail ArgumentError, 'search cannot be nil'
-      end
-
-      @search = search
+      @content = content
     end
 
     # Checks equality by comparing each attribute.
@@ -201,9 +199,9 @@ module RagieRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          think == o.think &&
-          current_question == o.current_question &&
-          search == o.search
+          id == o.id &&
+          role == o.role &&
+          content == o.content
     end
 
     # @see the `==` method
@@ -215,7 +213,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, search].hash
+      [type, id, role, content].hash
     end
 
     # Builds the object from hash

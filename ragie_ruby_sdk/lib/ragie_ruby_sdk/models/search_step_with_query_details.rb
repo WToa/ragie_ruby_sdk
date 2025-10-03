@@ -14,15 +14,16 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class SearchStep
+  class SearchStepWithQueryDetails
     attr_accessor :type
-
-    attr_accessor :think
-
-    attr_accessor :current_question
 
     # The search request to be made.
     attr_accessor :search
+
+    attr_accessor :query_details
+
+    # A log of the search results you found.
+    attr_accessor :search_log
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -50,9 +51,9 @@ module RagieRubySdk
     def self.attribute_map
       {
         :'type' => :'type',
-        :'think' => :'think',
-        :'current_question' => :'current_question',
-        :'search' => :'search'
+        :'search' => :'search',
+        :'query_details' => :'query_details',
+        :'search_log' => :'search_log'
       }
     end
 
@@ -70,9 +71,9 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'type' => :'String',
-        :'think' => :'String',
-        :'current_question' => :'String',
-        :'search' => :'Search'
+        :'search' => :'Search',
+        :'query_details' => :'Array<QueryDetails>',
+        :'search_log' => :'String'
       }
     end
 
@@ -86,14 +87,14 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::SearchStep` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::SearchStepWithQueryDetails` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::SearchStep`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::SearchStepWithQueryDetails`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -101,25 +102,25 @@ module RagieRubySdk
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
-        self.type = 'base_search'
-      end
-
-      if attributes.key?(:'think')
-        self.think = attributes[:'think']
-      else
-        self.think = nil
-      end
-
-      if attributes.key?(:'current_question')
-        self.current_question = attributes[:'current_question']
-      else
-        self.current_question = nil
+        self.type = 'search'
       end
 
       if attributes.key?(:'search')
         self.search = attributes[:'search']
       else
         self.search = nil
+      end
+
+      if attributes.key?(:'query_details')
+        if (value = attributes[:'query_details']).is_a?(Array)
+          self.query_details = value
+        end
+      end
+
+      if attributes.key?(:'search_log')
+        self.search_log = attributes[:'search_log']
+      else
+        self.search_log = ''
       end
     end
 
@@ -128,14 +129,6 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @think.nil?
-        invalid_properties.push('invalid value for "think", think cannot be nil.')
-      end
-
-      if @current_question.nil?
-        invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
-      end
-
       if @search.nil?
         invalid_properties.push('invalid value for "search", search cannot be nil.')
       end
@@ -147,10 +140,8 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      type_validator = EnumAttributeValidator.new('String', ["base_search"])
+      type_validator = EnumAttributeValidator.new('String', ["search"])
       return false unless type_validator.valid?(@type)
-      return false if @think.nil?
-      return false if @current_question.nil?
       return false if @search.nil?
       true
     end
@@ -158,31 +149,11 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["base_search"])
+      validator = EnumAttributeValidator.new('String', ["search"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
       @type = type
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] think Value to be assigned
-    def think=(think)
-      if think.nil?
-        fail ArgumentError, 'think cannot be nil'
-      end
-
-      @think = think
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] current_question Value to be assigned
-    def current_question=(current_question)
-      if current_question.nil?
-        fail ArgumentError, 'current_question cannot be nil'
-      end
-
-      @current_question = current_question
     end
 
     # Custom attribute writer method with validation
@@ -201,9 +172,9 @@ module RagieRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          think == o.think &&
-          current_question == o.current_question &&
-          search == o.search
+          search == o.search &&
+          query_details == o.query_details &&
+          search_log == o.search_log
     end
 
     # @see the `==` method
@@ -215,7 +186,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, search].hash
+      [type, search, query_details, search_log].hash
     end
 
     # Builds the object from hash

@@ -10,6 +10,8 @@
 | **other_resolved_question_ids** | **Array&lt;String&gt;** | A list of questions ids that are no longer relevant to the current answer referenced by their IDs. | [optional] |
 | **answer** | [**Answer**](Answer.md) |  |  |
 | **search** | [**Search**](Search.md) | The search request to be made. |  |
+| **query_details** | [**Array&lt;QueryDetails&gt;**](QueryDetails.md) |  | [optional] |
+| **search_log** | **String** | A log of the search results you found. | [optional][default to &#39;&#39;] |
 | **questions_to_answer** | **Array&lt;String&gt;** | The questions that need to be answered to answer the original question. | [optional] |
 | **code_issue** | **String** | The natural language description of the code issue you need to solve. |  |
 | **code** | **String** | The code you generated to solve the code issue. | [optional][default to &#39;&#39;] |
@@ -30,6 +32,8 @@ instance = RagieRubySdk::FinalAnswerStepsInner.new(
   other_resolved_question_ids: null,
   answer: null,
   search: null,
+  query_details: null,
+  search_log: null,
   questions_to_answer: null,
   code_issue: null,
   code: null,

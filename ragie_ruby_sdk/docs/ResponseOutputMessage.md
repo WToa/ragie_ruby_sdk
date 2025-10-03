@@ -1,4 +1,4 @@
-# RagieRubySdk::ResponseOutput
+# RagieRubySdk::ResponseOutputMessage
 
 ## Properties
 
@@ -14,7 +14,7 @@
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::ResponseOutput.new(
+instance = RagieRubySdk::ResponseOutputMessage.new(
   type: null,
   id: null,
   role: null,

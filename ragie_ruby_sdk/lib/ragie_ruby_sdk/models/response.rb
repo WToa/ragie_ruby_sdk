@@ -134,7 +134,7 @@ module RagieRubySdk
         :'instructions' => :'String',
         :'max_output_tokens' => :'Object',
         :'model' => :'String',
-        :'output' => :'Array<ResponseOutput>',
+        :'output' => :'Array<ResponseOutputInner>',
         :'output_parsed' => :'FinalAnswer',
         :'tools' => :'Array<Tool>',
         :'reasoning' => :'Reasoning',

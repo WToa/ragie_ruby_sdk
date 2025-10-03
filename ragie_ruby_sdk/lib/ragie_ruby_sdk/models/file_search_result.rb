@@ -14,45 +14,30 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class SearchStep
-    attr_accessor :type
+  class FileSearchResult
+    # The unique ID of the document.
+    attr_accessor :file_id
 
-    attr_accessor :think
+    # The name of the document.
+    attr_accessor :filename
 
-    attr_accessor :current_question
+    # The relevance score of the chunk - a value between 0 and 1.
+    attr_accessor :score
 
-    # The search request to be made.
-    attr_accessor :search
+    # The text content of the chunk.
+    attr_accessor :text
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    # The attributes of the chunk.
+    attr_accessor :attributes
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'think' => :'think',
-        :'current_question' => :'current_question',
-        :'search' => :'search'
+        :'file_id' => :'file_id',
+        :'filename' => :'filename',
+        :'score' => :'score',
+        :'text' => :'text',
+        :'attributes' => :'attributes'
       }
     end
 
@@ -69,10 +54,11 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'think' => :'String',
-        :'current_question' => :'String',
-        :'search' => :'Search'
+        :'file_id' => :'String',
+        :'filename' => :'String',
+        :'score' => :'Float',
+        :'text' => :'String',
+        :'attributes' => :'Hash<String, Object>'
       }
     end
 
@@ -86,40 +72,48 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::SearchStep` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::FileSearchResult` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::SearchStep`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::FileSearchResult`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.key?(:'file_id')
+        self.file_id = attributes[:'file_id']
       else
-        self.type = 'base_search'
+        self.file_id = nil
       end
 
-      if attributes.key?(:'think')
-        self.think = attributes[:'think']
+      if attributes.key?(:'filename')
+        self.filename = attributes[:'filename']
       else
-        self.think = nil
+        self.filename = nil
       end
 
-      if attributes.key?(:'current_question')
-        self.current_question = attributes[:'current_question']
+      if attributes.key?(:'score')
+        self.score = attributes[:'score']
       else
-        self.current_question = nil
+        self.score = nil
       end
 
-      if attributes.key?(:'search')
-        self.search = attributes[:'search']
+      if attributes.key?(:'text')
+        self.text = attributes[:'text']
       else
-        self.search = nil
+        self.text = nil
+      end
+
+      if attributes.key?(:'attributes')
+        if (value = attributes[:'attributes']).is_a?(Hash)
+          self.attributes = value
+        end
+      else
+        self.attributes = nil
       end
     end
 
@@ -128,16 +122,24 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @think.nil?
-        invalid_properties.push('invalid value for "think", think cannot be nil.')
+      if @file_id.nil?
+        invalid_properties.push('invalid value for "file_id", file_id cannot be nil.')
       end
 
-      if @current_question.nil?
-        invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
+      if @filename.nil?
+        invalid_properties.push('invalid value for "filename", filename cannot be nil.')
       end
 
-      if @search.nil?
-        invalid_properties.push('invalid value for "search", search cannot be nil.')
+      if @score.nil?
+        invalid_properties.push('invalid value for "score", score cannot be nil.')
+      end
+
+      if @text.nil?
+        invalid_properties.push('invalid value for "text", text cannot be nil.')
+      end
+
+      if @attributes.nil?
+        invalid_properties.push('invalid value for "attributes", attributes cannot be nil.')
       end
 
       invalid_properties
@@ -147,52 +149,62 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      type_validator = EnumAttributeValidator.new('String', ["base_search"])
-      return false unless type_validator.valid?(@type)
-      return false if @think.nil?
-      return false if @current_question.nil?
-      return false if @search.nil?
+      return false if @file_id.nil?
+      return false if @filename.nil?
+      return false if @score.nil?
+      return false if @text.nil?
+      return false if @attributes.nil?
       true
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ["base_search"])
-      unless validator.valid?(type)
-        fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
+    # Custom attribute writer method with validation
+    # @param [Object] file_id Value to be assigned
+    def file_id=(file_id)
+      if file_id.nil?
+        fail ArgumentError, 'file_id cannot be nil'
       end
-      @type = type
+
+      @file_id = file_id
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] think Value to be assigned
-    def think=(think)
-      if think.nil?
-        fail ArgumentError, 'think cannot be nil'
+    # @param [Object] filename Value to be assigned
+    def filename=(filename)
+      if filename.nil?
+        fail ArgumentError, 'filename cannot be nil'
       end
 
-      @think = think
+      @filename = filename
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] current_question Value to be assigned
-    def current_question=(current_question)
-      if current_question.nil?
-        fail ArgumentError, 'current_question cannot be nil'
+    # @param [Object] score Value to be assigned
+    def score=(score)
+      if score.nil?
+        fail ArgumentError, 'score cannot be nil'
       end
 
-      @current_question = current_question
+      @score = score
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] search Value to be assigned
-    def search=(search)
-      if search.nil?
-        fail ArgumentError, 'search cannot be nil'
+    # @param [Object] text Value to be assigned
+    def text=(text)
+      if text.nil?
+        fail ArgumentError, 'text cannot be nil'
       end
 
-      @search = search
+      @text = text
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] attributes Value to be assigned
+    def attributes=(attributes)
+      if attributes.nil?
+        fail ArgumentError, 'attributes cannot be nil'
+      end
+
+      @attributes = attributes
     end
 
     # Checks equality by comparing each attribute.
@@ -200,10 +212,11 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          think == o.think &&
-          current_question == o.current_question &&
-          search == o.search
+          file_id == o.file_id &&
+          filename == o.filename &&
+          score == o.score &&
+          text == o.text &&
+          attributes == o.attributes
     end
 
     # @see the `==` method
@@ -215,7 +228,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, search].hash
+      [file_id, filename, score, text, attributes].hash
     end
 
     # Builds the object from hash

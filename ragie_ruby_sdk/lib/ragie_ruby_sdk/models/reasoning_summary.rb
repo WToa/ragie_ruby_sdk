@@ -14,14 +14,11 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class ResponseOutput
+  class ReasoningSummary
+    # The summary of the reasoning.
+    attr_accessor :summary
+
     attr_accessor :type
-
-    attr_accessor :id
-
-    attr_accessor :role
-
-    attr_accessor :content
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -48,10 +45,8 @@ module RagieRubySdk
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'type',
-        :'id' => :'id',
-        :'role' => :'role',
-        :'content' => :'content'
+        :'summary' => :'summary',
+        :'type' => :'type'
       }
     end
 
@@ -68,10 +63,8 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'type' => :'String',
-        :'id' => :'String',
-        :'role' => :'String',
-        :'content' => :'Array<ResponseContent>'
+        :'summary' => :'String',
+        :'type' => :'String'
       }
     end
 
@@ -85,42 +78,28 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::ResponseOutput` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::ReasoningSummary` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::ResponseOutput`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::ReasoningSummary`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'summary')
+        self.summary = attributes[:'summary']
+      else
+        self.summary = nil
+      end
+
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
-        self.type = 'message'
-      end
-
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      else
-        self.id = nil
-      end
-
-      if attributes.key?(:'role')
-        self.role = attributes[:'role']
-      else
-        self.role = 'assistant'
-      end
-
-      if attributes.key?(:'content')
-        if (value = attributes[:'content']).is_a?(Array)
-          self.content = value
-        end
-      else
-        self.content = nil
+        self.type = 'summary'
       end
     end
 
@@ -129,12 +108,8 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
-      if @content.nil?
-        invalid_properties.push('invalid value for "content", content cannot be nil.')
+      if @summary.nil?
+        invalid_properties.push('invalid value for "summary", summary cannot be nil.')
       end
 
       invalid_properties
@@ -144,53 +119,30 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      type_validator = EnumAttributeValidator.new('String', ["message"])
+      return false if @summary.nil?
+      type_validator = EnumAttributeValidator.new('String', ["summary"])
       return false unless type_validator.valid?(@type)
-      return false if @id.nil?
-      role_validator = EnumAttributeValidator.new('String', ["assistant"])
-      return false unless role_validator.valid?(@role)
-      return false if @content.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] summary Value to be assigned
+    def summary=(summary)
+      if summary.nil?
+        fail ArgumentError, 'summary cannot be nil'
+      end
+
+      @summary = summary
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["message"])
+      validator = EnumAttributeValidator.new('String', ["summary"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
       @type = type
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] id Value to be assigned
-    def id=(id)
-      if id.nil?
-        fail ArgumentError, 'id cannot be nil'
-      end
-
-      @id = id
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] role Object to be assigned
-    def role=(role)
-      validator = EnumAttributeValidator.new('String', ["assistant"])
-      unless validator.valid?(role)
-        fail ArgumentError, "invalid value for \"role\", must be one of #{validator.allowable_values}."
-      end
-      @role = role
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] content Value to be assigned
-    def content=(content)
-      if content.nil?
-        fail ArgumentError, 'content cannot be nil'
-      end
-
-      @content = content
     end
 
     # Checks equality by comparing each attribute.
@@ -198,10 +150,8 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          id == o.id &&
-          role == o.role &&
-          content == o.content
+          summary == o.summary &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -213,7 +163,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, id, role, content].hash
+      [summary, type].hash
     end
 
     # Builds the object from hash

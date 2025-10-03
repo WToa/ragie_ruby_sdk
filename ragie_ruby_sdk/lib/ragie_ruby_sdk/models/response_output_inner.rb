@@ -14,18 +14,15 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  module FinalAnswerStepsInner
+  module ResponseOutputInner
     class << self
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of
         [
-          :'AnswerStep',
-          :'CodeStep',
-          :'EvaluatedAnswerStep',
-          :'PlanStep',
-          :'SearchStep',
-          :'SearchStepWithQueryDetails',
-          :'SurrenderStep'
+          :'CodeInterpreterOutput',
+          :'FileSearchOutput',
+          :'ReasoningOutput',
+          :'ResponseOutputMessage'
         ]
       end
 
