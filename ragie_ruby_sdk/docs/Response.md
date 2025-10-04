@@ -9,9 +9,9 @@
 | **created_at** | **Integer** |  |  |
 | **status** | **String** |  |  |
 | **error** | **String** |  | [optional] |
-| **incomplete_details** | **Object** |  | [optional] |
+| **incomplete_details** | [**Null**](Null.md) |  | [optional] |
 | **instructions** | **String** |  | [optional] |
-| **max_output_tokens** | **Object** |  | [optional] |
+| **max_output_tokens** | [**Null**](Null.md) |  | [optional] |
 | **model** | **String** |  | [optional][default to &#39;deep-search&#39;] |
 | **output** | [**Array&lt;ResponseOutputInner&gt;**](ResponseOutputInner.md) |  |  |
 | **output_parsed** | [**FinalAnswer**](FinalAnswer.md) |  | [optional] |
@@ -25,7 +25,7 @@
 | **top_p** | **Float** |  | [optional][default to 1.0] |
 | **truncation** | **String** |  | [optional][default to &#39;disabled&#39;] |
 | **usage** | [**RagieApiSchemaResponseUsage**](RagieApiSchemaResponseUsage.md) |  |  |
-| **user** | **Object** |  | [optional] |
+| **user** | [**Null**](Null.md) |  | [optional] |
 | **metadata** | **Hash&lt;String, Object&gt;** |  | [optional] |
 
 ## Example

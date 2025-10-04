@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **effort** | **String** |  |  |
-| **summary** | **Object** |  | [optional] |
+| **summary** | [**Null**](Null.md) |  | [optional] |
 
 ## Example
 

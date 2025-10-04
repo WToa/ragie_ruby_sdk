@@ -130,9 +130,9 @@ module RagieRubySdk
         :'created_at' => :'Integer',
         :'status' => :'String',
         :'error' => :'String',
-        :'incomplete_details' => :'Object',
+        :'incomplete_details' => :'Null',
         :'instructions' => :'String',
-        :'max_output_tokens' => :'Object',
+        :'max_output_tokens' => :'Null',
         :'model' => :'String',
         :'output' => :'Array<ResponseOutputInner>',
         :'output_parsed' => :'FinalAnswer',
@@ -146,7 +146,7 @@ module RagieRubySdk
         :'top_p' => :'Float',
         :'truncation' => :'String',
         :'usage' => :'RagieApiSchemaResponseUsage',
-        :'user' => :'Object',
+        :'user' => :'Null',
         :'metadata' => :'Hash<String, Object>'
       }
     end
@@ -155,12 +155,9 @@ module RagieRubySdk
     def self.openapi_nullable
       Set.new([
         :'error',
-        :'incomplete_details',
         :'instructions',
-        :'max_output_tokens',
         :'output_parsed',
         :'previous_response_id',
-        :'user',
       ])
     end
 

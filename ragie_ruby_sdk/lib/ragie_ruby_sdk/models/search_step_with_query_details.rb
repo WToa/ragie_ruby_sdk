@@ -17,6 +17,10 @@ module RagieRubySdk
   class SearchStepWithQueryDetails
     attr_accessor :type
 
+    attr_accessor :think
+
+    attr_accessor :current_question
+
     # The search request to be made.
     attr_accessor :search
 
@@ -51,6 +55,8 @@ module RagieRubySdk
     def self.attribute_map
       {
         :'type' => :'type',
+        :'think' => :'think',
+        :'current_question' => :'current_question',
         :'search' => :'search',
         :'query_details' => :'query_details',
         :'search_log' => :'search_log'
@@ -71,6 +77,8 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'type' => :'String',
+        :'think' => :'String',
+        :'current_question' => :'String',
         :'search' => :'Search',
         :'query_details' => :'Array<QueryDetails>',
         :'search_log' => :'String'
@@ -105,6 +113,18 @@ module RagieRubySdk
         self.type = 'search'
       end
 
+      if attributes.key?(:'think')
+        self.think = attributes[:'think']
+      else
+        self.think = nil
+      end
+
+      if attributes.key?(:'current_question')
+        self.current_question = attributes[:'current_question']
+      else
+        self.current_question = nil
+      end
+
       if attributes.key?(:'search')
         self.search = attributes[:'search']
       else
@@ -129,6 +149,14 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @think.nil?
+        invalid_properties.push('invalid value for "think", think cannot be nil.')
+      end
+
+      if @current_question.nil?
+        invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
+      end
+
       if @search.nil?
         invalid_properties.push('invalid value for "search", search cannot be nil.')
       end
@@ -142,6 +170,8 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       type_validator = EnumAttributeValidator.new('String', ["search"])
       return false unless type_validator.valid?(@type)
+      return false if @think.nil?
+      return false if @current_question.nil?
       return false if @search.nil?
       true
     end
@@ -154,6 +184,26 @@ module RagieRubySdk
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
       @type = type
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] think Value to be assigned
+    def think=(think)
+      if think.nil?
+        fail ArgumentError, 'think cannot be nil'
+      end
+
+      @think = think
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] current_question Value to be assigned
+    def current_question=(current_question)
+      if current_question.nil?
+        fail ArgumentError, 'current_question cannot be nil'
+      end
+
+      @current_question = current_question
     end
 
     # Custom attribute writer method with validation
@@ -172,6 +222,8 @@ module RagieRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
+          think == o.think &&
+          current_question == o.current_question &&
           search == o.search &&
           query_details == o.query_details &&
           search_log == o.search_log
@@ -186,7 +238,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, search, query_details, search_log].hash
+      [type, think, current_question, search, query_details, search_log].hash
     end
 
     # Builds the object from hash

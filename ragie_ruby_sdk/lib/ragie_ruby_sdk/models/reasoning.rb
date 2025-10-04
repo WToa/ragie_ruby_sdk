@@ -63,14 +63,13 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'effort' => :'String',
-        :'summary' => :'Object'
+        :'summary' => :'Null'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'summary'
       ])
     end
 
