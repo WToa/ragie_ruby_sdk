@@ -1,26 +1,24 @@
-# RagieRubySdk::SearchStep
+# RagieRubySdk::FailedStep
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** |  | [optional][default to &#39;base_search&#39;] |
+| **type** | **String** |  | [optional][default to &#39;failed&#39;] |
 | **think** | **String** |  |  |
 | **current_question** | **String** |  |  |
 | **errored** | **Boolean** |  | [optional][default to false] |
-| **search** | [**Search**](Search.md) | The search request to be made. |  |
 
 ## Example
 
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::SearchStep.new(
+instance = RagieRubySdk::FailedStep.new(
   type: null,
   think: null,
   current_question: null,
-  errored: null,
-  search: null
+  errored: null
 )
 ```
 

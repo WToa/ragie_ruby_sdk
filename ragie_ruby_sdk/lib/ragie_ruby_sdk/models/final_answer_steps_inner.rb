@@ -22,6 +22,7 @@ module RagieRubySdk
           :'AnswerStep',
           :'CodeStep',
           :'EvaluatedAnswerStep',
+          :'FailedStep',
           :'PlanStep',
           :'SearchStep',
           :'SearchStepWithQueryDetails',

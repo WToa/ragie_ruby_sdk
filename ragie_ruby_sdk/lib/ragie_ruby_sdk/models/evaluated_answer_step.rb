@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    attr_accessor :errored
+
     attr_accessor :answer
 
     # A list of questions ids that are no longer relevant to the current answer referenced by their IDs.
@@ -58,6 +60,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
+        :'errored' => :'errored',
         :'answer' => :'answer',
         :'other_resolved_question_ids' => :'other_resolved_question_ids',
         :'eval_passed' => :'eval_passed',
@@ -81,6 +84,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
+        :'errored' => :'Boolean',
         :'answer' => :'Answer',
         :'other_resolved_question_ids' => :'Array<String>',
         :'eval_passed' => :'Boolean',
@@ -126,6 +130,12 @@ module RagieRubySdk
         self.current_question = attributes[:'current_question']
       else
         self.current_question = nil
+      end
+
+      if attributes.key?(:'errored')
+        self.errored = attributes[:'errored']
+      else
+        self.errored = false
       end
 
       if attributes.key?(:'answer')
@@ -263,6 +273,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
+          errored == o.errored &&
           answer == o.answer &&
           other_resolved_question_ids == o.other_resolved_question_ids &&
           eval_passed == o.eval_passed &&
@@ -278,7 +289,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, answer, other_resolved_question_ids, eval_passed, eval_reason].hash
+      [type, think, current_question, errored, answer, other_resolved_question_ids, eval_passed, eval_reason].hash
     end
 
     # Builds the object from hash

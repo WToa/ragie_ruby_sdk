@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    attr_accessor :errored
+
     # A list of question ids that are no longer relevant to the current answer referenced by their IDs.
     attr_accessor :other_resolved_question_ids
 
@@ -54,6 +56,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
+        :'errored' => :'errored',
         :'other_resolved_question_ids' => :'other_resolved_question_ids',
         :'answer' => :'answer'
       }
@@ -75,6 +78,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
+        :'errored' => :'Boolean',
         :'other_resolved_question_ids' => :'Array<String>',
         :'answer' => :'Answer'
       }
@@ -118,6 +122,12 @@ module RagieRubySdk
         self.current_question = attributes[:'current_question']
       else
         self.current_question = nil
+      end
+
+      if attributes.key?(:'errored')
+        self.errored = attributes[:'errored']
+      else
+        self.errored = false
       end
 
       if attributes.key?(:'other_resolved_question_ids')
@@ -213,6 +223,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
+          errored == o.errored &&
           other_resolved_question_ids == o.other_resolved_question_ids &&
           answer == o.answer
     end
@@ -226,7 +237,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, other_resolved_question_ids, answer].hash
+      [type, think, current_question, errored, other_resolved_question_ids, answer].hash
     end
 
     # Builds the object from hash

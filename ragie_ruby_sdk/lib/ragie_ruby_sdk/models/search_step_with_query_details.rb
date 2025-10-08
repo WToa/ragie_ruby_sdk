@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    attr_accessor :errored
+
     # The search request to be made.
     attr_accessor :search
 
@@ -57,6 +59,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
+        :'errored' => :'errored',
         :'search' => :'search',
         :'query_details' => :'query_details',
         :'search_log' => :'search_log'
@@ -79,6 +82,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
+        :'errored' => :'Boolean',
         :'search' => :'Search',
         :'query_details' => :'Array<QueryDetails>',
         :'search_log' => :'String'
@@ -123,6 +127,12 @@ module RagieRubySdk
         self.current_question = attributes[:'current_question']
       else
         self.current_question = nil
+      end
+
+      if attributes.key?(:'errored')
+        self.errored = attributes[:'errored']
+      else
+        self.errored = false
       end
 
       if attributes.key?(:'search')
@@ -224,6 +234,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
+          errored == o.errored &&
           search == o.search &&
           query_details == o.query_details &&
           search_log == o.search_log
@@ -238,7 +249,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, search, query_details, search_log].hash
+      [type, think, current_question, errored, search, query_details, search_log].hash
     end
 
     # Builds the object from hash

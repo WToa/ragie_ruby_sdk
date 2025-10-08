@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class CodeStep
+  class FailedStep
     attr_accessor :type
 
     attr_accessor :think
@@ -22,15 +22,6 @@ module RagieRubySdk
     attr_accessor :current_question
 
     attr_accessor :errored
-
-    # The natural language description of the code issue you need to solve.
-    attr_accessor :code_issue
-
-    # The code you generated to solve the code issue.
-    attr_accessor :code
-
-    # The result of the code you generated after executing it.
-    attr_accessor :code_result
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -60,10 +51,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
-        :'errored' => :'errored',
-        :'code_issue' => :'code_issue',
-        :'code' => :'code',
-        :'code_result' => :'code_result'
+        :'errored' => :'errored'
       }
     end
 
@@ -83,10 +71,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
-        :'errored' => :'Boolean',
-        :'code_issue' => :'String',
-        :'code' => :'String',
-        :'code_result' => :'String'
+        :'errored' => :'Boolean'
       }
     end
 
@@ -100,14 +85,14 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::CodeStep` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::FailedStep` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::CodeStep`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::FailedStep`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -115,7 +100,7 @@ module RagieRubySdk
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
-        self.type = 'code'
+        self.type = 'failed'
       end
 
       if attributes.key?(:'think')
@@ -135,24 +120,6 @@ module RagieRubySdk
       else
         self.errored = false
       end
-
-      if attributes.key?(:'code_issue')
-        self.code_issue = attributes[:'code_issue']
-      else
-        self.code_issue = nil
-      end
-
-      if attributes.key?(:'code')
-        self.code = attributes[:'code']
-      else
-        self.code = ''
-      end
-
-      if attributes.key?(:'code_result')
-        self.code_result = attributes[:'code_result']
-      else
-        self.code_result = ''
-      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -168,10 +135,6 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "current_question", current_question cannot be nil.')
       end
 
-      if @code_issue.nil?
-        invalid_properties.push('invalid value for "code_issue", code_issue cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -179,18 +142,17 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      type_validator = EnumAttributeValidator.new('String', ["code"])
+      type_validator = EnumAttributeValidator.new('String', ["failed"])
       return false unless type_validator.valid?(@type)
       return false if @think.nil?
       return false if @current_question.nil?
-      return false if @code_issue.nil?
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["code"])
+      validator = EnumAttributeValidator.new('String', ["failed"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
@@ -217,16 +179,6 @@ module RagieRubySdk
       @current_question = current_question
     end
 
-    # Custom attribute writer method with validation
-    # @param [Object] code_issue Value to be assigned
-    def code_issue=(code_issue)
-      if code_issue.nil?
-        fail ArgumentError, 'code_issue cannot be nil'
-      end
-
-      @code_issue = code_issue
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -235,10 +187,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
-          errored == o.errored &&
-          code_issue == o.code_issue &&
-          code == o.code &&
-          code_result == o.code_result
+          errored == o.errored
     end
 
     # @see the `==` method
@@ -250,7 +199,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, errored, code_issue, code, code_result].hash
+      [type, think, current_question, errored].hash
     end
 
     # Builds the object from hash

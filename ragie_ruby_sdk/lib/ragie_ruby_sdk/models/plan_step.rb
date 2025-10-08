@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    attr_accessor :errored
+
     # The questions that need to be answered to answer the original question.
     attr_accessor :questions_to_answer
 
@@ -52,6 +54,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
+        :'errored' => :'errored',
         :'questions_to_answer' => :'questions_to_answer'
       }
     end
@@ -72,6 +75,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
+        :'errored' => :'Boolean',
         :'questions_to_answer' => :'Array<String>'
       }
     end
@@ -114,6 +118,12 @@ module RagieRubySdk
         self.current_question = attributes[:'current_question']
       else
         self.current_question = nil
+      end
+
+      if attributes.key?(:'errored')
+        self.errored = attributes[:'errored']
+      else
+        self.errored = false
       end
 
       if attributes.key?(:'questions_to_answer')
@@ -188,6 +198,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
+          errored == o.errored &&
           questions_to_answer == o.questions_to_answer
     end
 
@@ -200,7 +211,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, questions_to_answer].hash
+      [type, think, current_question, errored, questions_to_answer].hash
     end
 
     # Builds the object from hash

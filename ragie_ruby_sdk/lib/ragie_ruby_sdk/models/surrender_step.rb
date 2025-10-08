@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :current_question
 
+    attr_accessor :errored
+
     # The a potential partial answer when a full answer was not possible.
     attr_accessor :partial_answer
 
@@ -52,6 +54,7 @@ module RagieRubySdk
         :'type' => :'type',
         :'think' => :'think',
         :'current_question' => :'current_question',
+        :'errored' => :'errored',
         :'partial_answer' => :'partial_answer'
       }
     end
@@ -72,6 +75,7 @@ module RagieRubySdk
         :'type' => :'String',
         :'think' => :'String',
         :'current_question' => :'String',
+        :'errored' => :'Boolean',
         :'partial_answer' => :'Answer'
       }
     end
@@ -114,6 +118,12 @@ module RagieRubySdk
         self.current_question = attributes[:'current_question']
       else
         self.current_question = nil
+      end
+
+      if attributes.key?(:'errored')
+        self.errored = attributes[:'errored']
+      else
+        self.errored = false
       end
 
       if attributes.key?(:'partial_answer')
@@ -203,6 +213,7 @@ module RagieRubySdk
           type == o.type &&
           think == o.think &&
           current_question == o.current_question &&
+          errored == o.errored &&
           partial_answer == o.partial_answer
     end
 
@@ -215,7 +226,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [type, think, current_question, partial_answer].hash
+      [type, think, current_question, errored, partial_answer].hash
     end
 
     # Builds the object from hash
