@@ -351,7 +351,7 @@ module RagieRubySdk
       return false unless object_validator.valid?(@object)
       return false if @created_at.nil?
       return false if @status.nil?
-      status_validator = EnumAttributeValidator.new('String', ["completed", "failed", "in_progress"])
+      status_validator = EnumAttributeValidator.new('String', ["completed", "failed", "in_progress", "cancelled"])
       return false unless status_validator.valid?(@status)
       model_validator = EnumAttributeValidator.new('String', ["deep-search"])
       return false unless model_validator.valid?(@model)
@@ -399,7 +399,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["completed", "failed", "in_progress"])
+      validator = EnumAttributeValidator.new('String', ["completed", "failed", "in_progress", "cancelled"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
