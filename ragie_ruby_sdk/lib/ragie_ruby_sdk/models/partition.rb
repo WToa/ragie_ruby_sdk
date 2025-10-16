@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :limit_exceeded_at
 
+    attr_accessor :description
+
     attr_accessor :limits
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -29,6 +31,7 @@ module RagieRubySdk
         :'name' => :'name',
         :'is_default' => :'is_default',
         :'limit_exceeded_at' => :'limit_exceeded_at',
+        :'description' => :'description',
         :'limits' => :'limits'
       }
     end
@@ -49,6 +52,7 @@ module RagieRubySdk
         :'name' => :'String',
         :'is_default' => :'Boolean',
         :'limit_exceeded_at' => :'Time',
+        :'description' => :'String',
         :'limits' => :'PartitionLimits'
       }
     end
@@ -57,6 +61,7 @@ module RagieRubySdk
     def self.openapi_nullable
       Set.new([
         :'limit_exceeded_at',
+        :'description',
       ])
     end
 
@@ -90,6 +95,12 @@ module RagieRubySdk
 
       if attributes.key?(:'limit_exceeded_at')
         self.limit_exceeded_at = attributes[:'limit_exceeded_at']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      else
+        self.description = nil
       end
 
       if attributes.key?(:'limits')
@@ -167,6 +178,7 @@ module RagieRubySdk
           name == o.name &&
           is_default == o.is_default &&
           limit_exceeded_at == o.limit_exceeded_at &&
+          description == o.description &&
           limits == o.limits
     end
 
@@ -179,7 +191,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, is_default, limit_exceeded_at, limits].hash
+      [name, is_default, limit_exceeded_at, description, limits].hash
     end
 
     # Builds the object from hash

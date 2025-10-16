@@ -17,6 +17,8 @@ module RagieRubySdk
   class CreatePartitionParams
     attr_accessor :name
 
+    attr_accessor :description
+
     attr_accessor :pages_hosted_limit_monthly
 
     attr_accessor :pages_processed_limit_monthly
@@ -47,6 +49,7 @@ module RagieRubySdk
     def self.attribute_map
       {
         :'name' => :'name',
+        :'description' => :'description',
         :'pages_hosted_limit_monthly' => :'pages_hosted_limit_monthly',
         :'pages_processed_limit_monthly' => :'pages_processed_limit_monthly',
         :'pages_hosted_limit_max' => :'pages_hosted_limit_max',
@@ -77,6 +80,7 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'name' => :'String',
+        :'description' => :'String',
         :'pages_hosted_limit_monthly' => :'Integer',
         :'pages_processed_limit_monthly' => :'Integer',
         :'pages_hosted_limit_max' => :'Integer',
@@ -96,6 +100,7 @@ module RagieRubySdk
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'description',
         :'pages_hosted_limit_monthly',
         :'pages_processed_limit_monthly',
         :'pages_hosted_limit_max',
@@ -132,6 +137,10 @@ module RagieRubySdk
         self.name = attributes[:'name']
       else
         self.name = nil
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
       end
 
       if attributes.key?(:'pages_hosted_limit_monthly')
@@ -405,6 +414,7 @@ module RagieRubySdk
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
+          description == o.description &&
           pages_hosted_limit_monthly == o.pages_hosted_limit_monthly &&
           pages_processed_limit_monthly == o.pages_processed_limit_monthly &&
           pages_hosted_limit_max == o.pages_hosted_limit_max &&
@@ -429,7 +439,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, pages_hosted_limit_monthly, pages_processed_limit_monthly, pages_hosted_limit_max, pages_processed_limit_max, audio_processed_limit_monthly, audio_processed_limit_max, video_processed_limit_monthly, video_processed_limit_max, media_streamed_limit_monthly, media_streamed_limit_max, media_hosted_limit_monthly, media_hosted_limit_max, metadata_schema].hash
+      [name, description, pages_hosted_limit_monthly, pages_processed_limit_monthly, pages_hosted_limit_max, pages_processed_limit_max, audio_processed_limit_monthly, audio_processed_limit_max, video_processed_limit_monthly, video_processed_limit_max, media_streamed_limit_monthly, media_streamed_limit_max, media_hosted_limit_monthly, media_hosted_limit_max, metadata_schema].hash
     end
 
     # Builds the object from hash

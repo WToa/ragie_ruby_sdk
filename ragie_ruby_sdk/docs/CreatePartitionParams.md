@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  |  |
+| **description** | **String** |  | [optional] |
 | **pages_hosted_limit_monthly** | **Integer** |  | [optional] |
 | **pages_processed_limit_monthly** | **Integer** |  | [optional] |
 | **pages_hosted_limit_max** | **Integer** |  | [optional] |
@@ -26,6 +27,7 @@ require 'ragie_ruby_sdk'
 
 instance = RagieRubySdk::CreatePartitionParams.new(
   name: null,
+  description: null,
   pages_hosted_limit_monthly: null,
   pages_processed_limit_monthly: null,
   pages_hosted_limit_max: null,
