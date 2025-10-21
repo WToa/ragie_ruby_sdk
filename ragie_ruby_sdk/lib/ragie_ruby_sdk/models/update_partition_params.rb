@@ -14,31 +14,19 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  class Partition
-    attr_accessor :name
-
-    attr_accessor :is_default
-
-    attr_accessor :limit_exceeded_at
+  class UpdatePartitionParams
+    attr_accessor :context_aware
 
     attr_accessor :description
 
-    attr_accessor :context_aware
-
     attr_accessor :metadata_schema
-
-    attr_accessor :limits
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'name' => :'name',
-        :'is_default' => :'is_default',
-        :'limit_exceeded_at' => :'limit_exceeded_at',
-        :'description' => :'description',
         :'context_aware' => :'context_aware',
-        :'metadata_schema' => :'metadata_schema',
-        :'limits' => :'limits'
+        :'description' => :'description',
+        :'metadata_schema' => :'metadata_schema'
       }
     end
 
@@ -55,22 +43,18 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'name' => :'String',
-        :'is_default' => :'Boolean',
-        :'limit_exceeded_at' => :'Time',
-        :'description' => :'String',
         :'context_aware' => :'Boolean',
-        :'metadata_schema' => :'Hash<String, CreatePartitionParamsMetadataSchemaValue>',
-        :'limits' => :'PartitionLimits'
+        :'description' => :'String',
+        :'metadata_schema' => :'Hash<String, CreatePartitionParamsMetadataSchemaValue>'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'limit_exceeded_at',
+        :'context_aware',
         :'description',
-        :'metadata_schema',
+        :'metadata_schema'
       ])
     end
 
@@ -78,58 +62,30 @@ module RagieRubySdk
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::Partition` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `RagieRubySdk::UpdatePartitionParams` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::Partition`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `RagieRubySdk::UpdatePartitionParams`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      else
-        self.name = nil
-      end
-
-      if attributes.key?(:'is_default')
-        self.is_default = attributes[:'is_default']
-      else
-        self.is_default = nil
-      end
-
-      if attributes.key?(:'limit_exceeded_at')
-        self.limit_exceeded_at = attributes[:'limit_exceeded_at']
+      if attributes.key?(:'context_aware')
+        self.context_aware = attributes[:'context_aware']
       end
 
       if attributes.key?(:'description')
         self.description = attributes[:'description']
-      else
-        self.description = nil
-      end
-
-      if attributes.key?(:'context_aware')
-        self.context_aware = attributes[:'context_aware']
-      else
-        self.context_aware = nil
       end
 
       if attributes.key?(:'metadata_schema')
         if (value = attributes[:'metadata_schema']).is_a?(Hash)
           self.metadata_schema = value
         end
-      else
-        self.metadata_schema = nil
-      end
-
-      if attributes.key?(:'limits')
-        self.limits = attributes[:'limits']
-      else
-        self.limits = nil
       end
     end
 
@@ -138,22 +94,6 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
-      if @is_default.nil?
-        invalid_properties.push('invalid value for "is_default", is_default cannot be nil.')
-      end
-
-      if @context_aware.nil?
-        invalid_properties.push('invalid value for "context_aware", context_aware cannot be nil.')
-      end
-
-      if @limits.nil?
-        invalid_properties.push('invalid value for "limits", limits cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -161,51 +101,7 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @name.nil?
-      return false if @is_default.nil?
-      return false if @context_aware.nil?
-      return false if @limits.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] name Value to be assigned
-    def name=(name)
-      if name.nil?
-        fail ArgumentError, 'name cannot be nil'
-      end
-
-      @name = name
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] is_default Value to be assigned
-    def is_default=(is_default)
-      if is_default.nil?
-        fail ArgumentError, 'is_default cannot be nil'
-      end
-
-      @is_default = is_default
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] context_aware Value to be assigned
-    def context_aware=(context_aware)
-      if context_aware.nil?
-        fail ArgumentError, 'context_aware cannot be nil'
-      end
-
-      @context_aware = context_aware
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] limits Value to be assigned
-    def limits=(limits)
-      if limits.nil?
-        fail ArgumentError, 'limits cannot be nil'
-      end
-
-      @limits = limits
     end
 
     # Checks equality by comparing each attribute.
@@ -213,13 +109,9 @@ module RagieRubySdk
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          name == o.name &&
-          is_default == o.is_default &&
-          limit_exceeded_at == o.limit_exceeded_at &&
-          description == o.description &&
           context_aware == o.context_aware &&
-          metadata_schema == o.metadata_schema &&
-          limits == o.limits
+          description == o.description &&
+          metadata_schema == o.metadata_schema
     end
 
     # @see the `==` method
@@ -231,7 +123,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, is_default, limit_exceeded_at, description, context_aware, metadata_schema, limits].hash
+      [context_aware, description, metadata_schema].hash
     end
 
     # Builds the object from hash

@@ -8,6 +8,8 @@
 | **is_default** | **Boolean** |  |  |
 | **limit_exceeded_at** | **Time** |  | [optional] |
 | **description** | **String** |  |  |
+| **context_aware** | **Boolean** |  |  |
+| **metadata_schema** | [**Hash&lt;String, CreatePartitionParamsMetadataSchemaValue&gt;**](CreatePartitionParamsMetadataSchemaValue.md) |  |  |
 | **limits** | [**PartitionLimits**](PartitionLimits.md) |  |  |
 | **stats** | [**PartitionStats**](PartitionStats.md) |  |  |
 
@@ -21,6 +23,8 @@ instance = RagieRubySdk::PartitionDetail.new(
   is_default: null,
   limit_exceeded_at: null,
   description: null,
+  context_aware: null,
+  metadata_schema: null,
   limits: null,
   stats: null
 )

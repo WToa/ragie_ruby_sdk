@@ -150,132 +150,6 @@ module RagieRubySdk
       return data, status_code, headers
     end
 
-    # Disable Mcp
-    # Disables context-aware descriptions for a partition. This will stop automatically generating descriptions for the partition.
-    # @param partition_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Object]
-    def disable_mcp_partitions_partition_id_mcp_delete(partition_id, opts = {})
-      data, _status_code, _headers = disable_mcp_partitions_partition_id_mcp_delete_with_http_info(partition_id, opts)
-      data
-    end
-
-    # Disable Mcp
-    # Disables context-aware descriptions for a partition. This will stop automatically generating descriptions for the partition.
-    # @param partition_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def disable_mcp_partitions_partition_id_mcp_delete_with_http_info(partition_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: PartitionsApi.disable_mcp_partitions_partition_id_mcp_delete ...'
-      end
-      # verify the required parameter 'partition_id' is set
-      if @api_client.config.client_side_validation && partition_id.nil?
-        fail ArgumentError, "Missing the required parameter 'partition_id' when calling PartitionsApi.disable_mcp_partitions_partition_id_mcp_delete"
-      end
-      # resource path
-      local_var_path = '/partitions/{partition_id}/mcp'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['auth']
-
-      new_options = opts.merge(
-        :operation => :"PartitionsApi.disable_mcp_partitions_partition_id_mcp_delete",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: PartitionsApi#disable_mcp_partitions_partition_id_mcp_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # Enable Mcp
-    # Enables context-aware descriptions for a partition. This will allow the automatically generate a desccription for based on the documents in the partition.
-    # @param partition_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Object]
-    def enable_mcp_partitions_partition_id_mcp_post(partition_id, opts = {})
-      data, _status_code, _headers = enable_mcp_partitions_partition_id_mcp_post_with_http_info(partition_id, opts)
-      data
-    end
-
-    # Enable Mcp
-    # Enables context-aware descriptions for a partition. This will allow the automatically generate a desccription for based on the documents in the partition.
-    # @param partition_id [String] 
-    # @param [Hash] opts the optional parameters
-    # @return [Array<(Object, Integer, Hash)>] Object data, response status code and response headers
-    def enable_mcp_partitions_partition_id_mcp_post_with_http_info(partition_id, opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: PartitionsApi.enable_mcp_partitions_partition_id_mcp_post ...'
-      end
-      # verify the required parameter 'partition_id' is set
-      if @api_client.config.client_side_validation && partition_id.nil?
-        fail ArgumentError, "Missing the required parameter 'partition_id' when calling PartitionsApi.enable_mcp_partitions_partition_id_mcp_post"
-      end
-      # resource path
-      local_var_path = '/partitions/{partition_id}/mcp'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
-
-      # query parameters
-      query_params = opts[:query_params] || {}
-
-      # header parameters
-      header_params = opts[:header_params] || {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
-
-      # form parameters
-      form_params = opts[:form_params] || {}
-
-      # http body (model)
-      post_body = opts[:debug_body]
-
-      # return_type
-      return_type = opts[:debug_return_type] || 'Object'
-
-      # auth_names
-      auth_names = opts[:debug_auth_names] || ['auth']
-
-      new_options = opts.merge(
-        :operation => :"PartitionsApi.enable_mcp_partitions_partition_id_mcp_post",
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => return_type
-      )
-
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: PartitionsApi#enable_mcp_partitions_partition_id_mcp_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
     # Get Partition
     # Get a partition by its ID. Includes usage information such as the number of documents and pages hosted and processed. The partition's limits are also included.
     # @param partition_id [String] 
@@ -480,6 +354,80 @@ module RagieRubySdk
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PartitionsApi#set_partition_limits_partitions_partition_id_limits_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Update Partition
+    # Updates a partition. This includes the partition's description and metadata schema.
+    # @param partition_id [String] 
+    # @param update_partition_params [UpdatePartitionParams] 
+    # @param [Hash] opts the optional parameters
+    # @return [PartitionDetail]
+    def update_partition_partitions_partition_id_patch(partition_id, update_partition_params, opts = {})
+      data, _status_code, _headers = update_partition_partitions_partition_id_patch_with_http_info(partition_id, update_partition_params, opts)
+      data
+    end
+
+    # Update Partition
+    # Updates a partition. This includes the partition&#39;s description and metadata schema.
+    # @param partition_id [String] 
+    # @param update_partition_params [UpdatePartitionParams] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(PartitionDetail, Integer, Hash)>] PartitionDetail data, response status code and response headers
+    def update_partition_partitions_partition_id_patch_with_http_info(partition_id, update_partition_params, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: PartitionsApi.update_partition_partitions_partition_id_patch ...'
+      end
+      # verify the required parameter 'partition_id' is set
+      if @api_client.config.client_side_validation && partition_id.nil?
+        fail ArgumentError, "Missing the required parameter 'partition_id' when calling PartitionsApi.update_partition_partitions_partition_id_patch"
+      end
+      # verify the required parameter 'update_partition_params' is set
+      if @api_client.config.client_side_validation && update_partition_params.nil?
+        fail ArgumentError, "Missing the required parameter 'update_partition_params' when calling PartitionsApi.update_partition_partitions_partition_id_patch"
+      end
+      # resource path
+      local_var_path = '/partitions/{partition_id}'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(update_partition_params)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'PartitionDetail'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['auth']
+
+      new_options = opts.merge(
+        :operation => :"PartitionsApi.update_partition_partitions_partition_id_patch",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: PartitionsApi#update_partition_partitions_partition_id_patch\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

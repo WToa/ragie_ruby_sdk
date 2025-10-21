@@ -23,6 +23,10 @@ module RagieRubySdk
 
     attr_accessor :description
 
+    attr_accessor :context_aware
+
+    attr_accessor :metadata_schema
+
     attr_accessor :limits
 
     attr_accessor :stats
@@ -34,6 +38,8 @@ module RagieRubySdk
         :'is_default' => :'is_default',
         :'limit_exceeded_at' => :'limit_exceeded_at',
         :'description' => :'description',
+        :'context_aware' => :'context_aware',
+        :'metadata_schema' => :'metadata_schema',
         :'limits' => :'limits',
         :'stats' => :'stats'
       }
@@ -56,6 +62,8 @@ module RagieRubySdk
         :'is_default' => :'Boolean',
         :'limit_exceeded_at' => :'Time',
         :'description' => :'String',
+        :'context_aware' => :'Boolean',
+        :'metadata_schema' => :'Hash<String, CreatePartitionParamsMetadataSchemaValue>',
         :'limits' => :'PartitionLimits',
         :'stats' => :'PartitionStats'
       }
@@ -66,6 +74,7 @@ module RagieRubySdk
       Set.new([
         :'limit_exceeded_at',
         :'description',
+        :'metadata_schema',
       ])
     end
 
@@ -107,6 +116,20 @@ module RagieRubySdk
         self.description = nil
       end
 
+      if attributes.key?(:'context_aware')
+        self.context_aware = attributes[:'context_aware']
+      else
+        self.context_aware = nil
+      end
+
+      if attributes.key?(:'metadata_schema')
+        if (value = attributes[:'metadata_schema']).is_a?(Hash)
+          self.metadata_schema = value
+        end
+      else
+        self.metadata_schema = nil
+      end
+
       if attributes.key?(:'limits')
         self.limits = attributes[:'limits']
       else
@@ -133,6 +156,10 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "is_default", is_default cannot be nil.')
       end
 
+      if @context_aware.nil?
+        invalid_properties.push('invalid value for "context_aware", context_aware cannot be nil.')
+      end
+
       if @limits.nil?
         invalid_properties.push('invalid value for "limits", limits cannot be nil.')
       end
@@ -150,6 +177,7 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @name.nil?
       return false if @is_default.nil?
+      return false if @context_aware.nil?
       return false if @limits.nil?
       return false if @stats.nil?
       true
@@ -173,6 +201,16 @@ module RagieRubySdk
       end
 
       @is_default = is_default
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] context_aware Value to be assigned
+    def context_aware=(context_aware)
+      if context_aware.nil?
+        fail ArgumentError, 'context_aware cannot be nil'
+      end
+
+      @context_aware = context_aware
     end
 
     # Custom attribute writer method with validation
@@ -204,6 +242,8 @@ module RagieRubySdk
           is_default == o.is_default &&
           limit_exceeded_at == o.limit_exceeded_at &&
           description == o.description &&
+          context_aware == o.context_aware &&
+          metadata_schema == o.metadata_schema &&
           limits == o.limits &&
           stats == o.stats
     end
@@ -217,7 +257,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, is_default, limit_exceeded_at, description, limits, stats].hash
+      [name, is_default, limit_exceeded_at, description, context_aware, metadata_schema, limits, stats].hash
     end
 
     # Builds the object from hash

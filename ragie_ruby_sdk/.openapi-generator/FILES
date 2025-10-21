@@ -185,6 +185,7 @@ docs/Tool.md
 docs/UpdateDocumentFromUrlParams.md
 docs/UpdateDocumentRawParams.md
 docs/UpdateInstructionParams.md
+docs/UpdatePartitionParams.md
 docs/ValidationError.md
 docs/ValidationErrorLocInner.md
 docs/VideoModalityData.md
@@ -374,6 +375,7 @@ lib/ragie_ruby_sdk/models/tool.rb
 lib/ragie_ruby_sdk/models/update_document_from_url_params.rb
 lib/ragie_ruby_sdk/models/update_document_raw_params.rb
 lib/ragie_ruby_sdk/models/update_instruction_params.rb
+lib/ragie_ruby_sdk/models/update_partition_params.rb
 lib/ragie_ruby_sdk/models/validation_error.rb
 lib/ragie_ruby_sdk/models/validation_error_loc_inner.rb
 lib/ragie_ruby_sdk/models/video_modality_data.rb
@@ -560,6 +562,7 @@ spec/models/tool_spec.rb
 spec/models/update_document_from_url_params_spec.rb
 spec/models/update_document_raw_params_spec.rb
 spec/models/update_instruction_params_spec.rb
+spec/models/update_partition_params_spec.rb
 spec/models/validation_error_loc_inner_spec.rb
 spec/models/validation_error_spec.rb
 spec/models/video_modality_data_spec.rb

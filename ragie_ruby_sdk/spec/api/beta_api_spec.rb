@@ -81,30 +81,6 @@ describe 'BetaApi' do
     end
   end
 
-  # unit tests for disable_mcp_partitions_partition_id_mcp_delete
-  # Disable Mcp
-  # Disables context-aware descriptions for a partition. This will stop automatically generating descriptions for the partition.
-  # @param partition_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'disable_mcp_partitions_partition_id_mcp_delete test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for enable_mcp_partitions_partition_id_mcp_post
-  # Enable Mcp
-  # Enables context-aware descriptions for a partition. This will allow the automatically generate a desccription for based on the documents in the partition.
-  # @param partition_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'enable_mcp_partitions_partition_id_mcp_post test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for list_authenticators
   # List Authenticators
   # List all authenticators sorted by created_at in descending order. Results are paginated with a max limit of 100. When more authenticators are available, a &#x60;cursor&#x60; will be provided. Use the &#x60;cursor&#x60; parameter to retrieve the subsequent page.

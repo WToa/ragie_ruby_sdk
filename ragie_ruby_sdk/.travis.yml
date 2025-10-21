@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build ragie_ruby_sdk.gemspec
-  - gem install ./ragie_ruby_sdk-1.0.20.gem
+  - gem install ./ragie_ruby_sdk-1.0.21.gem

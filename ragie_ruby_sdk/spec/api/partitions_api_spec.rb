@@ -56,30 +56,6 @@ describe 'PartitionsApi' do
     end
   end
 
-  # unit tests for disable_mcp_partitions_partition_id_mcp_delete
-  # Disable Mcp
-  # Disables context-aware descriptions for a partition. This will stop automatically generating descriptions for the partition.
-  # @param partition_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'disable_mcp_partitions_partition_id_mcp_delete test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for enable_mcp_partitions_partition_id_mcp_post
-  # Enable Mcp
-  # Enables context-aware descriptions for a partition. This will allow the automatically generate a desccription for based on the documents in the partition.
-  # @param partition_id 
-  # @param [Hash] opts the optional parameters
-  # @return [Object]
-  describe 'enable_mcp_partitions_partition_id_mcp_post test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for get_partition_partitions_partition_id_get
   # Get Partition
   # Get a partition by its ID. Includes usage information such as the number of documents and pages hosted and processed. The partition&#39;s limits are also included.
@@ -113,6 +89,19 @@ describe 'PartitionsApi' do
   # @param [Hash] opts the optional parameters
   # @return [PartitionDetail]
   describe 'set_partition_limits_partitions_partition_id_limits_put test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for update_partition_partitions_partition_id_patch
+  # Update Partition
+  # Updates a partition. This includes the partition&#39;s description and metadata schema.
+  # @param partition_id 
+  # @param update_partition_params 
+  # @param [Hash] opts the optional parameters
+  # @return [PartitionDetail]
+  describe 'update_partition_partitions_partition_id_patch test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
