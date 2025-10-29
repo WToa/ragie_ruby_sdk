@@ -206,6 +206,7 @@ lib/ragie_ruby_sdk/api/responses_api.rb
 lib/ragie_ruby_sdk/api/retrievals_api.rb
 lib/ragie_ruby_sdk/api_client.rb
 lib/ragie_ruby_sdk/api_error.rb
+lib/ragie_ruby_sdk/api_model_base.rb
 lib/ragie_ruby_sdk/configuration.rb
 lib/ragie_ruby_sdk/models/access_token_credentials.rb
 lib/ragie_ruby_sdk/models/agent_hopps_models_models_usage.rb

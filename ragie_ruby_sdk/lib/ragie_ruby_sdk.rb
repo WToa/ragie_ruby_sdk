@@ -13,6 +13,7 @@ Generator version: 7.17.0-SNAPSHOT
 # Common files
 require 'ragie_ruby_sdk/api_client'
 require 'ragie_ruby_sdk/api_error'
+require 'ragie_ruby_sdk/api_model_base'
 require 'ragie_ruby_sdk/version'
 require 'ragie_ruby_sdk/configuration'
 
