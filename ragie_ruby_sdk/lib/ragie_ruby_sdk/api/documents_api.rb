@@ -726,7 +726,7 @@ module RagieRubySdk
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/octet-stream', 'application/json']) unless header_params['Accept']
+      header_params['Accept'] = @api_client.select_header_accept(['*/*', 'application/json']) unless header_params['Accept']
       header_params[:'partition'] = opts[:'partition'] if !opts[:'partition'].nil?
 
       # form parameters

@@ -771,7 +771,7 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream, application/json
+- **Accept**: */*, application/json
 
 
 ## get_document_summary

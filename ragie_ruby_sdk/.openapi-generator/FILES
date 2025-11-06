@@ -176,6 +176,7 @@ docs/SearchStep.md
 docs/SearchStepWithQueryDetails.md
 docs/SetConnectionEnabledPayload.md
 docs/SharepointData.md
+docs/SharepointDriveData.md
 docs/SharepointFileData.md
 docs/SharepointSiteData.md
 docs/SlackData.md
@@ -367,6 +368,7 @@ lib/ragie_ruby_sdk/models/search_step.rb
 lib/ragie_ruby_sdk/models/search_step_with_query_details.rb
 lib/ragie_ruby_sdk/models/set_connection_enabled_payload.rb
 lib/ragie_ruby_sdk/models/sharepoint_data.rb
+lib/ragie_ruby_sdk/models/sharepoint_drive_data.rb
 lib/ragie_ruby_sdk/models/sharepoint_file_data.rb
 lib/ragie_ruby_sdk/models/sharepoint_site_data.rb
 lib/ragie_ruby_sdk/models/slack_data.rb
@@ -554,6 +556,7 @@ spec/models/search_step_spec.rb
 spec/models/search_step_with_query_details_spec.rb
 spec/models/set_connection_enabled_payload_spec.rb
 spec/models/sharepoint_data_spec.rb
+spec/models/sharepoint_drive_data_spec.rb
 spec/models/sharepoint_file_data_spec.rb
 spec/models/sharepoint_site_data_spec.rb
 spec/models/slack_data_spec.rb

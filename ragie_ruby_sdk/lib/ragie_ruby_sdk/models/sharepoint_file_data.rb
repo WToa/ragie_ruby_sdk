@@ -21,6 +21,8 @@ module RagieRubySdk
 
     attr_accessor :type
 
+    attr_accessor :drive_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -48,7 +50,8 @@ module RagieRubySdk
       {
         :'id' => :'id',
         :'name' => :'name',
-        :'type' => :'type'
+        :'type' => :'type',
+        :'drive_id' => :'drive_id'
       }
     end
 
@@ -67,13 +70,15 @@ module RagieRubySdk
       {
         :'id' => :'String',
         :'name' => :'String',
-        :'type' => :'String'
+        :'type' => :'String',
+        :'drive_id' => :'String'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'drive_id'
       ])
     end
 
@@ -109,6 +114,12 @@ module RagieRubySdk
         self.type = attributes[:'type']
       else
         self.type = nil
+      end
+
+      if attributes.key?(:'drive_id')
+        self.drive_id = attributes[:'drive_id']
+      else
+        self.drive_id = nil
       end
     end
 
@@ -181,7 +192,8 @@ module RagieRubySdk
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
-          type == o.type
+          type == o.type &&
+          drive_id == o.drive_id
     end
 
     # @see the `==` method
@@ -193,7 +205,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, type].hash
+      [id, name, type, drive_id].hash
     end
 
     # Builds the object from hash

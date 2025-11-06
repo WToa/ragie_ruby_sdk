@@ -1,4 +1,4 @@
-# RagieRubySdk::SharepointFileData
+# RagieRubySdk::SharepointDriveData
 
 ## Properties
 
@@ -6,19 +6,15 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  |  |
 | **name** | **String** |  |  |
-| **type** | **String** |  |  |
-| **drive_id** | **String** |  |  |
 
 ## Example
 
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::SharepointFileData.new(
+instance = RagieRubySdk::SharepointDriveData.new(
   id: null,
-  name: null,
-  type: null,
-  drive_id: null
+  name: null
 )
 ```
 
