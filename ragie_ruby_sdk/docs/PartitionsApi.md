@@ -83,7 +83,7 @@ end
 
 ## delete_partition_partitions_partition_id_delete
 
-> Hash&lt;String, String&gt; delete_partition_partitions_partition_id_delete(partition_id)
+> <ResponseOK> delete_partition_partitions_partition_id_delete(partition_id, opts)
 
 Delete Partition
 
@@ -102,10 +102,13 @@ end
 
 api_instance = RagieRubySdk::PartitionsApi.new
 partition_id = 'partition_id_example' # String | 
+opts = {
+  async: true # Boolean | If true, performs partition deletion asynchronously.
+}
 
 begin
   # Delete Partition
-  result = api_instance.delete_partition_partitions_partition_id_delete(partition_id)
+  result = api_instance.delete_partition_partitions_partition_id_delete(partition_id, opts)
   p result
 rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->delete_partition_partitions_partition_id_delete: #{e}"
@@ -116,15 +119,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Hash&lt;String, String&gt;, Integer, Hash)> delete_partition_partitions_partition_id_delete_with_http_info(partition_id)
+> <Array(<ResponseOK>, Integer, Hash)> delete_partition_partitions_partition_id_delete_with_http_info(partition_id, opts)
 
 ```ruby
 begin
   # Delete Partition
-  data, status_code, headers = api_instance.delete_partition_partitions_partition_id_delete_with_http_info(partition_id)
+  data, status_code, headers = api_instance.delete_partition_partitions_partition_id_delete_with_http_info(partition_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Hash&lt;String, String&gt;
+  p data # => <ResponseOK>
 rescue RagieRubySdk::ApiError => e
   puts "Error when calling PartitionsApi->delete_partition_partitions_partition_id_delete_with_http_info: #{e}"
 end
@@ -135,10 +138,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **partition_id** | **String** |  |  |
+| **async** | **Boolean** | If true, performs partition deletion asynchronously. | [optional] |
 
 ### Return type
 
-**Hash&lt;String, String&gt;**
+[**ResponseOK**](ResponseOK.md)
 
 ### Authorization
 

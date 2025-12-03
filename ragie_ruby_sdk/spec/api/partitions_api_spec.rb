@@ -49,7 +49,8 @@ describe 'PartitionsApi' do
   # Deletes a partition and all of its associated data. This includes connections, documents, and partition specific instructions. This operation is irreversible.
   # @param partition_id 
   # @param [Hash] opts the optional parameters
-  # @return [Hash<String, String>]
+  # @option opts [Boolean] :async If true, performs partition deletion asynchronously.
+  # @return [ResponseOK]
   describe 'delete_partition_partitions_partition_id_delete test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

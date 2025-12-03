@@ -91,7 +91,8 @@ module RagieRubySdk
     # Deletes a partition and all of its associated data. This includes connections, documents, and partition specific instructions. This operation is irreversible.
     # @param partition_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Hash<String, String>]
+    # @option opts [Boolean] :async If true, performs partition deletion asynchronously.
+    # @return [ResponseOK]
     def delete_partition_partitions_partition_id_delete(partition_id, opts = {})
       data, _status_code, _headers = delete_partition_partitions_partition_id_delete_with_http_info(partition_id, opts)
       data
@@ -101,7 +102,8 @@ module RagieRubySdk
     # Deletes a partition and all of its associated data. This includes connections, documents, and partition specific instructions. This operation is irreversible.
     # @param partition_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Hash<String, String>, Integer, Hash)>] Hash<String, String> data, response status code and response headers
+    # @option opts [Boolean] :async If true, performs partition deletion asynchronously.
+    # @return [Array<(ResponseOK, Integer, Hash)>] ResponseOK data, response status code and response headers
     def delete_partition_partitions_partition_id_delete_with_http_info(partition_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: PartitionsApi.delete_partition_partitions_partition_id_delete ...'
@@ -115,6 +117,7 @@ module RagieRubySdk
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'async'] = opts[:'async'] if !opts[:'async'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -128,7 +131,7 @@ module RagieRubySdk
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Hash<String, String>'
+      return_type = opts[:debug_return_type] || 'ResponseOK'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['auth']
