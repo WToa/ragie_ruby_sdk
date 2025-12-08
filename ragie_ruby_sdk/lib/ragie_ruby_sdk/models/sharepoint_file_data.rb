@@ -19,6 +19,8 @@ module RagieRubySdk
 
     attr_accessor :name
 
+    attr_accessor :path
+
     attr_accessor :type
 
     attr_accessor :drive_id
@@ -50,6 +52,7 @@ module RagieRubySdk
       {
         :'id' => :'id',
         :'name' => :'name',
+        :'path' => :'path',
         :'type' => :'type',
         :'drive_id' => :'drive_id'
       }
@@ -70,6 +73,7 @@ module RagieRubySdk
       {
         :'id' => :'String',
         :'name' => :'String',
+        :'path' => :'String',
         :'type' => :'String',
         :'drive_id' => :'String'
       }
@@ -110,6 +114,12 @@ module RagieRubySdk
         self.name = nil
       end
 
+      if attributes.key?(:'path')
+        self.path = attributes[:'path']
+      else
+        self.path = nil
+      end
+
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
@@ -136,6 +146,10 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
+      if @path.nil?
+        invalid_properties.push('invalid value for "path", path cannot be nil.')
+      end
+
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
@@ -149,6 +163,7 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @id.nil?
       return false if @name.nil?
+      return false if @path.nil?
       return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ["file", "folder"])
       return false unless type_validator.valid?(@type)
@@ -175,6 +190,16 @@ module RagieRubySdk
       @name = name
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] path Value to be assigned
+    def path=(path)
+      if path.nil?
+        fail ArgumentError, 'path cannot be nil'
+      end
+
+      @path = path
+    end
+
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
@@ -192,6 +217,7 @@ module RagieRubySdk
       self.class == o.class &&
           id == o.id &&
           name == o.name &&
+          path == o.path &&
           type == o.type &&
           drive_id == o.drive_id
     end
@@ -205,7 +231,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, type, drive_id].hash
+      [id, name, path, type, drive_id].hash
     end
 
     # Builds the object from hash

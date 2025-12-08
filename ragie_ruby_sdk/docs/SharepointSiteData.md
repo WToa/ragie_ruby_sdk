@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  |  |
 | **name** | **String** |  |  |
+| **display_name** | **String** |  |  |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'ragie_ruby_sdk'
 
 instance = RagieRubySdk::SharepointSiteData.new(
   id: null,
-  name: null
+  name: null,
+  display_name: null
 )
 ```
 

@@ -19,11 +19,14 @@ module RagieRubySdk
 
     attr_accessor :name
 
+    attr_accessor :display_name
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'id' => :'id',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'display_name' => :'display_name'
       }
     end
 
@@ -41,7 +44,8 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'id' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'display_name' => :'String'
       }
     end
 
@@ -78,6 +82,12 @@ module RagieRubySdk
       else
         self.name = nil
       end
+
+      if attributes.key?(:'display_name')
+        self.display_name = attributes[:'display_name']
+      else
+        self.display_name = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -93,6 +103,10 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "name", name cannot be nil.')
       end
 
+      if @display_name.nil?
+        invalid_properties.push('invalid value for "display_name", display_name cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -102,6 +116,7 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @id.nil?
       return false if @name.nil?
+      return false if @display_name.nil?
       true
     end
 
@@ -125,13 +140,24 @@ module RagieRubySdk
       @name = name
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] display_name Value to be assigned
+    def display_name=(display_name)
+      if display_name.nil?
+        fail ArgumentError, 'display_name cannot be nil'
+      end
+
+      @display_name = display_name
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           id == o.id &&
-          name == o.name
+          name == o.name &&
+          display_name == o.display_name
     end
 
     # @see the `==` method
@@ -143,7 +169,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name].hash
+      [id, name, display_name].hash
     end
 
     # Builds the object from hash
