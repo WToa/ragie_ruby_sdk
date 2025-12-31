@@ -1,4 +1,4 @@
-# RagieRubySdk::ResponseOutputInner
+# RagieRubySdk::OutputInner
 
 ## Properties
 
@@ -22,7 +22,7 @@
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::ResponseOutputInner.new(
+instance = RagieRubySdk::OutputInner.new(
   type: null,
   id: null,
   role: null,

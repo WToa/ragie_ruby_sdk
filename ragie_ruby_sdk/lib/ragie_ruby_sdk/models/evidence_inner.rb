@@ -14,15 +14,13 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  module ResponseOutputInner
+  module EvidenceInner
     class << self
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of
         [
-          :'CodeInterpreterOutput',
-          :'FileSearchOutput',
-          :'ReasoningOutput',
-          :'ResponseOutputMessage'
+          :'CodeInterpreterEvidence',
+          :'RagieEvidence'
         ]
       end
 

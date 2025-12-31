@@ -1,4 +1,4 @@
-# RagieRubySdk::FinalAnswerEvidenceInner
+# RagieRubySdk::EvidenceInner
 
 ## Properties
 
@@ -22,7 +22,7 @@
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::FinalAnswerEvidenceInner.new(
+instance = RagieRubySdk::EvidenceInner.new(
   type: null,
   text: null,
   code: null,

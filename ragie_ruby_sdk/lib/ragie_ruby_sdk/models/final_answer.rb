@@ -51,8 +51,8 @@ module RagieRubySdk
     def self.openapi_types
       {
         :'text' => :'String',
-        :'evidence' => :'Array<FinalAnswerEvidenceInner>',
-        :'steps' => :'Array<FinalAnswerStepsInner>',
+        :'evidence' => :'Array<EvidenceInner>',
+        :'steps' => :'Array<StepsInner>',
         :'usage' => :'AgentHoppsModelsModelsUsage'
       }
     end

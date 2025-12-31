@@ -43,7 +43,7 @@ module RagieRubySdk
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'loc' => :'Array<ValidationErrorLocInner>',
+        :'loc' => :'Array<LocationInner>',
         :'msg' => :'String',
         :'type' => :'String'
       }

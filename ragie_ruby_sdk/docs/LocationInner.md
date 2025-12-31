@@ -1,4 +1,4 @@
-# RagieRubySdk::ValidationErrorLocInner
+# RagieRubySdk::LocationInner
 
 ## Properties
 
@@ -10,6 +10,6 @@
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::ValidationErrorLocInner.new()
+instance = RagieRubySdk::LocationInner.new()
 ```
 

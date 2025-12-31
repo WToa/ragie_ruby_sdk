@@ -14,13 +14,15 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  module ValidationErrorLocInner
+  module OutputInner
     class << self
       # List of class defined in anyOf (OpenAPI v3)
       def openapi_any_of
         [
-          :'Integer',
-          :'String'
+          :'CodeInterpreterOutput',
+          :'FileSearchOutput',
+          :'ReasoningOutput',
+          :'ResponseOutputMessage'
         ]
       end
 

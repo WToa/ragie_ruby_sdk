@@ -13,7 +13,7 @@
 | **instructions** | **String** |  | [optional] |
 | **max_output_tokens** | [**Null**](Null.md) |  | [optional] |
 | **model** | **String** |  | [optional][default to &#39;deep-search&#39;] |
-| **output** | [**Array&lt;ResponseOutputInner&gt;**](ResponseOutputInner.md) |  |  |
+| **output** | [**Array&lt;OutputInner&gt;**](OutputInner.md) |  |  |
 | **output_parsed** | [**FinalAnswer**](FinalAnswer.md) |  | [optional] |
 | **tools** | [**Array&lt;Tool&gt;**](Tool.md) |  |  |
 | **reasoning** | [**Reasoning**](Reasoning.md) |  |  |

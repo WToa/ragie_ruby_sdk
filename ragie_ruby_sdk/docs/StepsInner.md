@@ -1,4 +1,4 @@
-# RagieRubySdk::FinalAnswerStepsInner
+# RagieRubySdk::StepsInner
 
 ## Properties
 
@@ -26,7 +26,7 @@
 ```ruby
 require 'ragie_ruby_sdk'
 
-instance = RagieRubySdk::FinalAnswerStepsInner.new(
+instance = RagieRubySdk::StepsInner.new(
   type: null,
   think: null,
   current_question: null,

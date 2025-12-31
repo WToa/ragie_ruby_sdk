@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **loc** | [**Array&lt;ValidationErrorLocInner&gt;**](ValidationErrorLocInner.md) |  |  |
+| **loc** | [**Array&lt;LocationInner&gt;**](LocationInner.md) |  |  |
 | **msg** | **String** |  |  |
 | **type** | **String** |  |  |
 
