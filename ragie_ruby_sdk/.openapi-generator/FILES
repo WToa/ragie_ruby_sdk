@@ -63,6 +63,7 @@ docs/CreateGoogleAuthenticator.md
 docs/CreateInstructionParams.md
 docs/CreatePartitionParams.md
 docs/CreatePartitionParamsMetadataSchemaValue.md
+docs/CreateWebhookEndpointPayload.md
 docs/Data.md
 docs/DefaultApi.md
 docs/DeleteConnectionPayload.md
@@ -188,8 +189,12 @@ docs/UpdateDocumentFromUrlParams.md
 docs/UpdateDocumentRawParams.md
 docs/UpdateInstructionParams.md
 docs/UpdatePartitionParams.md
+docs/UpdateWebhookEndpointPayload.md
 docs/ValidationError.md
 docs/VideoModalityData.md
+docs/WebhookEndpoint.md
+docs/WebhookEndpointList.md
+docs/WebhookEndpointsApi.md
 docs/WordTimestamp.md
 docs/ZendeskCredentials.md
 docs/ZendeskData.md
@@ -205,6 +210,7 @@ lib/ragie_ruby_sdk/api/entities_api.rb
 lib/ragie_ruby_sdk/api/partitions_api.rb
 lib/ragie_ruby_sdk/api/responses_api.rb
 lib/ragie_ruby_sdk/api/retrievals_api.rb
+lib/ragie_ruby_sdk/api/webhook_endpoints_api.rb
 lib/ragie_ruby_sdk/api_client.rb
 lib/ragie_ruby_sdk/api_error.rb
 lib/ragie_ruby_sdk/api_model_base.rb
@@ -262,6 +268,7 @@ lib/ragie_ruby_sdk/models/create_google_authenticator.rb
 lib/ragie_ruby_sdk/models/create_instruction_params.rb
 lib/ragie_ruby_sdk/models/create_partition_params.rb
 lib/ragie_ruby_sdk/models/create_partition_params_metadata_schema_value.rb
+lib/ragie_ruby_sdk/models/create_webhook_endpoint_payload.rb
 lib/ragie_ruby_sdk/models/data.rb
 lib/ragie_ruby_sdk/models/delete_connection_payload.rb
 lib/ragie_ruby_sdk/models/document.rb
@@ -380,8 +387,11 @@ lib/ragie_ruby_sdk/models/update_document_from_url_params.rb
 lib/ragie_ruby_sdk/models/update_document_raw_params.rb
 lib/ragie_ruby_sdk/models/update_instruction_params.rb
 lib/ragie_ruby_sdk/models/update_partition_params.rb
+lib/ragie_ruby_sdk/models/update_webhook_endpoint_payload.rb
 lib/ragie_ruby_sdk/models/validation_error.rb
 lib/ragie_ruby_sdk/models/video_modality_data.rb
+lib/ragie_ruby_sdk/models/webhook_endpoint.rb
+lib/ragie_ruby_sdk/models/webhook_endpoint_list.rb
 lib/ragie_ruby_sdk/models/word_timestamp.rb
 lib/ragie_ruby_sdk/models/zendesk_credentials.rb
 lib/ragie_ruby_sdk/models/zendesk_data.rb
@@ -397,6 +407,7 @@ spec/api/entities_api_spec.rb
 spec/api/partitions_api_spec.rb
 spec/api/responses_api_spec.rb
 spec/api/retrievals_api_spec.rb
+spec/api/webhook_endpoints_api_spec.rb
 spec/models/access_token_credentials_spec.rb
 spec/models/agent_hopps_models_models_usage_spec.rb
 spec/models/answer_spec.rb
@@ -450,6 +461,7 @@ spec/models/create_google_authenticator_spec.rb
 spec/models/create_instruction_params_spec.rb
 spec/models/create_partition_params_metadata_schema_value_spec.rb
 spec/models/create_partition_params_spec.rb
+spec/models/create_webhook_endpoint_payload_spec.rb
 spec/models/data_spec.rb
 spec/models/delete_connection_payload_spec.rb
 spec/models/document_chunk_detail_modality_data_spec.rb
@@ -568,8 +580,11 @@ spec/models/update_document_from_url_params_spec.rb
 spec/models/update_document_raw_params_spec.rb
 spec/models/update_instruction_params_spec.rb
 spec/models/update_partition_params_spec.rb
+spec/models/update_webhook_endpoint_payload_spec.rb
 spec/models/validation_error_spec.rb
 spec/models/video_modality_data_spec.rb
+spec/models/webhook_endpoint_list_spec.rb
+spec/models/webhook_endpoint_spec.rb
 spec/models/word_timestamp_spec.rb
 spec/models/zendesk_credentials_spec.rb
 spec/models/zendesk_data_spec.rb
