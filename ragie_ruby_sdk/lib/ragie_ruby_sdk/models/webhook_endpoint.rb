@@ -29,6 +29,8 @@ module RagieRubySdk
 
     attr_accessor :active
 
+    attr_accessor :secret
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -38,7 +40,8 @@ module RagieRubySdk
         :'name' => :'name',
         :'url' => :'url',
         :'partition_pattern' => :'partition_pattern',
-        :'active' => :'active'
+        :'active' => :'active',
+        :'secret' => :'secret'
       }
     end
 
@@ -61,7 +64,8 @@ module RagieRubySdk
         :'name' => :'String',
         :'url' => :'String',
         :'partition_pattern' => :'String',
-        :'active' => :'Boolean'
+        :'active' => :'Boolean',
+        :'secret' => :'String'
       }
     end
 
@@ -129,6 +133,12 @@ module RagieRubySdk
       else
         self.active = nil
       end
+
+      if attributes.key?(:'secret')
+        self.secret = attributes[:'secret']
+      else
+        self.secret = nil
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -168,6 +178,10 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "active", active cannot be nil.')
       end
 
+      if @secret.nil?
+        invalid_properties.push('invalid value for "secret", secret cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -183,6 +197,7 @@ module RagieRubySdk
       return false if @url.to_s.length > 2083
       return false if @url.to_s.length < 1
       return false if @active.nil?
+      return false if @secret.nil?
       true
     end
 
@@ -254,6 +269,16 @@ module RagieRubySdk
       @active = active
     end
 
+    # Custom attribute writer method with validation
+    # @param [Object] secret Value to be assigned
+    def secret=(secret)
+      if secret.nil?
+        fail ArgumentError, 'secret cannot be nil'
+      end
+
+      @secret = secret
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -265,7 +290,8 @@ module RagieRubySdk
           name == o.name &&
           url == o.url &&
           partition_pattern == o.partition_pattern &&
-          active == o.active
+          active == o.active &&
+          secret == o.secret
     end
 
     # @see the `==` method
@@ -277,7 +303,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created_at, updated_at, name, url, partition_pattern, active].hash
+      [id, created_at, updated_at, name, url, partition_pattern, active, secret].hash
     end
 
     # Builds the object from hash

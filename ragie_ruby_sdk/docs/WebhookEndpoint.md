@@ -11,6 +11,7 @@
 | **url** | **String** |  |  |
 | **partition_pattern** | **String** |  |  |
 | **active** | **Boolean** |  |  |
+| **secret** | **String** |  |  |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = RagieRubySdk::WebhookEndpoint.new(
   name: null,
   url: null,
   partition_pattern: null,
-  active: null
+  active: null,
+  secret: null
 )
 ```
 
