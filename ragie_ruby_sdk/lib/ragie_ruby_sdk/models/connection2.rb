@@ -24,6 +24,7 @@ module RagieRubySdk
           :'PublicGCSConnection',
           :'PublicIntercomConnection',
           :'PublicS3CompatibleConnection',
+          :'PublicWebcrawlerConnection',
           :'PublicZendeskConnection'
         ]
       end
@@ -41,6 +42,7 @@ module RagieRubySdk
           :'gcs' => :'PublicGCSConnection',
           :'intercom' => :'PublicIntercomConnection',
           :'s3' => :'PublicS3CompatibleConnection',
+          :'webcrawler' => :'PublicWebcrawlerConnection',
           :'zendesk' => :'PublicZendeskConnection'
         }
       end

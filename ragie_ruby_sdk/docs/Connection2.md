@@ -19,6 +19,7 @@ RagieRubySdk::Connection2.openapi_one_of
 #   :'PublicGCSConnection',
 #   :'PublicIntercomConnection',
 #   :'PublicS3CompatibleConnection',
+#   :'PublicWebcrawlerConnection',
 #   :'PublicZendeskConnection'
 # ]
 ```
@@ -53,6 +54,7 @@ RagieRubySdk::Connection2.openapi_discriminator_mapping
 #   :'gcs' => :'PublicGCSConnection',
 #   :'intercom' => :'PublicIntercomConnection',
 #   :'s3' => :'PublicS3CompatibleConnection',
+#   :'webcrawler' => :'PublicWebcrawlerConnection',
 #   :'zendesk' => :'PublicZendeskConnection'
 # }
 ```
@@ -86,6 +88,7 @@ RagieRubySdk::Connection2.build(data_that_doesnt_match)
 - `PublicGCSConnection`
 - `PublicIntercomConnection`
 - `PublicS3CompatibleConnection`
+- `PublicWebcrawlerConnection`
 - `PublicZendeskConnection`
 - `nil` (if no type matches)
 

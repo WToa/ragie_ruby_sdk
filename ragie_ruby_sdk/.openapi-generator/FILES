@@ -150,6 +150,7 @@ docs/PublicFreshdeskConnection.md
 docs/PublicGCSConnection.md
 docs/PublicIntercomConnection.md
 docs/PublicS3CompatibleConnection.md
+docs/PublicWebcrawlerConnection.md
 docs/PublicZendeskConnection.md
 docs/QueryDetails.md
 docs/RagieApiSchemaResponseUsage.md
@@ -192,6 +193,7 @@ docs/UpdatePartitionParams.md
 docs/UpdateWebhookEndpointPayload.md
 docs/ValidationError.md
 docs/VideoModalityData.md
+docs/WebcrawlerData.md
 docs/WebhookEndpoint.md
 docs/WebhookEndpointList.md
 docs/WebhookEndpointsApi.md
@@ -350,6 +352,7 @@ lib/ragie_ruby_sdk/models/public_freshdesk_connection.rb
 lib/ragie_ruby_sdk/models/public_gcs_connection.rb
 lib/ragie_ruby_sdk/models/public_intercom_connection.rb
 lib/ragie_ruby_sdk/models/public_s3_compatible_connection.rb
+lib/ragie_ruby_sdk/models/public_webcrawler_connection.rb
 lib/ragie_ruby_sdk/models/public_zendesk_connection.rb
 lib/ragie_ruby_sdk/models/query_details.rb
 lib/ragie_ruby_sdk/models/ragie_api_schema_response_usage.rb
@@ -390,6 +393,7 @@ lib/ragie_ruby_sdk/models/update_partition_params.rb
 lib/ragie_ruby_sdk/models/update_webhook_endpoint_payload.rb
 lib/ragie_ruby_sdk/models/validation_error.rb
 lib/ragie_ruby_sdk/models/video_modality_data.rb
+lib/ragie_ruby_sdk/models/webcrawler_data.rb
 lib/ragie_ruby_sdk/models/webhook_endpoint.rb
 lib/ragie_ruby_sdk/models/webhook_endpoint_list.rb
 lib/ragie_ruby_sdk/models/word_timestamp.rb
@@ -543,6 +547,7 @@ spec/models/public_freshdesk_connection_spec.rb
 spec/models/public_gcs_connection_spec.rb
 spec/models/public_intercom_connection_spec.rb
 spec/models/public_s3_compatible_connection_spec.rb
+spec/models/public_webcrawler_connection_spec.rb
 spec/models/public_zendesk_connection_spec.rb
 spec/models/query_details_spec.rb
 spec/models/ragie_api_schema_response_usage_spec.rb
@@ -583,6 +588,7 @@ spec/models/update_partition_params_spec.rb
 spec/models/update_webhook_endpoint_payload_spec.rb
 spec/models/validation_error_spec.rb
 spec/models/video_modality_data_spec.rb
+spec/models/webcrawler_data_spec.rb
 spec/models/webhook_endpoint_list_spec.rb
 spec/models/webhook_endpoint_spec.rb
 spec/models/word_timestamp_spec.rb
