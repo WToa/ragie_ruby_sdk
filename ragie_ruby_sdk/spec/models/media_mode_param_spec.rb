@@ -30,7 +30,7 @@ describe RagieRubySdk::MediaModeParam do
   describe 'test attribute "static"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["hi_res", "fast"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["hi_res", "fast", "agentic_ocr"])
       # validator.allowable_values.each do |value|
       #   expect { instance.static = value }.not_to raise_error
       # end

@@ -121,7 +121,7 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      static_validator = EnumAttributeValidator.new('String', ["hi_res", "fast"])
+      static_validator = EnumAttributeValidator.new('String', ["hi_res", "fast", "agentic_ocr"])
       return false unless static_validator.valid?(@static)
       video_validator = EnumAttributeValidator.new('String', ["audio_only", "video_only", "audio_video"])
       return false unless video_validator.valid?(@video)
@@ -131,7 +131,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] static Object to be assigned
     def static=(static)
-      validator = EnumAttributeValidator.new('String', ["hi_res", "fast"])
+      validator = EnumAttributeValidator.new('String', ["hi_res", "fast", "agentic_ocr"])
       unless validator.valid?(static)
         fail ArgumentError, "invalid value for \"static\", must be one of #{validator.allowable_values}."
       end

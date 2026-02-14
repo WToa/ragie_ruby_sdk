@@ -11,5 +11,5 @@ Generator version: 7.20.0-SNAPSHOT
 =end
 
 module RagieRubySdk
-  VERSION = '1.0.35'
+  VERSION = '1.0.36'
 end
