@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** |  |  |
+| **type** | **String** |  | [optional][default to &#39;ListItem&#39;] |
 | **content** | **String** |  |  |
 
 ## Example

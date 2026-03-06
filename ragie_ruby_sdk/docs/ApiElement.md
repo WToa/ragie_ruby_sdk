@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** |  | [default to &#39;Text&#39;] |
+| **type** | **String** |  | [optional][default to &#39;Text&#39;] |
 | **content** | **String** |  |  |
 | **handwritten** | **Boolean** | True if handwritten, false otherwise | [optional][default to false] |
 | **latex** | **String** |  | [optional] |

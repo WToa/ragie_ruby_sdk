@@ -237,7 +237,6 @@ docs/Title.md
 docs/Tool.md
 docs/UncategorizedText.md
 docs/UnorderedList.md
-docs/UnstructuredSectionHeader.md
 docs/UpdateDocumentFromUrlParams.md
 docs/UpdateDocumentRawParams.md
 docs/UpdateInstructionParams.md
@@ -493,7 +492,6 @@ lib/ragie_ruby_sdk/models/title.rb
 lib/ragie_ruby_sdk/models/tool.rb
 lib/ragie_ruby_sdk/models/uncategorized_text.rb
 lib/ragie_ruby_sdk/models/unordered_list.rb
-lib/ragie_ruby_sdk/models/unstructured_section_header.rb
 lib/ragie_ruby_sdk/models/update_document_from_url_params.rb
 lib/ragie_ruby_sdk/models/update_document_raw_params.rb
 lib/ragie_ruby_sdk/models/update_instruction_params.rb
@@ -744,7 +742,6 @@ spec/models/title_spec.rb
 spec/models/tool_spec.rb
 spec/models/uncategorized_text_spec.rb
 spec/models/unordered_list_spec.rb
-spec/models/unstructured_section_header_spec.rb
 spec/models/update_document_from_url_params_spec.rb
 spec/models/update_document_raw_params_spec.rb
 spec/models/update_instruction_params_spec.rb

@@ -59,7 +59,6 @@ module RagieRubySdk
           :'Title',
           :'UncategorizedText',
           :'UnorderedList',
-          :'UnstructuredSectionHeader',
           :'Video',
           :'VideoSegment',
           :'Watermark'

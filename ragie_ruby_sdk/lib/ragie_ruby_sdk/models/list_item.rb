@@ -14,7 +14,6 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
-  # Unstructured specific element, don't include in Agentic.
   class ListItem < ApiModelBase
     attr_accessor :type
 
@@ -93,7 +92,7 @@ module RagieRubySdk
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       else
-        self.type = nil
+        self.type = 'ListItem'
       end
 
       if attributes.key?(:'content')
@@ -108,10 +107,6 @@ module RagieRubySdk
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
       if @content.nil?
         invalid_properties.push('invalid value for "content", content cannot be nil.')
       end
@@ -123,8 +118,7 @@ module RagieRubySdk
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ["ListItem", "List Item"])
+      type_validator = EnumAttributeValidator.new('String', ["ListItem"])
       return false unless type_validator.valid?(@type)
       return false if @content.nil?
       true
@@ -133,7 +127,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["ListItem", "List Item"])
+      validator = EnumAttributeValidator.new('String', ["ListItem"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for \"type\", must be one of #{validator.allowable_values}."
       end
