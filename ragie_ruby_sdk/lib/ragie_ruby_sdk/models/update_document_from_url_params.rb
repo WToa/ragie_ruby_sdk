@@ -88,6 +88,14 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "url", url cannot be nil.')
       end
 
+      if @url.to_s.length > 2083
+        invalid_properties.push('invalid value for "url", the character length must be smaller than or equal to 2083.')
+      end
+
+      if @url.to_s.length < 1
+        invalid_properties.push('invalid value for "url", the character length must be greater than or equal to 1.')
+      end
+
       invalid_properties
     end
 
@@ -96,6 +104,8 @@ module RagieRubySdk
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @url.nil?
+      return false if @url.to_s.length > 2083
+      return false if @url.to_s.length < 1
       true
     end
 
@@ -104,6 +114,14 @@ module RagieRubySdk
     def url=(url)
       if url.nil?
         fail ArgumentError, 'url cannot be nil'
+      end
+
+      if url.to_s.length > 2083
+        fail ArgumentError, 'invalid value for "url", the character length must be smaller than or equal to 2083.'
+      end
+
+      if url.to_s.length < 1
+        fail ArgumentError, 'invalid value for "url", the character length must be greater than or equal to 1.'
       end
 
       @url = url
