@@ -84,12 +84,43 @@ describe 'EntitiesApi' do
     end
   end
 
+  # unit tests for list_instruction_entity_extraction_logs
+  # Get Instruction Entity Extraction Logs
+  # List entity extraction logs for an instruction. Results are attempt-level and include both successful and unsuccessful extraction outcomes. Results are sorted by created_at in descending order and paginated. Historical extraction attempts before 2026-03-06 are unavailable in this endpoint.
+  # @param instruction_id The ID of the instruction.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :cursor An opaque cursor for pagination
+  # @option opts [Integer] :page_size The number of items per page (must be greater than 0 and less than or equal to 100)
+  # @option opts [Array<String>] :document_ids Optional document IDs to filter extraction logs to.
+  # @option opts [String] :status Optional extraction status filter. Supported values are &#x60;extracted&#x60;, &#x60;not_found&#x60;, and &#x60;error&#x60;.
+  # @option opts [Time] :created_after Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &gt;&#x3D; created_after&#x60;.
+  # @option opts [Time] :created_before Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &lt; created_before&#x60;.
+  # @option opts [String] :partition An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
+  # @return [InstructionEntityExtractionLogList]
+  describe 'list_instruction_entity_extraction_logs test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for list_instructions
   # List Instructions
   # List all instructions.
   # @param [Hash] opts the optional parameters
   # @return [Array<Instruction>]
   describe 'list_instructions test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for patch_instruction
+  # Patch Instruction
+  # @param instruction_id The ID of the instruction.
+  # @param patch_instruction_params 
+  # @param [Hash] opts the optional parameters
+  # @return [Instruction]
+  describe 'patch_instruction test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

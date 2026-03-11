@@ -137,6 +137,8 @@ docs/HubspotData.md
 docs/Image.md
 docs/InputTokenDetails.md
 docs/Instruction.md
+docs/InstructionEntityExtractionLog.md
+docs/InstructionEntityExtractionLogList.md
 docs/IntercomCredentials.md
 docs/IntercomData.md
 docs/Json.md
@@ -179,6 +181,7 @@ docs/PartitionStats.md
 docs/PartitionStrategy.md
 docs/PartitionsApi.md
 docs/PatchDocumentMetadataParams.md
+docs/PatchInstructionParams.md
 docs/Payload.md
 docs/PlanStep.md
 docs/PublicBackblazeConnection.md
@@ -395,6 +398,8 @@ lib/ragie_ruby_sdk/models/hubspot_data.rb
 lib/ragie_ruby_sdk/models/image.rb
 lib/ragie_ruby_sdk/models/input_token_details.rb
 lib/ragie_ruby_sdk/models/instruction.rb
+lib/ragie_ruby_sdk/models/instruction_entity_extraction_log.rb
+lib/ragie_ruby_sdk/models/instruction_entity_extraction_log_list.rb
 lib/ragie_ruby_sdk/models/intercom_credentials.rb
 lib/ragie_ruby_sdk/models/intercom_data.rb
 lib/ragie_ruby_sdk/models/json.rb
@@ -436,6 +441,7 @@ lib/ragie_ruby_sdk/models/partition_list.rb
 lib/ragie_ruby_sdk/models/partition_stats.rb
 lib/ragie_ruby_sdk/models/partition_strategy.rb
 lib/ragie_ruby_sdk/models/patch_document_metadata_params.rb
+lib/ragie_ruby_sdk/models/patch_instruction_params.rb
 lib/ragie_ruby_sdk/models/payload.rb
 lib/ragie_ruby_sdk/models/plan_step.rb
 lib/ragie_ruby_sdk/models/public_backblaze_connection.rb
@@ -644,6 +650,8 @@ spec/models/http_validation_error_spec.rb
 spec/models/hubspot_data_spec.rb
 spec/models/image_spec.rb
 spec/models/input_token_details_spec.rb
+spec/models/instruction_entity_extraction_log_list_spec.rb
+spec/models/instruction_entity_extraction_log_spec.rb
 spec/models/instruction_spec.rb
 spec/models/intercom_credentials_spec.rb
 spec/models/intercom_data_spec.rb
@@ -686,6 +694,7 @@ spec/models/partition_spec.rb
 spec/models/partition_stats_spec.rb
 spec/models/partition_strategy_spec.rb
 spec/models/patch_document_metadata_params_spec.rb
+spec/models/patch_instruction_params_spec.rb
 spec/models/payload_spec.rb
 spec/models/plan_step_spec.rb
 spec/models/public_backblaze_connection_spec.rb

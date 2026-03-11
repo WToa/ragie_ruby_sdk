@@ -8,7 +8,9 @@ All URIs are relative to *https://api.ragie.ai*
 | [**delete_instruction**](EntitiesApi.md#delete_instruction) | **DELETE** /instructions/{instruction_id} | Delete Instruction |
 | [**list_entities_by_document**](EntitiesApi.md#list_entities_by_document) | **GET** /documents/{document_id}/entities | Get Document Extracted Entities |
 | [**list_entities_by_instruction**](EntitiesApi.md#list_entities_by_instruction) | **GET** /instructions/{instruction_id}/entities | Get Instruction Extracted Entities |
+| [**list_instruction_entity_extraction_logs**](EntitiesApi.md#list_instruction_entity_extraction_logs) | **GET** /instructions/{instruction_id}/entity-extraction-logs | Get Instruction Entity Extraction Logs |
 | [**list_instructions**](EntitiesApi.md#list_instructions) | **GET** /instructions | List Instructions |
+| [**patch_instruction**](EntitiesApi.md#patch_instruction) | **PATCH** /instructions/{instruction_id} | Patch Instruction |
 | [**update_instruction**](EntitiesApi.md#update_instruction) | **PUT** /instructions/{instruction_id} | Update Instruction |
 
 
@@ -300,6 +302,91 @@ end
 - **Accept**: application/json
 
 
+## list_instruction_entity_extraction_logs
+
+> <InstructionEntityExtractionLogList> list_instruction_entity_extraction_logs(instruction_id, opts)
+
+Get Instruction Entity Extraction Logs
+
+List entity extraction logs for an instruction. Results are attempt-level and include both successful and unsuccessful extraction outcomes. Results are sorted by created_at in descending order and paginated. Historical extraction attempts before 2026-03-06 are unavailable in this endpoint.
+
+### Examples
+
+```ruby
+require 'time'
+require 'ragie_ruby_sdk'
+# setup authorization
+RagieRubySdk.configure do |config|
+  # Configure Bearer authorization: auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = RagieRubySdk::EntitiesApi.new
+instruction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the instruction.
+opts = {
+  cursor: 'cursor_example', # String | An opaque cursor for pagination
+  page_size: 56, # Integer | The number of items per page (must be greater than 0 and less than or equal to 100)
+  document_ids: ['inner_example'], # Array<String> | Optional document IDs to filter extraction logs to.
+  status: 'extracted', # String | Optional extraction status filter. Supported values are `extracted`, `not_found`, and `error`.
+  created_after: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Optional ISO 8601 timestamp. Includes only logs with `created_at >= created_after`.
+  created_before: Time.parse('2013-10-20T19:20:30+01:00'), # Time | Optional ISO 8601 timestamp. Includes only logs with `created_at < created_before`.
+  partition: 'partition_example' # String | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
+}
+
+begin
+  # Get Instruction Entity Extraction Logs
+  result = api_instance.list_instruction_entity_extraction_logs(instruction_id, opts)
+  p result
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling EntitiesApi->list_instruction_entity_extraction_logs: #{e}"
+end
+```
+
+#### Using the list_instruction_entity_extraction_logs_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<InstructionEntityExtractionLogList>, Integer, Hash)> list_instruction_entity_extraction_logs_with_http_info(instruction_id, opts)
+
+```ruby
+begin
+  # Get Instruction Entity Extraction Logs
+  data, status_code, headers = api_instance.list_instruction_entity_extraction_logs_with_http_info(instruction_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <InstructionEntityExtractionLogList>
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling EntitiesApi->list_instruction_entity_extraction_logs_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **instruction_id** | **String** | The ID of the instruction. |  |
+| **cursor** | **String** | An opaque cursor for pagination | [optional] |
+| **page_size** | **Integer** | The number of items per page (must be greater than 0 and less than or equal to 100) | [optional][default to 10] |
+| **document_ids** | [**Array&lt;String&gt;**](String.md) | Optional document IDs to filter extraction logs to. | [optional] |
+| **status** | **String** | Optional extraction status filter. Supported values are &#x60;extracted&#x60;, &#x60;not_found&#x60;, and &#x60;error&#x60;. | [optional] |
+| **created_after** | **Time** | Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &gt;&#x3D; created_after&#x60;. | [optional] |
+| **created_before** | **Time** | Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &lt; created_before&#x60;. | [optional] |
+| **partition** | **String** | An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition. | [optional] |
+
+### Return type
+
+[**InstructionEntityExtractionLogList**](InstructionEntityExtractionLogList.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_instructions
 
 > <Array<Instruction>> list_instructions
@@ -363,6 +450,75 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## patch_instruction
+
+> <Instruction> patch_instruction(instruction_id, patch_instruction_params)
+
+Patch Instruction
+
+### Examples
+
+```ruby
+require 'time'
+require 'ragie_ruby_sdk'
+# setup authorization
+RagieRubySdk.configure do |config|
+  # Configure Bearer authorization: auth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = RagieRubySdk::EntitiesApi.new
+instruction_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The ID of the instruction.
+patch_instruction_params = RagieRubySdk::PatchInstructionParams.new # PatchInstructionParams | 
+
+begin
+  # Patch Instruction
+  result = api_instance.patch_instruction(instruction_id, patch_instruction_params)
+  p result
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling EntitiesApi->patch_instruction: #{e}"
+end
+```
+
+#### Using the patch_instruction_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Instruction>, Integer, Hash)> patch_instruction_with_http_info(instruction_id, patch_instruction_params)
+
+```ruby
+begin
+  # Patch Instruction
+  data, status_code, headers = api_instance.patch_instruction_with_http_info(instruction_id, patch_instruction_params)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Instruction>
+rescue RagieRubySdk::ApiError => e
+  puts "Error when calling EntitiesApi->patch_instruction_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **instruction_id** | **String** | The ID of the instruction. |  |
+| **patch_instruction_params** | [**PatchInstructionParams**](PatchInstructionParams.md) |  |  |
+
+### Return type
+
+[**Instruction**](Instruction.md)
+
+### Authorization
+
+[auth](../README.md#auth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

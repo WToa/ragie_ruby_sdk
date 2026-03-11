@@ -306,6 +306,102 @@ module RagieRubySdk
       return data, status_code, headers
     end
 
+    # Get Instruction Entity Extraction Logs
+    # List entity extraction logs for an instruction. Results are attempt-level and include both successful and unsuccessful extraction outcomes. Results are sorted by created_at in descending order and paginated. Historical extraction attempts before 2026-03-06 are unavailable in this endpoint.
+    # @param instruction_id [String] The ID of the instruction.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cursor An opaque cursor for pagination
+    # @option opts [Integer] :page_size The number of items per page (must be greater than 0 and less than or equal to 100) (default to 10)
+    # @option opts [Array<String>] :document_ids Optional document IDs to filter extraction logs to.
+    # @option opts [String] :status Optional extraction status filter. Supported values are &#x60;extracted&#x60;, &#x60;not_found&#x60;, and &#x60;error&#x60;.
+    # @option opts [Time] :created_after Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &gt;&#x3D; created_after&#x60;.
+    # @option opts [Time] :created_before Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &lt; created_before&#x60;.
+    # @option opts [String] :partition An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
+    # @return [InstructionEntityExtractionLogList]
+    def list_instruction_entity_extraction_logs(instruction_id, opts = {})
+      data, _status_code, _headers = list_instruction_entity_extraction_logs_with_http_info(instruction_id, opts)
+      data
+    end
+
+    # Get Instruction Entity Extraction Logs
+    # List entity extraction logs for an instruction. Results are attempt-level and include both successful and unsuccessful extraction outcomes. Results are sorted by created_at in descending order and paginated. Historical extraction attempts before 2026-03-06 are unavailable in this endpoint.
+    # @param instruction_id [String] The ID of the instruction.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :cursor An opaque cursor for pagination
+    # @option opts [Integer] :page_size The number of items per page (must be greater than 0 and less than or equal to 100) (default to 10)
+    # @option opts [Array<String>] :document_ids Optional document IDs to filter extraction logs to.
+    # @option opts [String] :status Optional extraction status filter. Supported values are &#x60;extracted&#x60;, &#x60;not_found&#x60;, and &#x60;error&#x60;.
+    # @option opts [Time] :created_after Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &gt;&#x3D; created_after&#x60;.
+    # @option opts [Time] :created_before Optional ISO 8601 timestamp. Includes only logs with &#x60;created_at &lt; created_before&#x60;.
+    # @option opts [String] :partition An optional partition to scope the request to. If omitted, accounts created after 1/9/2025 will have the request scoped to the default partition, while older accounts will have the request scoped to all partitions. Older accounts may opt in to strict partition scoping by contacting support@ragie.ai. Older accounts using the partitions feature are strongly recommended to scope the request to a partition.
+    # @return [Array<(InstructionEntityExtractionLogList, Integer, Hash)>] InstructionEntityExtractionLogList data, response status code and response headers
+    def list_instruction_entity_extraction_logs_with_http_info(instruction_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: EntitiesApi.list_instruction_entity_extraction_logs ...'
+      end
+      # verify the required parameter 'instruction_id' is set
+      if @api_client.config.client_side_validation && instruction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'instruction_id' when calling EntitiesApi.list_instruction_entity_extraction_logs"
+      end
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] > 100
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling EntitiesApi.list_instruction_entity_extraction_logs, must be smaller than or equal to 100.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling EntitiesApi.list_instruction_entity_extraction_logs, must be greater than or equal to 1.'
+      end
+
+      allowable_values = ["extracted", "not_found", "error"]
+      if @api_client.config.client_side_validation && opts[:'status'] && !allowable_values.include?(opts[:'status'])
+        fail ArgumentError, "invalid value for \"status\", must be one of #{allowable_values}"
+      end
+      # resource path
+      local_var_path = '/instructions/{instruction_id}/entity-extraction-logs'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'cursor'] = opts[:'cursor'] if !opts[:'cursor'].nil?
+      query_params[:'page_size'] = opts[:'page_size'] if !opts[:'page_size'].nil?
+      query_params[:'document_ids'] = @api_client.build_collection_param(opts[:'document_ids'], :multi) if !opts[:'document_ids'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'created_after'] = opts[:'created_after'] if !opts[:'created_after'].nil?
+      query_params[:'created_before'] = opts[:'created_before'] if !opts[:'created_before'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      header_params[:'partition'] = opts[:'partition'] if !opts[:'partition'].nil?
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'InstructionEntityExtractionLogList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['auth']
+
+      new_options = opts.merge(
+        :operation => :"EntitiesApi.list_instruction_entity_extraction_logs",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EntitiesApi#list_instruction_entity_extraction_logs\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # List Instructions
     # List all instructions.
     # @param [Hash] opts the optional parameters
@@ -359,6 +455,78 @@ module RagieRubySdk
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: EntitiesApi#list_instructions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Patch Instruction
+    # @param instruction_id [String] The ID of the instruction.
+    # @param patch_instruction_params [PatchInstructionParams] 
+    # @param [Hash] opts the optional parameters
+    # @return [Instruction]
+    def patch_instruction(instruction_id, patch_instruction_params, opts = {})
+      data, _status_code, _headers = patch_instruction_with_http_info(instruction_id, patch_instruction_params, opts)
+      data
+    end
+
+    # Patch Instruction
+    # @param instruction_id [String] The ID of the instruction.
+    # @param patch_instruction_params [PatchInstructionParams] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Instruction, Integer, Hash)>] Instruction data, response status code and response headers
+    def patch_instruction_with_http_info(instruction_id, patch_instruction_params, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: EntitiesApi.patch_instruction ...'
+      end
+      # verify the required parameter 'instruction_id' is set
+      if @api_client.config.client_side_validation && instruction_id.nil?
+        fail ArgumentError, "Missing the required parameter 'instruction_id' when calling EntitiesApi.patch_instruction"
+      end
+      # verify the required parameter 'patch_instruction_params' is set
+      if @api_client.config.client_side_validation && patch_instruction_params.nil?
+        fail ArgumentError, "Missing the required parameter 'patch_instruction_params' when calling EntitiesApi.patch_instruction"
+      end
+      # resource path
+      local_var_path = '/instructions/{instruction_id}'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(patch_instruction_params)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'Instruction'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['auth']
+
+      new_options = opts.merge(
+        :operation => :"EntitiesApi.patch_instruction",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: EntitiesApi#patch_instruction\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
