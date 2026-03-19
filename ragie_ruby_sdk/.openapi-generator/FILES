@@ -102,6 +102,7 @@ docs/DocumentUpdateWebhook.md
 docs/DocumentUpdateWebhookPayload.md
 docs/DocumentUrlUpdate.md
 docs/DocumentWithContent.md
+docs/DocumentWorkflow.md
 docs/DocumentsApi.md
 docs/DurationLocation.md
 docs/ElementsApi.md
@@ -367,6 +368,7 @@ lib/ragie_ruby_sdk/models/document_update_webhook.rb
 lib/ragie_ruby_sdk/models/document_update_webhook_payload.rb
 lib/ragie_ruby_sdk/models/document_url_update.rb
 lib/ragie_ruby_sdk/models/document_with_content.rb
+lib/ragie_ruby_sdk/models/document_workflow.rb
 lib/ragie_ruby_sdk/models/duration_location.rb
 lib/ragie_ruby_sdk/models/email_address.rb
 lib/ragie_ruby_sdk/models/entity.rb
@@ -620,6 +622,7 @@ spec/models/document_update_webhook_payload_spec.rb
 spec/models/document_update_webhook_spec.rb
 spec/models/document_url_update_spec.rb
 spec/models/document_with_content_spec.rb
+spec/models/document_workflow_spec.rb
 spec/models/duration_location_spec.rb
 spec/models/email_address_spec.rb
 spec/models/entity_extracted_webhook_payload_spec.rb

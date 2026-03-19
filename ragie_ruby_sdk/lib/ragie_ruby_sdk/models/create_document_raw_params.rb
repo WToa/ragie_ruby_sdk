@@ -26,7 +26,32 @@ module RagieRubySdk
     # An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters `_` and `-`.  A partition is created any time a document is created.
     attr_accessor :partition
 
+    # An optional stage to stop processing the document. If set to \"parse\" processing will stop once elements have been extracted. Setting it to \"index\" or leaving it blank will go through the full pipeline.
+    attr_accessor :workflow
+
     attr_accessor :data
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -35,6 +60,7 @@ module RagieRubySdk
         :'metadata' => :'metadata',
         :'external_id' => :'external_id',
         :'partition' => :'partition',
+        :'workflow' => :'workflow',
         :'data' => :'data'
       }
     end
@@ -56,6 +82,7 @@ module RagieRubySdk
         :'metadata' => :'Hash<String, MetadataValue>',
         :'external_id' => :'String',
         :'partition' => :'String',
+        :'workflow' => :'DocumentWorkflow',
         :'data' => :'Data'
       }
     end
@@ -99,6 +126,10 @@ module RagieRubySdk
 
       if attributes.key?(:'partition')
         self.partition = attributes[:'partition']
+      end
+
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
       end
 
       if attributes.key?(:'data')
@@ -147,6 +178,7 @@ module RagieRubySdk
           metadata == o.metadata &&
           external_id == o.external_id &&
           partition == o.partition &&
+          workflow == o.workflow &&
           data == o.data
     end
 
@@ -159,7 +191,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, metadata, external_id, partition, data].hash
+      [name, metadata, external_id, partition, workflow, data].hash
     end
 
     # Builds the object from hash

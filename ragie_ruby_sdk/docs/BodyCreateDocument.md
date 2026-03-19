@@ -10,6 +10,7 @@
 | **external_id** | **String** | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found. | [optional] |
 | **partition** | **String** | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created. | [optional] |
 | **name** | **String** | An optional name for the document. If set, the document will have this name. Otherwise it will default to the file&#39;s name. | [optional] |
+| **workflow** | [**DocumentWorkflow**](DocumentWorkflow.md) | An optional stage to stop processing the document. If set to \&quot;parse\&quot; processing will stop once elements have been extracted. Setting it to \&quot;index\&quot; or leaving it blank will go through the full pipeline. | [optional] |
 
 ## Example
 
@@ -22,7 +23,8 @@ instance = RagieRubySdk::BodyCreateDocument.new(
   file: null,
   external_id: null,
   partition: null,
-  name: null
+  name: null,
+  workflow: null
 )
 ```
 

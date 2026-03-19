@@ -9,6 +9,7 @@
 | **mode** | [**Mode**](Mode.md) |  | [optional] |
 | **external_id** | **String** |  | [optional] |
 | **partition** | **String** | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created. | [optional] |
+| **workflow** | [**DocumentWorkflow**](DocumentWorkflow.md) | An optional stage to stop processing the document. If set to \&quot;parse\&quot; processing will stop once elements have been extracted. Setting it to \&quot;index\&quot; or leaving it blank will go through the full pipeline. | [optional] |
 | **url** | **String** | Url of the file to download. Must be publicly accessible and HTTP or HTTPS scheme. |  |
 
 ## Example
@@ -22,6 +23,7 @@ instance = RagieRubySdk::CreateDocumentFromUrlParams.new(
   mode: null,
   external_id: null,
   partition: null,
+  workflow: null,
   url: null
 )
 ```

@@ -12,7 +12,7 @@
 | **text** | **String** |  |  |
 | **markdown** | **String** |  |  |
 | **location** | [**ApiDocumentElementLocation**](ApiDocumentElementLocation.md) |  | [optional] |
-| **data_content** | [**ApiElement**](ApiElement.md) |  |  |
+| **data** | [**ApiElement**](ApiElement.md) |  |  |
 
 ## Example
 
@@ -28,7 +28,7 @@ instance = RagieRubySdk::ApiDocumentElement.new(
   text: null,
   markdown: null,
   location: null,
-  data_content: null
+  data: null
 )
 ```
 

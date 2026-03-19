@@ -48,7 +48,8 @@ opts = {
   metadata: { key: nil}, # Hash<String, MetadataValue1> | Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`, `chunk_content_type`.
   external_id: 'external_id_example', # String | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
   name: 'name_example', # String | An optional name for the document. If set, the document will have this name. Otherwise it will default to the file's name.
-  partition: 'partition_example' # String | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters `_` and `-`.  A partition is created any time a document is created.
+  partition: 'partition_example', # String | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters `_` and `-`.  A partition is created any time a document is created.
+  workflow: 'parse' # String | 
 }
 
 begin
@@ -88,6 +89,7 @@ end
 | **external_id** | **String** | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found. | [optional] |
 | **name** | **String** | An optional name for the document. If set, the document will have this name. Otherwise it will default to the file&#39;s name. | [optional] |
 | **partition** | **String** | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created. | [optional] |
+| **workflow** | **String** |  | [optional] |
 
 ### Return type
 

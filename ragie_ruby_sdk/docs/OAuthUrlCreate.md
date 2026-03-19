@@ -13,6 +13,7 @@
 | **page_limit** | **Integer** |  | [optional] |
 | **config** | **Hash&lt;String, Object&gt;** | Optional config per connector | [optional] |
 | **authenticator_id** | **String** |  | [optional] |
+| **workflow** | [**DocumentWorkflow**](DocumentWorkflow.md) |  | [optional] |
 
 ## Example
 
@@ -28,7 +29,8 @@ instance = RagieRubySdk::OAuthUrlCreate.new(
   theme: null,
   page_limit: null,
   config: null,
-  authenticator_id: null
+  authenticator_id: null,
+  workflow: null
 )
 ```
 

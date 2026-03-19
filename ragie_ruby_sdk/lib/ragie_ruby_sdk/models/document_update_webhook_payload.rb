@@ -212,7 +212,7 @@ module RagieRubySdk
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @document_id.nil?
       return false if @status.nil?
-      status_validator = EnumAttributeValidator.new('String', ["ready", "failed", "indexed", "keyword_indexed"])
+      status_validator = EnumAttributeValidator.new('String', ["ready", "failed", "refined", "indexed", "keyword_indexed"])
       return false unless status_validator.valid?(@status)
       return false if @partition.nil?
       return false if @metadata.nil?
@@ -233,7 +233,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["ready", "failed", "indexed", "keyword_indexed"])
+      validator = EnumAttributeValidator.new('String', ["ready", "failed", "refined", "indexed", "keyword_indexed"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end

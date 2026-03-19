@@ -28,6 +28,7 @@ module RagieRubySdk
     # @option opts [String] :external_id An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
     # @option opts [String] :name An optional name for the document. If set, the document will have this name. Otherwise it will default to the file&#39;s name.
     # @option opts [String] :partition An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created.
+    # @option opts [String] :workflow 
     # @return [Document]
     def create_document(file, opts = {})
       data, _status_code, _headers = create_document_with_http_info(file, opts)
@@ -43,6 +44,7 @@ module RagieRubySdk
     # @option opts [String] :external_id An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
     # @option opts [String] :name An optional name for the document. If set, the document will have this name. Otherwise it will default to the file&#39;s name.
     # @option opts [String] :partition An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created.
+    # @option opts [String] :workflow 
     # @return [Array<(Document, Integer, Hash)>] Document data, response status code and response headers
     def create_document_with_http_info(file, opts = {})
       if @api_client.config.debugging
@@ -51,6 +53,10 @@ module RagieRubySdk
       # verify the required parameter 'file' is set
       if @api_client.config.client_side_validation && file.nil?
         fail ArgumentError, "Missing the required parameter 'file' when calling DocumentsApi.create_document"
+      end
+      allowable_values = ["parse", "index"]
+      if @api_client.config.client_side_validation && opts[:'workflow'] && !allowable_values.include?(opts[:'workflow'])
+        fail ArgumentError, "invalid value for \"workflow\", must be one of #{allowable_values}"
       end
       # resource path
       local_var_path = '/documents'
@@ -76,6 +82,7 @@ module RagieRubySdk
       form_params['external_id'] = opts[:'external_id'] if !opts[:'external_id'].nil?
       form_params['name'] = opts[:'name'] if !opts[:'name'].nil?
       form_params['partition'] = opts[:'partition'] if !opts[:'partition'].nil?
+      form_params['workflow'] = opts[:'workflow'] if !opts[:'workflow'].nil?
 
       # http body (model)
       post_body = opts[:debug_body]

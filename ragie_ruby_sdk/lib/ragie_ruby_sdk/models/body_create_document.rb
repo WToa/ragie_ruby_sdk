@@ -33,6 +33,31 @@ module RagieRubySdk
     # An optional name for the document. If set, the document will have this name. Otherwise it will default to the file's name.
     attr_accessor :name
 
+    # An optional stage to stop processing the document. If set to \"parse\" processing will stop once elements have been extracted. Setting it to \"index\" or leaving it blank will go through the full pipeline.
+    attr_accessor :workflow
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -41,7 +66,8 @@ module RagieRubySdk
         :'file' => :'file',
         :'external_id' => :'external_id',
         :'partition' => :'partition',
-        :'name' => :'name'
+        :'name' => :'name',
+        :'workflow' => :'workflow'
       }
     end
 
@@ -63,7 +89,8 @@ module RagieRubySdk
         :'file' => :'File',
         :'external_id' => :'String',
         :'partition' => :'String',
-        :'name' => :'String'
+        :'name' => :'String',
+        :'workflow' => :'DocumentWorkflow'
       }
     end
 
@@ -118,6 +145,10 @@ module RagieRubySdk
       if attributes.key?(:'name')
         self.name = attributes[:'name']
       end
+
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -160,7 +191,8 @@ module RagieRubySdk
           file == o.file &&
           external_id == o.external_id &&
           partition == o.partition &&
-          name == o.name
+          name == o.name &&
+          workflow == o.workflow
     end
 
     # @see the `==` method
@@ -172,7 +204,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [mode, metadata, file, external_id, partition, name].hash
+      [mode, metadata, file, external_id, partition, name, workflow].hash
     end
 
     # Builds the object from hash

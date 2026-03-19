@@ -31,7 +31,7 @@ module RagieRubySdk
 
     attr_accessor :location
 
-    attr_accessor :data_content
+    attr_accessor :data
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -66,7 +66,7 @@ module RagieRubySdk
         :'text' => :'text',
         :'markdown' => :'markdown',
         :'location' => :'location',
-        :'data_content' => :'data_content'
+        :'data' => :'data'
       }
     end
 
@@ -91,7 +91,7 @@ module RagieRubySdk
         :'text' => :'String',
         :'markdown' => :'String',
         :'location' => :'ApiDocumentElementLocation',
-        :'data_content' => :'ApiElement'
+        :'data' => :'ApiElement'
       }
     end
 
@@ -168,10 +168,10 @@ module RagieRubySdk
         self.location = attributes[:'location']
       end
 
-      if attributes.key?(:'data_content')
-        self.data_content = attributes[:'data_content']
+      if attributes.key?(:'data')
+        self.data = attributes[:'data']
       else
-        self.data_content = nil
+        self.data = nil
       end
     end
 
@@ -200,8 +200,8 @@ module RagieRubySdk
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
 
-      if @data_content.nil?
-        invalid_properties.push('invalid value for "data_content", data_content cannot be nil.')
+      if @data.nil?
+        invalid_properties.push('invalid value for "data", data cannot be nil.')
       end
 
       invalid_properties
@@ -216,7 +216,7 @@ module RagieRubySdk
       return false if @index.nil?
       return false if @metadata.nil?
       return false if @type.nil?
-      return false if @data_content.nil?
+      return false if @data.nil?
       true
     end
 
@@ -271,13 +271,13 @@ module RagieRubySdk
     end
 
     # Custom attribute writer method with validation
-    # @param [Object] data_content Value to be assigned
-    def data_content=(data_content)
-      if data_content.nil?
-        fail ArgumentError, 'data_content cannot be nil'
+    # @param [Object] data Value to be assigned
+    def data=(data)
+      if data.nil?
+        fail ArgumentError, 'data cannot be nil'
       end
 
-      @data_content = data_content
+      @data = data
     end
 
     # Checks equality by comparing each attribute.
@@ -293,7 +293,7 @@ module RagieRubySdk
           text == o.text &&
           markdown == o.markdown &&
           location == o.location &&
-          data_content == o.data_content
+          data == o.data
     end
 
     # @see the `==` method
@@ -305,7 +305,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, created_at, index, metadata, type, text, markdown, location, data_content].hash
+      [id, created_at, index, metadata, type, text, markdown, location, data].hash
     end
 
     # Builds the object from hash

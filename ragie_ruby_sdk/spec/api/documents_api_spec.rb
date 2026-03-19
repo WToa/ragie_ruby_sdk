@@ -42,6 +42,7 @@ describe 'DocumentsApi' do
   # @option opts [String] :external_id An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
   # @option opts [String] :name An optional name for the document. If set, the document will have this name. Otherwise it will default to the file&#39;s name.
   # @option opts [String] :partition An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created.
+  # @option opts [String] :workflow 
   # @return [Document]
   describe 'create_document test' do
     it 'should work' do

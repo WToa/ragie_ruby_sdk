@@ -36,6 +36,8 @@ module RagieRubySdk
 
     attr_accessor :authenticator_id
 
+    attr_accessor :workflow
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -69,7 +71,8 @@ module RagieRubySdk
         :'theme' => :'theme',
         :'page_limit' => :'page_limit',
         :'config' => :'config',
-        :'authenticator_id' => :'authenticator_id'
+        :'authenticator_id' => :'authenticator_id',
+        :'workflow' => :'workflow'
       }
     end
 
@@ -94,7 +97,8 @@ module RagieRubySdk
         :'theme' => :'String',
         :'page_limit' => :'Integer',
         :'config' => :'Hash<String, Object>',
-        :'authenticator_id' => :'String'
+        :'authenticator_id' => :'String',
+        :'workflow' => :'DocumentWorkflow'
       }
     end
 
@@ -105,7 +109,8 @@ module RagieRubySdk
         :'mode',
         :'theme',
         :'page_limit',
-        :'authenticator_id'
+        :'authenticator_id',
+        :'workflow'
       ])
     end
 
@@ -165,6 +170,10 @@ module RagieRubySdk
 
       if attributes.key?(:'authenticator_id')
         self.authenticator_id = attributes[:'authenticator_id']
+      end
+
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
       end
     end
 
@@ -238,7 +247,8 @@ module RagieRubySdk
           theme == o.theme &&
           page_limit == o.page_limit &&
           config == o.config &&
-          authenticator_id == o.authenticator_id
+          authenticator_id == o.authenticator_id &&
+          workflow == o.workflow
     end
 
     # @see the `==` method
@@ -250,7 +260,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [redirect_uri, partition, source_type, metadata, mode, theme, page_limit, config, authenticator_id].hash
+      [redirect_uri, partition, source_type, metadata, mode, theme, page_limit, config, authenticator_id, workflow].hash
     end
 
     # Builds the object from hash

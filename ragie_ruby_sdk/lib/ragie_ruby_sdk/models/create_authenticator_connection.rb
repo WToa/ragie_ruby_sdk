@@ -26,7 +26,31 @@ module RagieRubySdk
     # Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`, `chunk_content_type`.
     attr_accessor :metadata
 
+    attr_accessor :workflow
+
     attr_accessor :connection
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -36,6 +60,7 @@ module RagieRubySdk
         :'page_limit' => :'page_limit',
         :'config' => :'config',
         :'metadata' => :'metadata',
+        :'workflow' => :'workflow',
         :'connection' => :'connection'
       }
     end
@@ -58,6 +83,7 @@ module RagieRubySdk
         :'page_limit' => :'Integer',
         :'config' => :'Hash<String, Object>',
         :'metadata' => :'Hash<String, MetadataValue>',
+        :'workflow' => :'DocumentWorkflow',
         :'connection' => :'Connection1'
       }
     end
@@ -68,6 +94,7 @@ module RagieRubySdk
         :'partition',
         :'page_limit',
         :'config',
+        :'workflow',
       ])
     end
 
@@ -111,6 +138,10 @@ module RagieRubySdk
         if (value = attributes[:'metadata']).is_a?(Hash)
           self.metadata = value
         end
+      end
+
+      if attributes.key?(:'workflow')
+        self.workflow = attributes[:'workflow']
       end
 
       if attributes.key?(:'connection')
@@ -175,6 +206,7 @@ module RagieRubySdk
           page_limit == o.page_limit &&
           config == o.config &&
           metadata == o.metadata &&
+          workflow == o.workflow &&
           connection == o.connection
     end
 
@@ -187,7 +219,7 @@ module RagieRubySdk
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [partition_strategy, partition, page_limit, config, metadata, connection].hash
+      [partition_strategy, partition, page_limit, config, metadata, workflow, connection].hash
     end
 
     # Builds the object from hash
