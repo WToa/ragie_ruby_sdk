@@ -17,6 +17,7 @@
 | **delete_count** | **Integer** |  |  |
 | **deleted_count** | **Integer** |  |  |
 | **errored_count** | **Integer** |  |  |
+| **paused_insufficient_credits_count** | **Integer** |  |  |
 
 ## Example
 
@@ -36,7 +37,8 @@ instance = RagieRubySdk::ConnectionSyncProgressWebhookPayload.new(
   updated_metadata_count: null,
   delete_count: null,
   deleted_count: null,
-  errored_count: null
+  errored_count: null,
+  paused_insufficient_credits_count: null
 )
 ```
 
