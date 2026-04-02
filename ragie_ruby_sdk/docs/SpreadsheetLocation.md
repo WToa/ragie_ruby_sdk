@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **location_type** | **String** |  | [optional][default to &#39;spreadsheet&#39;] |
-| **range** | **String** |  | [optional] |
-| **sheet_name** | **String** |  | [optional] |
-| **sheet_index** | **Integer** |  | [optional] |
+| **range** | **String** | Excel-style range like &#39;A1:C10&#39; | [optional] |
+| **sheet_name** | **String** | Name of the sheet | [optional] |
+| **sheet_index** | **Integer** | 0-based index of the sheet | [optional] |
 
 ## Example
 

@@ -21,6 +21,7 @@ module RagieRubySdk
     # Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: `document_id`, `document_type`, `document_source`, `document_name`, `document_uploaded_at`, `start_time`, `end_time`, `chunk_content_type`.
     attr_accessor :metadata
 
+    # An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
     attr_accessor :external_id
 
     # An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters `_` and `-`.  A partition is created any time a document is created.

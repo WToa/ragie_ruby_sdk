@@ -20,6 +20,7 @@ module RagieRubySdk
     # The formula as plain text.
     attr_accessor :content
 
+    # The LaTeX representation of the formula.
     attr_accessor :latex
 
     class EnumAttributeValidator

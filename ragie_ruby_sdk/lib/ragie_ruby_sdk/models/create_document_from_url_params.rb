@@ -22,6 +22,7 @@ module RagieRubySdk
 
     attr_accessor :mode
 
+    # An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found.
     attr_accessor :external_id
 
     # An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters `_` and `-`.  A partition is created any time a document is created.

@@ -9,8 +9,8 @@
 | **description** | **String** | A detailed description of the signature. |  |
 | **label** | **String** | The printed text indicating who should sign (e.g., &#39;Driver Signature&#39;, &#39;Authorized By&#39;). |  |
 | **is_signed** | **Boolean** | True if a handwritten signature, digital signature, or stamp is present. False if blank. |  |
-| **signer_name** | **String** |  | [optional] |
-| **date** | **String** |  | [optional] |
+| **signer_name** | **String** | The name of the signer | [optional] |
+| **date** | **String** | The date of the signature if present | [optional] |
 
 ## Example
 

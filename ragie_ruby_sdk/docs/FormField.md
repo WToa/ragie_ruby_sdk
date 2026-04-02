@@ -8,10 +8,10 @@
 | **content** | **String** | The text content of the form field, including both the label and the value |  |
 | **input_type** | **String** | Type of input. |  |
 | **label** | **String** | The main question/label for the field. |  |
-| **value** | **String** |  | [optional] |
-| **options** | [**Array&lt;FormOption&gt;**](FormOption.md) |  | [optional] |
-| **selected_values** | **Array&lt;String&gt;** |  | [optional] |
-| **help_text** | **String** |  | [optional] |
+| **value** | **String** | The filled text. For single checkbox: &#39;true&#39;/&#39;false&#39;. | [optional] |
+| **options** | [**Array&lt;FormOption&gt;**](FormOption.md) | List of available options. | [optional] |
+| **selected_values** | **Array&lt;String&gt;** | The &#39;label&#39; of the selected option(s). | [optional] |
+| **help_text** | **String** | The help text for the form field. | [optional] |
 
 ## Example
 

@@ -14,6 +14,7 @@ require 'date'
 require 'time'
 
 module RagieRubySdk
+  # Additional data specific to the modality of the chunk's source file, such as word level timestamps for chunks extracted from audio files.
   module DocumentChunkDetailModalityData
     class << self
       # List of class defined in oneOf (OpenAPI v3)

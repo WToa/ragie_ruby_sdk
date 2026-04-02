@@ -18,10 +18,13 @@ module RagieRubySdk
   class SpreadsheetLocation < ApiModelBase
     attr_accessor :location_type
 
+    # Excel-style range like 'A1:C10'
     attr_accessor :range
 
+    # Name of the sheet
     attr_accessor :sheet_name
 
+    # 0-based index of the sheet
     attr_accessor :sheet_index
 
     class EnumAttributeValidator

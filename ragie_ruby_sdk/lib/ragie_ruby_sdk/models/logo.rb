@@ -23,6 +23,7 @@ module RagieRubySdk
     # A detailed description of the logo
     attr_accessor :description
 
+    # 
     attr_accessor :base64_data
 
     class EnumAttributeValidator

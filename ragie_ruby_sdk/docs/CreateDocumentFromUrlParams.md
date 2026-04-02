@@ -7,7 +7,7 @@
 | **name** | **String** |  | [optional] |
 | **metadata** | [**Hash&lt;String, MetadataValue&gt;**](MetadataValue.md) | Metadata for the document. Keys must be strings. Values may be strings, numbers, booleans, or lists of strings. Numbers may be integers or floating point and will be converted to 64 bit floating point. 1000 total values are allowed. Each item in an array counts towards the total. The following keys are reserved for internal use: &#x60;document_id&#x60;, &#x60;document_type&#x60;, &#x60;document_source&#x60;, &#x60;document_name&#x60;, &#x60;document_uploaded_at&#x60;, &#x60;start_time&#x60;, &#x60;end_time&#x60;, &#x60;chunk_content_type&#x60;. | [optional] |
 | **mode** | [**Mode**](Mode.md) |  | [optional] |
-| **external_id** | **String** |  | [optional] |
+| **external_id** | **String** | An optional identifier for the document. A common value might be an id in an external system or the URL where the source file may be found. | [optional] |
 | **partition** | **String** | An optional partition identifier. Documents can be scoped to a partition. Partitions must be lowercase alphanumeric and may only include the special characters &#x60;_&#x60; and &#x60;-&#x60;.  A partition is created any time a document is created. | [optional] |
 | **workflow** | [**DocumentWorkflow**](DocumentWorkflow.md) | An optional stage to stop processing the document. If set to \&quot;parse\&quot; processing will stop once elements have been extracted. Setting it to \&quot;index\&quot; or leaving it blank will go through the full pipeline. | [optional] |
 | **url** | **String** | Url of the file to download. Must be publicly accessible and HTTP or HTTPS scheme. |  |

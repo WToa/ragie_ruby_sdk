@@ -30,13 +30,16 @@ module RagieRubySdk
     # Whether extraction was attempted at document scope or chunk scope.
     attr_accessor :scope
 
+    # Chunk index when scope is `chunk`; null when scope is `document`.
     attr_accessor :chunk_index
 
     # Extraction status for this attempt.
     attr_accessor :status
 
+    # Machine-readable reason code when available. Values: `NO_MATCH`, `AMBIGUOUS`, `OUT_OF_SCOPE`, `SCHEMA_INVALID`, `MODEL_ERROR`.
     attr_accessor :reason_code
 
+    # Optional debug text for this attempt. Usually model-provided; may be system-generated when normalization/parsing fails.
     attr_accessor :reason
 
     # Machine-readable extraction error identifiers. Public responses map internal entity-shape validation failures to `unexpected_error`. Common values include `unexpected_error`, `invalid_instruction_schema`, and `empty_completion_content`. Raw provider/runtime error strings may also appear.

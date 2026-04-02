@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  |  |
 | **is_default** | **Boolean** |  |  |
-| **limit_exceeded_at** | **Time** |  | [optional] |
+| **limit_exceeded_at** | **Time** | Timestamp when the partition exceeded its limits, if applicable. | [optional] |
 | **description** | **String** |  |  |
 | **context_aware** | **Boolean** |  |  |
 | **metadata_schema** | [**Hash&lt;String, CreatePartitionParamsMetadataSchemaValue&gt;**](CreatePartitionParamsMetadataSchemaValue.md) |  |  |

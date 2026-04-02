@@ -17,32 +17,46 @@ module RagieRubySdk
   class CreatePartitionParams < ApiModelBase
     attr_accessor :name
 
+    # Description of the partition. Automatic description generation can be enabled in the web dashboard.
     attr_accessor :description
 
+    # Monthly limit of hosted pages added in the current month in the partition.
     attr_accessor :pages_hosted_limit_monthly
 
+    # Monthly limit, in pages, for processed documents in the partition.
     attr_accessor :pages_processed_limit_monthly
 
+    # Maximum limit, in pages, for hosted documents in the partition.
     attr_accessor :pages_hosted_limit_max
 
+    # Maximum limit, in pages, for processed documents in the partition.
     attr_accessor :pages_processed_limit_max
 
+    # Monthly limit, in minutes, for audio processing in the partition.
     attr_accessor :audio_processed_limit_monthly
 
+    # Maximum limit, in minutes, for audio processing in the partition.
     attr_accessor :audio_processed_limit_max
 
+    # Monthly limit, in minutes, for video processing in the partition.
     attr_accessor :video_processed_limit_monthly
 
+    # Maximum limit, in minutes, for video processing in the partition.
     attr_accessor :video_processed_limit_max
 
+    # Monthly limit, in MBs, for media streamed from the partition.
     attr_accessor :media_streamed_limit_monthly
 
+    # Maximum limit, in MBs, for media streamed from the partition.
     attr_accessor :media_streamed_limit_max
 
+    # Monthly limit, in MBs, for media hosted in the partition.
     attr_accessor :media_hosted_limit_monthly
 
+    # Maximum limit, in MBs, for media hosted in the partition.
     attr_accessor :media_hosted_limit_max
 
+    # Metadata schema for the partition. This is an optional subset of the metadata of documents in the partition, defined as JSON Schema, that can be used in filter generatation. Providing detailed descriptions of the fields in the schema can be helpful for LLMs generating filters dynamically.
     attr_accessor :metadata_schema
 
     # Attribute mapping from ruby-style variable name to JSON key.

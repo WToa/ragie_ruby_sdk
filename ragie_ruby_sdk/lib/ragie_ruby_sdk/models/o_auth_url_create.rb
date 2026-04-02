@@ -27,8 +27,10 @@ module RagieRubySdk
 
     attr_accessor :mode
 
+    # Sets the theme of the Ragie Web UI when the user lands there. Can be light, dark, or system to use whatever the system value is. If omitted, system is used.
     attr_accessor :theme
 
+    # The maximum number of pages a connection will sync. The connection will be disabled after this limit is reached. Some in progress documents may continue processing after the limit is reached. The limit will be enforced at the start of the next document sync. Remove the limit by setting to null.
     attr_accessor :page_limit
 
     # Optional config per connector

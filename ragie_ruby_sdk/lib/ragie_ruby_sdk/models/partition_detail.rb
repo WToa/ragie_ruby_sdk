@@ -19,6 +19,7 @@ module RagieRubySdk
 
     attr_accessor :is_default
 
+    # Timestamp when the partition exceeded its limits, if applicable.
     attr_accessor :limit_exceeded_at
 
     attr_accessor :description

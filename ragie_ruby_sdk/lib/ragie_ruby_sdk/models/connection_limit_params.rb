@@ -15,6 +15,7 @@ require 'time'
 
 module RagieRubySdk
   class ConnectionLimitParams < ApiModelBase
+    # The maximum number of pages a connection will sync. The connection will be disabled after this limit is reached. Some in process documents may continue processing. Remove the limit by setting to `null`.
     attr_accessor :page_limit
 
     # Attribute mapping from ruby-style variable name to JSON key.

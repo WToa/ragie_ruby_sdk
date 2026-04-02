@@ -4,18 +4,18 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **pages_hosted_limit_monthly** | **Integer** |  | [optional] |
-| **pages_processed_limit_monthly** | **Integer** |  | [optional] |
-| **pages_hosted_limit_max** | **Integer** |  | [optional] |
-| **pages_processed_limit_max** | **Integer** |  | [optional] |
-| **video_processed_limit_monthly** | **Integer** |  | [optional] |
-| **video_processed_limit_max** | **Integer** |  | [optional] |
-| **audio_processed_limit_monthly** | **Integer** |  | [optional] |
-| **audio_processed_limit_max** | **Integer** |  | [optional] |
-| **media_streamed_limit_monthly** | **Integer** |  | [optional] |
-| **media_streamed_limit_max** | **Integer** |  | [optional] |
-| **media_hosted_limit_monthly** | **Integer** |  | [optional] |
-| **media_hosted_limit_max** | **Integer** |  | [optional] |
+| **pages_hosted_limit_monthly** | **Integer** | Monthly limit of hosted pages added in the current month in the partition. | [optional] |
+| **pages_processed_limit_monthly** | **Integer** | Monthly limit, in pages, for processed documents in the partition. | [optional] |
+| **pages_hosted_limit_max** | **Integer** | Maximum limit, in pages, for hosted documents in the partition. | [optional] |
+| **pages_processed_limit_max** | **Integer** | Maximum limit, in pages, for processed documents in the partition. | [optional] |
+| **video_processed_limit_monthly** | **Integer** | Monthly limit, in minutes, for video processing in the partition. | [optional] |
+| **video_processed_limit_max** | **Integer** | Maximum limit, in minutes, for video processing in the partition. | [optional] |
+| **audio_processed_limit_monthly** | **Integer** | Monthly limit, in minutes, for audio processing in the partition. | [optional] |
+| **audio_processed_limit_max** | **Integer** | Maximum limit, in minutes, for audio processing in the partition. | [optional] |
+| **media_streamed_limit_monthly** | **Integer** | Monthly limit, in MBs, for media streamed from the partition. | [optional] |
+| **media_streamed_limit_max** | **Integer** | Maximum limit, in MBs, for media streamed from the partition. | [optional] |
+| **media_hosted_limit_monthly** | **Integer** | Monthly limit, in MBs, for media hosted in the partition. | [optional] |
+| **media_hosted_limit_max** | **Integer** | Maximum limit, in MBs, for media hosted in the partition. | [optional] |
 
 ## Example
 

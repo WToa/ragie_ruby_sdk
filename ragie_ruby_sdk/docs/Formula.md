@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **type** | **String** |  | [optional][default to &#39;Formula&#39;] |
 | **content** | **String** | The formula as plain text. |  |
-| **latex** | **String** |  | [optional] |
+| **latex** | **String** | The LaTeX representation of the formula. | [optional] |
 
 ## Example
 

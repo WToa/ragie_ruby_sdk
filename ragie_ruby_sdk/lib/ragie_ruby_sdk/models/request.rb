@@ -18,6 +18,7 @@ module RagieRubySdk
     # The text used to generate the response. Generally a question or a query.
     attr_accessor :input
 
+    # The instructions inserted in the prompt. For this agent, the instructions are injected during search related steps.
     attr_accessor :instructions
 
     # The tools available to the agent. Currently the only tool is retrieve. The `default` partition is used by default unless an other partition is specified.

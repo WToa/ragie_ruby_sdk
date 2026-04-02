@@ -5,20 +5,20 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  |  |
-| **description** | **String** |  | [optional] |
-| **pages_hosted_limit_monthly** | **Integer** |  | [optional] |
-| **pages_processed_limit_monthly** | **Integer** |  | [optional] |
-| **pages_hosted_limit_max** | **Integer** |  | [optional] |
-| **pages_processed_limit_max** | **Integer** |  | [optional] |
-| **audio_processed_limit_monthly** | **Integer** |  | [optional] |
-| **audio_processed_limit_max** | **Integer** |  | [optional] |
-| **video_processed_limit_monthly** | **Integer** |  | [optional] |
-| **video_processed_limit_max** | **Integer** |  | [optional] |
-| **media_streamed_limit_monthly** | **Integer** |  | [optional] |
-| **media_streamed_limit_max** | **Integer** |  | [optional] |
-| **media_hosted_limit_monthly** | **Integer** |  | [optional] |
-| **media_hosted_limit_max** | **Integer** |  | [optional] |
-| **metadata_schema** | [**Hash&lt;String, CreatePartitionParamsMetadataSchemaValue&gt;**](CreatePartitionParamsMetadataSchemaValue.md) |  | [optional] |
+| **description** | **String** | Description of the partition. Automatic description generation can be enabled in the web dashboard. | [optional] |
+| **pages_hosted_limit_monthly** | **Integer** | Monthly limit of hosted pages added in the current month in the partition. | [optional] |
+| **pages_processed_limit_monthly** | **Integer** | Monthly limit, in pages, for processed documents in the partition. | [optional] |
+| **pages_hosted_limit_max** | **Integer** | Maximum limit, in pages, for hosted documents in the partition. | [optional] |
+| **pages_processed_limit_max** | **Integer** | Maximum limit, in pages, for processed documents in the partition. | [optional] |
+| **audio_processed_limit_monthly** | **Integer** | Monthly limit, in minutes, for audio processing in the partition. | [optional] |
+| **audio_processed_limit_max** | **Integer** | Maximum limit, in minutes, for audio processing in the partition. | [optional] |
+| **video_processed_limit_monthly** | **Integer** | Monthly limit, in minutes, for video processing in the partition. | [optional] |
+| **video_processed_limit_max** | **Integer** | Maximum limit, in minutes, for video processing in the partition. | [optional] |
+| **media_streamed_limit_monthly** | **Integer** | Monthly limit, in MBs, for media streamed from the partition. | [optional] |
+| **media_streamed_limit_max** | **Integer** | Maximum limit, in MBs, for media streamed from the partition. | [optional] |
+| **media_hosted_limit_monthly** | **Integer** | Monthly limit, in MBs, for media hosted in the partition. | [optional] |
+| **media_hosted_limit_max** | **Integer** | Maximum limit, in MBs, for media hosted in the partition. | [optional] |
+| **metadata_schema** | [**Hash&lt;String, CreatePartitionParamsMetadataSchemaValue&gt;**](CreatePartitionParamsMetadataSchemaValue.md) | Metadata schema for the partition. This is an optional subset of the metadata of documents in the partition, defined as JSON Schema, that can be used in filter generatation. Providing detailed descriptions of the fields in the schema can be helpful for LLMs generating filters dynamically. | [optional] |
 
 ## Example
 

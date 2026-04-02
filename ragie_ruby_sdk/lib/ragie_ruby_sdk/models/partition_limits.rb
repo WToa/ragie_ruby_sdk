@@ -15,28 +15,40 @@ require 'time'
 
 module RagieRubySdk
   class PartitionLimits < ApiModelBase
+    # Monthly limit, in pages, for processed documents in the partition.
     attr_accessor :pages_processed_limit_monthly
 
+    # Monthly limit of hosted pages added in the current month in the partition.
     attr_accessor :pages_hosted_limit_monthly
 
+    # Maximum limit, in pages, for processed documents in the partition.
     attr_accessor :pages_processed_limit_max
 
+    # Maximum limit, in pages, for hosted documents in the partition.
     attr_accessor :pages_hosted_limit_max
 
+    # Monthly limit, in minutes, for video processing in the partition.
     attr_accessor :video_processed_limit_monthly
 
+    # Maximum limit, in minutes, for video processing in the partition.
     attr_accessor :video_processed_limit_max
 
+    # Monthly limit, in minutes, for audio processing in the partition.
     attr_accessor :audio_processed_limit_monthly
 
+    # Maximum limit, in minutes, for audio processing in the partition.
     attr_accessor :audio_processed_limit_max
 
+    # Monthly limit, in MBs, for media streamed from the partition.
     attr_accessor :media_streamed_limit_monthly
 
+    # Maximum limit, in MBs, for media streamed from the partition.
     attr_accessor :media_streamed_limit_max
 
+    # Monthly limit, in MBs, for media hosted in the partition.
     attr_accessor :media_hosted_limit_monthly
 
+    # Maximum limit, in MBs, for media hosted in the partition.
     attr_accessor :media_hosted_limit_max
 
     # Attribute mapping from ruby-style variable name to JSON key.

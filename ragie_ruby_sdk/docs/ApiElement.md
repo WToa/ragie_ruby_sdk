@@ -7,20 +7,20 @@
 | **type** | **String** |  | [optional][default to &#39;Text&#39;] |
 | **content** | **String** |  |  |
 | **handwritten** | **Boolean** | True if handwritten, false otherwise | [optional][default to false] |
-| **latex** | **String** |  | [optional] |
+| **latex** | **String** | The LaTeX representation of the formula. | [optional] |
 | **description** | **String** | A detailed description of what the visual depicts. |  |
-| **header_range** | **String** |  | [optional] |
+| **header_range** | **String** | Optional normalized header rows range used for &lt;thead&gt; construction. | [optional] |
 | **base64_data** | **String** |  | [optional] |
 | **label** | **String** | The main question/label for the field. |  |
 | **is_signed** | **Boolean** | True if a handwritten signature, digital signature, or stamp is present. False if blank. |  |
-| **signer_name** | **String** |  | [optional] |
-| **date** | **String** |  | [optional] |
+| **signer_name** | **String** | The name of the signer | [optional] |
+| **date** | **String** | The date of the signature if present | [optional] |
 | **key** | **String** | The label/attribute name (e.g. &#39;Date&#39;, &#39;Invoice #&#39;). |  |
-| **value** | **String** |  |  |
+| **value** | **String** | The filled text. For single checkbox: &#39;true&#39;/&#39;false&#39;. |  |
 | **input_type** | **String** | Type of input. |  |
-| **options** | [**Array&lt;FormOption&gt;**](FormOption.md) |  | [optional] |
-| **selected_values** | **Array&lt;String&gt;** |  | [optional] |
-| **help_text** | **String** |  | [optional] |
+| **options** | [**Array&lt;FormOption&gt;**](FormOption.md) | List of available options. | [optional] |
+| **selected_values** | **Array&lt;String&gt;** | The &#39;label&#39; of the selected option(s). | [optional] |
+| **help_text** | **String** | The help text for the form field. | [optional] |
 | **language** | **String** | The language the code is written in | [optional][default to &#39;&#39;] |
 | **modality_data** | [**Array&lt;WordModality&gt;**](WordModality.md) | A list of information per word that shows the word, start time, and end time |  |
 

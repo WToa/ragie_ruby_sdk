@@ -23,6 +23,7 @@ module RagieRubySdk
     # A brief summary of the content in the table.
     attr_accessor :description
 
+    # Optional normalized header rows range used for <thead> construction.
     attr_accessor :header_range
 
     class EnumAttributeValidator

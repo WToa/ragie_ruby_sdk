@@ -15,10 +15,13 @@ require 'time'
 
 module RagieRubySdk
   class UpdatePartitionParams < ApiModelBase
+    # Enable context-aware descriptions for the partition.
     attr_accessor :context_aware
 
+    # Description of the partition.
     attr_accessor :description
 
+    # Metadata schema for the partition. This is an optional subset of the metadata of documents in the partition, defined as JSON Schema, that can be used in filter generatation. Providing detailed descriptions of the fields in the schema can be helpful for LLMs generating filters dynamically.
     attr_accessor :metadata_schema
 
     # Attribute mapping from ruby-style variable name to JSON key.

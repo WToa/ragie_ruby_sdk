@@ -29,8 +29,10 @@ module RagieRubySdk
     # True if a handwritten signature, digital signature, or stamp is present. False if blank.
     attr_accessor :is_signed
 
+    # The name of the signer
     attr_accessor :signer_name
 
+    # The date of the signature if present
     attr_accessor :date
 
     class EnumAttributeValidator

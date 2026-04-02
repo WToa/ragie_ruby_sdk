@@ -26,12 +26,16 @@ module RagieRubySdk
     # The main question/label for the field.
     attr_accessor :label
 
+    # The filled text. For single checkbox: 'true'/'false'.
     attr_accessor :value
 
+    # List of available options.
     attr_accessor :options
 
+    # The 'label' of the selected option(s).
     attr_accessor :selected_values
 
+    # The help text for the form field.
     attr_accessor :help_text
 
     class EnumAttributeValidator
