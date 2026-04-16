@@ -117,7 +117,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'create_authenticator_connection' when calling AuthenticatorsApi.create_authenticator_connection"
       end
       # resource path
-      local_var_path = '/authenticators/{authenticator_id}/connection'.sub('{' + 'authenticator_id' + '}', CGI.escape(authenticator_id.to_s))
+      local_var_path = '/authenticators/{authenticator_id}/connection'.sub('{authenticator_id}', CGI.escape(authenticator_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -185,7 +185,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'authenticator_id' when calling AuthenticatorsApi.delete_authenticator_connection"
       end
       # resource path
-      local_var_path = '/authenticators/{authenticator_id}'.sub('{' + 'authenticator_id' + '}', CGI.escape(authenticator_id.to_s))
+      local_var_path = '/authenticators/{authenticator_id}'.sub('{authenticator_id}', CGI.escape(authenticator_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

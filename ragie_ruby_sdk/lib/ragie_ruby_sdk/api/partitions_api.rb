@@ -113,7 +113,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'partition_id' when calling PartitionsApi.delete_partition_partitions_partition_id_delete"
       end
       # resource path
-      local_var_path = '/partitions/{partition_id}'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
+      local_var_path = '/partitions/{partition_id}'.sub('{partition_id}', CGI.escape(partition_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -177,7 +177,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'partition_id' when calling PartitionsApi.get_partition_partitions_partition_id_get"
       end
       # resource path
-      local_var_path = '/partitions/{partition_id}'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
+      local_var_path = '/partitions/{partition_id}'.sub('{partition_id}', CGI.escape(partition_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -317,7 +317,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'partition_limit_params' when calling PartitionsApi.set_partition_limits_partitions_partition_id_limits_put"
       end
       # resource path
-      local_var_path = '/partitions/{partition_id}/limits'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
+      local_var_path = '/partitions/{partition_id}/limits'.sub('{partition_id}', CGI.escape(partition_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -391,7 +391,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'update_partition_params' when calling PartitionsApi.update_partition_partitions_partition_id_patch"
       end
       # resource path
-      local_var_path = '/partitions/{partition_id}'.sub('{' + 'partition_id' + '}', CGI.escape(partition_id.to_s))
+      local_var_path = '/partitions/{partition_id}'.sub('{partition_id}', CGI.escape(partition_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

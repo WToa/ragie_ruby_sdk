@@ -185,7 +185,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'delete_connection_payload' when calling ConnectionsApi.delete_connection_connections_connection_id_delete_post"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}/delete'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}/delete'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -253,7 +253,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'connection_id' when calling ConnectionsApi.get_connection_connections_connection_id_get"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -316,7 +316,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'connection_id' when calling ConnectionsApi.get_connection_stats_connections_connection_id_stats_get"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}/stats'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}/stats'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -519,7 +519,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'set_connection_enabled_payload' when calling ConnectionsApi.set_connection_enabled_connections_connection_id_enabled_put"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}/enabled'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}/enabled'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -593,7 +593,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'connection_limit_params' when calling ConnectionsApi.set_connection_limits_connections_connection_id_limit_put"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}/limit'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}/limit'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -661,7 +661,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'connection_id' when calling ConnectionsApi.sync_connection"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}/sync'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}/sync'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -730,7 +730,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'connection_base' when calling ConnectionsApi.update_connection_connections_connection_id_put"
       end
       # resource path
-      local_var_path = '/connections/{connection_id}'.sub('{' + 'connection_id' + '}', CGI.escape(connection_id.to_s))
+      local_var_path = '/connections/{connection_id}'.sub('{connection_id}', CGI.escape(connection_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

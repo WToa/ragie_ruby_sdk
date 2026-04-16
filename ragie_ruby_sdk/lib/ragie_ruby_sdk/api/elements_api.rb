@@ -43,7 +43,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'element_id' when calling ElementsApi.get_element"
       end
       # resource path
-      local_var_path = '/elements/{element_id}'.sub('{' + 'element_id' + '}', CGI.escape(element_id.to_s))
+      local_var_path = '/elements/{element_id}'.sub('{element_id}', CGI.escape(element_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -126,7 +126,7 @@ module RagieRubySdk
       end
 
       # resource path
-      local_var_path = '/documents/{document_id}/elements'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/elements'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

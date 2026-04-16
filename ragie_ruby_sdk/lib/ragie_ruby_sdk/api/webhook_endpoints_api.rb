@@ -111,7 +111,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'endpoint_id' when calling WebhookEndpointsApi.delete_webhook_endpoint"
       end
       # resource path
-      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{' + 'endpoint_id' + '}', CGI.escape(endpoint_id.to_s))
+      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{endpoint_id}', CGI.escape(endpoint_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -174,7 +174,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'endpoint_id' when calling WebhookEndpointsApi.get_webhook_endpoint"
       end
       # resource path
-      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{' + 'endpoint_id' + '}', CGI.escape(endpoint_id.to_s))
+      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{endpoint_id}', CGI.escape(endpoint_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -314,7 +314,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'update_webhook_endpoint_payload' when calling WebhookEndpointsApi.update_webhook_endpoint"
       end
       # resource path
-      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{' + 'endpoint_id' + '}', CGI.escape(endpoint_id.to_s))
+      local_var_path = '/webhook_endpoints/{endpoint_id}'.sub('{endpoint_id}', CGI.escape(endpoint_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

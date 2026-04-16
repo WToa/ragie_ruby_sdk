@@ -111,7 +111,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'response_id' when calling ResponsesApi.get_response_responses_response_id_get"
       end
       # resource path
-      local_var_path = '/responses/{response_id}'.sub('{' + 'response_id' + '}', CGI.escape(response_id.to_s))
+      local_var_path = '/responses/{response_id}'.sub('{response_id}', CGI.escape(response_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

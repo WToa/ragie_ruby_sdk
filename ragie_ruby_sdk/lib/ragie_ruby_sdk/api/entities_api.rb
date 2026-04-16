@@ -111,7 +111,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'instruction_id' when calling EntitiesApi.delete_instruction"
       end
       # resource path
-      local_var_path = '/instructions/{instruction_id}'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+      local_var_path = '/instructions/{instruction_id}'.sub('{instruction_id}', CGI.escape(instruction_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -186,7 +186,7 @@ module RagieRubySdk
       end
 
       # resource path
-      local_var_path = '/documents/{document_id}/entities'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/entities'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -264,7 +264,7 @@ module RagieRubySdk
       end
 
       # resource path
-      local_var_path = '/instructions/{instruction_id}/entities'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+      local_var_path = '/instructions/{instruction_id}/entities'.sub('{instruction_id}', CGI.escape(instruction_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -356,7 +356,7 @@ module RagieRubySdk
         fail ArgumentError, "invalid value for \"status\", must be one of #{allowable_values}"
       end
       # resource path
-      local_var_path = '/instructions/{instruction_id}/entity-extraction-logs'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+      local_var_path = '/instructions/{instruction_id}/entity-extraction-logs'.sub('{instruction_id}', CGI.escape(instruction_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -487,7 +487,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'patch_instruction_params' when calling EntitiesApi.patch_instruction"
       end
       # resource path
-      local_var_path = '/instructions/{instruction_id}'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+      local_var_path = '/instructions/{instruction_id}'.sub('{instruction_id}', CGI.escape(instruction_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -559,7 +559,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'update_instruction_params' when calling EntitiesApi.update_instruction"
       end
       # resource path
-      local_var_path = '/instructions/{instruction_id}'.sub('{' + 'instruction_id' + '}', CGI.escape(instruction_id.to_s))
+      local_var_path = '/instructions/{instruction_id}'.sub('{instruction_id}', CGI.escape(instruction_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}

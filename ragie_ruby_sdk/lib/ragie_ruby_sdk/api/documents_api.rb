@@ -272,7 +272,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.delete_document"
       end
       # resource path
-      local_var_path = '/documents/{document_id}'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -337,7 +337,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.get_document"
       end
       # resource path
-      local_var_path = '/documents/{document_id}'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -409,7 +409,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'chunk_id' when calling DocumentsApi.get_document_chunk"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/chunks/{chunk_id}'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s)).sub('{' + 'chunk_id' + '}', CGI.escape(chunk_id.to_s))
+      local_var_path = '/documents/{document_id}/chunks/{chunk_id}'.sub('{document_id}', CGI.escape(document_id.to_s)).sub('{chunk_id}', CGI.escape(chunk_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -491,7 +491,7 @@ module RagieRubySdk
         fail ArgumentError, "invalid value for \"media_type\", must be one of #{allowable_values}"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/chunks/{chunk_id}/content'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s)).sub('{' + 'chunk_id' + '}', CGI.escape(chunk_id.to_s))
+      local_var_path = '/documents/{document_id}/chunks/{chunk_id}/content'.sub('{document_id}', CGI.escape(document_id.to_s)).sub('{chunk_id}', CGI.escape(chunk_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -576,7 +576,7 @@ module RagieRubySdk
       end
 
       # resource path
-      local_var_path = '/documents/{document_id}/chunks'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/chunks'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -656,7 +656,7 @@ module RagieRubySdk
         fail ArgumentError, "invalid value for \"media_type\", must be one of #{allowable_values}"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/content'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/content'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -725,7 +725,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.get_document_source"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/source'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/source'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -791,7 +791,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'document_id' when calling DocumentsApi.get_document_summary"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/summary'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/summary'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -938,7 +938,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'patch_document_metadata_params' when calling DocumentsApi.patch_document_metadata"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/metadata'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/metadata'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1015,7 +1015,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'file' when calling DocumentsApi.update_document_file"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/file'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/file'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1094,7 +1094,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'update_document_from_url_params' when calling DocumentsApi.update_document_from_url"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/url'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/url'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -1169,7 +1169,7 @@ module RagieRubySdk
         fail ArgumentError, "Missing the required parameter 'update_document_raw_params' when calling DocumentsApi.update_document_raw"
       end
       # resource path
-      local_var_path = '/documents/{document_id}/raw'.sub('{' + 'document_id' + '}', CGI.escape(document_id.to_s))
+      local_var_path = '/documents/{document_id}/raw'.sub('{document_id}', CGI.escape(document_id.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
