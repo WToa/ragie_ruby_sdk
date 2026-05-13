@@ -275,7 +275,7 @@ module RagieRubySdk
       return false if @type.nil?
       return false if @name.nil?
       return false if @enabled.nil?
-      disabled_by_system_reason_validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      disabled_by_system_reason_validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       return false unless disabled_by_system_reason_validator.valid?(@disabled_by_system_reason)
       return false if @disabled_by_system.nil?
       true
@@ -354,7 +354,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] disabled_by_system_reason Object to be assigned
     def disabled_by_system_reason=(disabled_by_system_reason)
-      validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       unless validator.valid?(disabled_by_system_reason)
         fail ArgumentError, "invalid value for \"disabled_by_system_reason\", must be one of #{validator.allowable_values}."
       end

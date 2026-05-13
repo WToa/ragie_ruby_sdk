@@ -118,7 +118,7 @@ module RagieRubySdk
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @enabled.nil?
-      reason_validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      reason_validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       return false unless reason_validator.valid?(@reason)
       true
     end
@@ -136,7 +136,7 @@ module RagieRubySdk
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] reason Object to be assigned
     def reason=(reason)
-      validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      validator = EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       unless validator.valid?(reason)
         fail ArgumentError, "invalid value for \"reason\", must be one of #{validator.allowable_values}."
       end

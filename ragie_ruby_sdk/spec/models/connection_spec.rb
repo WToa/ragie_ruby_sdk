@@ -78,7 +78,7 @@ describe RagieRubySdk::Connection do
   describe 'test attribute "disabled_by_system_reason"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       # validator.allowable_values.each do |value|
       #   expect { instance.disabled_by_system_reason = value }.not_to raise_error
       # end

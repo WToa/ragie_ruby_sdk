@@ -36,7 +36,7 @@ describe RagieRubySdk::SetConnectionEnabledPayload do
   describe 'test attribute "reason"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["connection_over_total_page_limit", "authentication_failed", "tenant_account_disabled"])
       # validator.allowable_values.each do |value|
       #   expect { instance.reason = value }.not_to raise_error
       # end
