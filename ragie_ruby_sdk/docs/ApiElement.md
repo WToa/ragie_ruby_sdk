@@ -10,7 +10,7 @@
 | **latex** | **String** | The LaTeX representation of the formula. | [optional] |
 | **description** | **String** | A detailed description of what the visual depicts. |  |
 | **header_range** | **String** | Optional normalized header rows range used for &lt;thead&gt; construction. | [optional] |
-| **base64_data** | **String** |  | [optional] |
+| **base64_data** | **String** | Base64 encoded image data, when available. | [optional] |
 | **label** | **String** | The main question/label for the field. |  |
 | **is_signed** | **Boolean** | True if a handwritten signature, digital signature, or stamp is present. False if blank. |  |
 | **signer_name** | **String** | The name of the signer | [optional] |
